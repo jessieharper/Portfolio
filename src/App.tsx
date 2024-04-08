@@ -3,7 +3,7 @@ import "./index.css";
 
 const App = (): JSX.Element => {
   return (
-    <main className="h-[100vh] w-[100vw]">
+    <main className="h-[100vh] w-[100vw] bg-slate-100">
       <Header />
     </main>
   );
