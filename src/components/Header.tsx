@@ -5,7 +5,7 @@ const Header = (): JSX.Element => {
         <h1 className="text-4xl font-semibold">Jessica Harper</h1>
 
         <nav>
-          <ul className="h-full flex flex-row items-end align-bottom mt-2">
+          <ul className="h-full flex flex-row items-end align-bottom mt-2 ">
             <li className="mr-4">About Me</li>
             <li className="mr-4">Projects</li>
             <li className="mr-2">Contact</li>

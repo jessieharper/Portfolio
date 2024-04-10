@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Cursor = (): JSX.Element => {
   const mouse = { x: 0, y: 0 };
-  const size = 32;
+  const size = 64;
 
   const manageMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
@@ -30,8 +30,11 @@ const Cursor = (): JSX.Element => {
   const moveCircle = () => {
     const circle = document.getElementById("circle");
     if (circle) {
-      circle.style.left = `${mouse.x}px`;
-      circle.style.top = `${mouse.y}px`;
+      const circleRect = circle.getBoundingClientRect();
+      const offsetX = circleRect.width / 2;
+      const offsetY = circleRect.height / 2;
+      circle.style.left = `${mouse.x - offsetX}px`;
+      circle.style.top = `${mouse.y - offsetY}px`;
     }
   };
 
@@ -39,12 +42,10 @@ const Cursor = (): JSX.Element => {
     <div className="relative h-screen">
       <motion.div
         id="circle"
+        className="fixed bg-slate-100 rounded-full mix-blend-difference"
         style={{
-          backgroundColor: "#1e293b",
           width: size,
           height: size,
-          position: "fixed",
-          borderRadius: "50%",
           zIndex: 9999,
           left: `${mouse.x}px`,
           top: `${mouse.y}px`,
