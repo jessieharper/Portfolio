@@ -6,8 +6,9 @@ import { useState } from "react";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
+
   return (
-    <main className="h-[100vh] w-[100vw] overflow-hidden">
+    <main className="min-h-screen w-[100vw]">
       <Header setIsHovered={setIsHovered} />
       <LandingPage setIsHovered={setIsHovered} />
       <Cursor isHovered={isHovered} />

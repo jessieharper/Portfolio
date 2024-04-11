@@ -43,7 +43,7 @@ const Cursor = (props: ICursor): JSX.Element => {
     <div className="relative h-screen">
       <motion.div
         id="circle"
-        className="fixed bg-slate-100 rounded-full mix-blend-difference pointer-events-none"
+        className="fixed bg-[#fef8f0] rounded-full mix-blend-difference pointer-events-none"
         style={{
           width: size,
           height: size,

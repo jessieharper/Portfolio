@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body * {
   font-family: Poppins;
-  color: #0f172a;
-  background-color: rgb(241 245 249);
+  @apply transition-colors duration-100;
+}
+
+@layer base {
+  :root {
+    --background: hsl(34, 88%, 97%);
+    --text: hsl(28, 41%, 7%);
+  }
+}
+
+.dark {
+  --background: hsl(28, 41%, 7%);
+  --text: hsl(34, 88%, 97%);
 }
 
 h1,

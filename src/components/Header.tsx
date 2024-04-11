@@ -1,4 +1,5 @@
 import { ICursor } from "./models/CursorProps";
+import ThemeSelector from "./ThemeSelector";
 
 const Header = (props: ICursor): JSX.Element => {
   return (
@@ -24,8 +25,12 @@ const Header = (props: ICursor): JSX.Element => {
             if (props.setIsHovered) props.setIsHovered(false);
           }}
         >
-          <ul className="h-full flex flex-row items-end align-bottom mt-2 ">
-            <li className="mr-4">About Me</li>
+          <ul className="h-full flex flex-row items-center align-center mt-2 ">
+            <div className="border-4 rounded-full flex  flex-row">
+              <ThemeSelector />
+            </div>
+
+            <li className="mx-4">About Me</li>
             <li className="mr-4">Projects</li>
             <li className="mr-4">Contact Me</li>
             <li className="mr-2">Resources</li>

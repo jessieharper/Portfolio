@@ -18,8 +18,9 @@ const LandingPage = (props: ICursor): JSX.Element => {
         </h2>
         <span className="ml-6 flex flex-col max-w-[310px] sm:max-w-[350px]">
           <p className="text-wrap">
-            My name is Jessica and I am a Sheffield-based Junior Software
-            Developer.
+            My name is Jessica, and I am a Sheffield-based Junior Software
+            Developer, amateur animator, and burgeoning crazy cat lady. Welcome
+            to my portfolio!
           </p>
           <br />
           <h3 className="font-semibold mb-2">Tech stack: </h3>
@@ -29,11 +30,17 @@ const LandingPage = (props: ICursor): JSX.Element => {
                 src="/javascript.svg"
                 alt="JavaScript logo"
                 className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
               />
               <img
                 src="/typescript-icon.svg"
                 alt="TypeScript logo"
                 className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
                 height={48}
                 width={48}
               />
@@ -42,15 +49,35 @@ const LandingPage = (props: ICursor): JSX.Element => {
                 src="/tailwindcss-icon.svg"
                 alt="Tailwind CSS logo"
                 className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
               />
             </span>
             <span className="w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
-              <img src="/react.svg" alt="React logo" className="mr-2" />
-              <img src="/nextjs-icon.svg" alt="NextJs logo" className="mr-2" />
+              <img
+                src="/react.svg"
+                alt="React logo"
+                className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
+              />
+              <img
+                src="/nextjs-icon.svg"
+                alt="NextJs logo"
+                className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
+              />
               <img
                 src="/postgresql.svg"
                 alt="PostgreSQL logo"
                 className="mr-2"
+                style={
+                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
+                }
               />
             </span>
           </span>
