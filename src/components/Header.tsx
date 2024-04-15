@@ -26,7 +26,7 @@ const Header = (props: ICursor): JSX.Element => {
           }}
         >
           <ul className="h-full flex flex-row items-center align-center mt-2 ">
-            <div className="border-4 rounded-full flex  flex-row">
+            <div className="border-2 border-text dark:border-backgroun rounded-full flex  flex-row">
               <ThemeSelector />
             </div>
 

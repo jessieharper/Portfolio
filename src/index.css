@@ -9,7 +9,7 @@ body * {
 
 @layer base {
   :root {
-    --background: hsl(34, 88%, 97%);
+    --background: #fef8f1;
     --text: hsl(28, 41%, 7%);
   }
 }

@@ -1,3 +1,4 @@
+// import MaskIcons from "./MaskIcons";
 import { ICursor } from "./models/CursorProps";
 
 const LandingPage = (props: ICursor): JSX.Element => {
@@ -26,6 +27,7 @@ const LandingPage = (props: ICursor): JSX.Element => {
           <h3 className="font-semibold mb-2">Tech stack: </h3>
           <span className="flex sm:flex-row flex-col items-center justify-center">
             <span className="w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
+              {/* <MaskIcons setIsHovered={props.setIsHovered} /> */}
               <img
                 src="/javascript.svg"
                 alt="JavaScript logo"

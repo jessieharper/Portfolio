@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ThemeSelector = (): JSX.Element => {
-  const [theme, setTheme] = useState<string | null>(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
-  );
+  const { theme, setTheme } = useContext(ThemeContext);
+
   const element = document.documentElement;
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const options = [
