@@ -57,7 +57,7 @@ const ThemeSelector = (): JSX.Element => {
         <button
           key={option.text}
           className={`w-6 h-auto my-1 mx-1 flex justify-center ${
-            theme === option.text && "text-pink-400"
+            theme === option.text && "text-[#ec4c95]"
           }`}
           aria-hidden="true"
           onClick={() => setTheme(option.text)}

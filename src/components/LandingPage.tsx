@@ -1,9 +1,10 @@
 // import MaskIcons from "./MaskIcons";
 import { ICursor } from "./models/CursorProps";
+import TechStackLogos from "./TechStackLogos";
 
 const LandingPage = (props: ICursor): JSX.Element => {
   return (
-    <section className="h-[85vh] flex justify-center items-center">
+    <section className="h-[85vh] flex justify-center items-center ">
       <span
         onMouseOver={() => {
           if (props.setIsHovered) props.setIsHovered(true);
@@ -11,13 +12,14 @@ const LandingPage = (props: ICursor): JSX.Element => {
         onMouseLeave={() => {
           if (props.setIsHovered) props.setIsHovered(false);
         }}
-        className="h-auto flex sm:flex-row flex-col items-center"
+        className="h-auto flex sm:flex-row flex-col items-center relative"
       >
-        <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl text-8xl font-extrabold">
+        <div className="hidden sm:flex self-center justify-center align-middle border-2 border-text/20  absolute left-[15%] rounded-full w-[500px] h-[500px] z-0"></div>
+        <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl text-8xl font-extrabold z-10">
           Hiya, <br />
           World
         </h2>
-        <span className="ml-6 flex flex-col max-w-[310px] sm:max-w-[350px]">
+        <span className="ml-6 flex flex-col max-w-[310px] sm:max-w-[350px] z-10">
           <p className="text-wrap">
             My name is Jessica, and I am a Sheffield-based Junior Software
             Developer, amateur animator, and burgeoning crazy cat lady. Welcome
@@ -26,63 +28,11 @@ const LandingPage = (props: ICursor): JSX.Element => {
           <br />
           <h3 className="font-semibold mb-2">Tech stack: </h3>
           <span className="flex sm:flex-row flex-col items-center justify-center">
-            <span className="w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
-              {/* <MaskIcons setIsHovered={props.setIsHovered} /> */}
-              <img
-                src="/javascript.svg"
-                alt="JavaScript logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-              />
-              <img
-                src="/typescript-icon.svg"
-                alt="TypeScript logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-                height={48}
-                width={48}
-              />
-
-              <img
-                src="/tailwindcss-icon.svg"
-                alt="Tailwind CSS logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-              />
-            </span>
-            <span className="w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
-              <img
-                src="/react.svg"
-                alt="React logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-              />
-              <img
-                src="/nextjs-icon.svg"
-                alt="NextJs logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-              />
-              <img
-                src="/postgresql.svg"
-                alt="PostgreSQL logo"
-                className="mr-2"
-                style={
-                  localStorage.theme === "dark" ? { filter: "invert(1)" } : {}
-                }
-              />
-            </span>
+            <TechStackLogos />
           </span>
+          <button className="text-background dark:text-text border-6 p-2 border-transparent bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 z-10 font-semibold">
+            See Full Stack
+          </button>
         </span>
       </span>
     </section>
