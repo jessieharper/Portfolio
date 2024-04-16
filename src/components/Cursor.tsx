@@ -43,11 +43,10 @@ const Cursor = (props: ICursor): JSX.Element => {
     <div className="relative h-screen">
       <motion.div
         id="circle"
-        className="fixed bg-[#fef8f0] rounded-full mix-blend-difference pointer-events-none"
+        className="fixed bg-[#fef8f0] rounded-full mix-blend-difference pointer-events-none z-10"
         style={{
           width: size,
           height: size,
-          zIndex: 9999,
           left: `${mouse.x}px`,
           top: `${mouse.y}px`,
           transition: `height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out`,

@@ -4,7 +4,7 @@ import TechStackLogos from "./TechStackLogos";
 
 const LandingPage = (props: ICursor): JSX.Element => {
   return (
-    <section className="h-[85vh] flex justify-center items-center ">
+    <section className="h-[80vh] flex justify-center items-center ">
       <span
         onMouseOver={() => {
           if (props.setIsHovered) props.setIsHovered(true);
@@ -14,7 +14,7 @@ const LandingPage = (props: ICursor): JSX.Element => {
         }}
         className="h-auto flex sm:flex-row flex-col items-center relative"
       >
-        <div className="hidden sm:flex self-center justify-center align-middle border-2 border-text/20  absolute left-[15%] rounded-full w-[500px] h-[500px] z-0"></div>
+        <div className="hidden sm:flex self-center justify-center align-middle border-2 border-text absolute left-[15%] rounded-full w-[500px] h-[500px] z-0"></div>
         <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl text-8xl font-extrabold z-10">
           Hiya, <br />
           World

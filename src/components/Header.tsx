@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { ICursor } from "./models/CursorProps";
 import ThemeSelector from "./ThemeSelector";
+import NavBar from "./NavBar";
 
 const Header = (props: ICursor): JSX.Element => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <header className="flex flex-row h-auto w-full justify-between items-center p-4 m-auto">
+      <header className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto">
         <h1
           onMouseOver={() => {
             if (props.setIsHovered) props.setIsHovered(true);
@@ -29,13 +37,16 @@ const Header = (props: ICursor): JSX.Element => {
             <div className="border-2 border-text dark:border-backgroun rounded-full flex  flex-row">
               <ThemeSelector />
             </div>
-
-            <li className="mx-4">About Me</li>
-            <li className="mr-4">Projects</li>
-            <li className="mr-4">Contact Me</li>
-            <li className="mr-2">Resources</li>
+            <li className="mx-4 hidden md:flex">About Me</li>
+            <li className="mr-4 hidden md:flex">Projects</li>
+            <li className="mr-4 hidden md:flex">Contact Me</li>
+            <li className="mr-2 hidden md:flex">Resources</li>
           </ul>
         </nav>
+        <button className="md:hidden flex cursor-pointer" onClick={toggleMenu}>
+          Menu
+        </button>
+        <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>
     </>
   );
