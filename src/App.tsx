@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
 
   return (
-    <main className="min-h-screen w-[100vw]">
+    <main className="min-hß-[100vh] w-[100vw]">
       <ThemeProvider>
         <Header setIsHovered={setIsHovered} />
         <LandingPage setIsHovered={setIsHovered} />

@@ -40,10 +40,13 @@ const Header = (props: ICursor): JSX.Element => {
             <li className="mx-4 hidden md:flex">About Me</li>
             <li className="mr-4 hidden md:flex">Projects</li>
             <li className="mr-4 hidden md:flex">Contact Me</li>
-            <li className="mr-2 hidden md:flex">Resources</li>
+            <li className="mr-4 hidden md:flex">Resources</li>
           </ul>
         </nav>
-        <button className="md:hidden flex cursor-pointer" onClick={toggleMenu}>
+        <button
+          className="md:hidden flex cursor-pointer mr-4"
+          onClick={toggleMenu}
+        >
           Menu
         </button>
         <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
