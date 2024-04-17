@@ -22,7 +22,7 @@ const LandingPage = (props: ICursor): JSX.Element => {
           Hiya, <br />
           World
         </h2>
-        <span className="ml-6 flex flex-col max-w-[310px] sm:max-w-[350px] z-10 p-2 py-4 rounded-2xl bg-background border-2 border-text">
+        <span className="ml-6 flex flex-col max-w-[310px] sm:max-w-[350px] z-10 sm:p-2 sm:py-4 sm:rounded-2xl sm:bg-background sm:border-2 sm:border-text">
           <p className="text-wrap">
             My name is Jessica, and I am a Sheffield-based Junior Software
             Developer, amateur animator, and burgeoning crazy cat lady. Welcome
