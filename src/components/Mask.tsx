@@ -66,7 +66,7 @@ const Mask = (props: IMask): JSX.Element => {
                 JavaScript | TypeScript | Tailwind | React | NextJS | Postgres
               </p>
             </span>
-            <button className="border-2 p-2 w-[80%] self-center bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 font-semibold">
+            <button className="border-2 p-2 w-[80%] self-center bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 font-semibold border-background text-text">
               See full stack
             </button>
           </span>
