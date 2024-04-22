@@ -21,7 +21,16 @@ const App = (): JSX.Element => {
             WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
             WebkitMaskSize: `${size}px`,
           }}
-          transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+          transition={{
+            type: "tween",
+            ease: "linear",
+            WebkitMaskPosition: {
+              duration: 0,
+            },
+            WebkitMaskSize: {
+              duration: 0.5,
+            },
+          }}
         >
           <Mask setIsHovered={setIsHovered} />
         </motion.div>
