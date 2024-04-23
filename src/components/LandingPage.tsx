@@ -1,13 +1,14 @@
-// import MaskIcons from "./MaskIcons";
-
 import Earth from "./Earth";
 import TechStackLogos from "./TechStackLogos";
 
 const LandingPage = (): JSX.Element => {
   return (
-    <section className="h-[80vh] flex justify-center items-center ">
-      <span className="h-auto flex sm:flex-row flex-col items-center relative">
-        <div className="hidden sm:flex self-center justify-center align-middle border-4 border-text absolute left-[15%] rounded-full w-[500px] h-[500px] z-10">
+    <section
+      id="main"
+      className="h-screen flex justify-center items-center  mt-[-72px]"
+    >
+      <div className="flex sm:flex-row flex-col items-center relative">
+        <div className="hidden sm:flex self-center border-4 border-text absolute left-[15%] rounded-full w-[500px] h-[500px] z-10">
           <Earth />
         </div>
 
@@ -30,7 +31,7 @@ const LandingPage = (): JSX.Element => {
             See full stack
           </button>
         </span>
-      </span>
+      </div>
     </section>
   );
 };

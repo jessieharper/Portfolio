@@ -7,10 +7,9 @@ interface INavBar {
 }
 
 const navLinks = [
-  { title: "About", href: "/about" },
-  { title: "Projects", href: "/projects" },
-  { title: "Contact Me", href: "/contact" },
-  { title: "Resources", href: "/resources" },
+  { title: "About", href: "#about" },
+  { title: "Projects", href: "#projects" },
+  { title: "Contact Me", href: "#contact" },
 ];
 
 const menuVariables = {
@@ -82,7 +81,10 @@ const NavBar = (props: INavBar): JSX.Element => {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div className="overflow-hidden">
+                    <div
+                      className="overflow-hidden"
+                      onClick={() => props.setIsOpen(!props.isOpen)}
+                    >
                       <MobileNavLinks
                         key={index}
                         title={link.title}

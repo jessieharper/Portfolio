@@ -14,7 +14,7 @@ body {
   }
 }
 
-.dark body {
+.dark #main {
   background-image: url("/stars.png");
   background-repeat: repeat;
 }
@@ -22,6 +22,27 @@ body {
 .dark {
   --background: hsl(28, 41%, 7%);
   --text: hsl(32, 87%, 97%);
+}
+
+.dark .noise {
+  width: full;
+  height: auto;
+  background: linear-gradient(to left, rgb(0, 0, 0), rgba(144, 142, 142, 0)),
+    url("/noise-filter.svg");
+  filter: contrast(170%) brightness(150%);
+  mix-blend-mode: screen;
+}
+
+.noise {
+  width: full;
+  height: auto;
+  background: linear-gradient(
+      to left,
+      rgb(254, 248, 240),
+      rgba(50, 49, 49, 0.36)
+    ),
+    url("/noise-filter.svg");
+  filter: contrast(170%) brightness(150%);
 }
 
 h1,
