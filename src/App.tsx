@@ -1,11 +1,12 @@
 import Header from "./components/Header.js";
-import "./index.css";
+import About from "./components/About.js";
 import Mask from "./components/Mask.js";
 import LandingPage from "./components/LandingPage.js";
+import useMousePosition from "./utils/useMousePosition.js";
+import "./index.css";
 import { useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { motion } from "framer-motion";
-import useMousePosition from "./utils/useMousePosition.js";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
@@ -22,13 +23,12 @@ const App = (): JSX.Element => {
             WebkitMaskSize: `${size}px`,
           }}
           transition={{
-            type: "tween",
-            ease: "linear",
+            ease: "tween",
             WebkitMaskPosition: {
               duration: 0,
             },
             WebkitMaskSize: {
-              duration: 0.5,
+              duration: 0,
             },
           }}
         >
@@ -36,6 +36,7 @@ const App = (): JSX.Element => {
         </motion.div>
         <Header />
         <LandingPage />
+        <About />
       </ThemeProvider>
     </main>
   );

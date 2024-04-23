@@ -23,7 +23,6 @@ const Header = (): JSX.Element => {
             <li className="mx-4 hidden md:flex">About Me</li>
             <li className="mr-4 hidden md:flex">Projects</li>
             <li className="mr-4 hidden md:flex">Contact Me</li>
-            <li className="mr-4 hidden md:flex">Resources</li>
           </ul>
         </nav>
         <button

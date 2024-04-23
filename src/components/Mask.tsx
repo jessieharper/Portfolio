@@ -20,26 +20,23 @@ const Mask = (props: IMask): JSX.Element => {
           Jessica Harper
         </h1>
         <nav>
-          <ul
-            className="h-full flex flex-row items-center align-center mt-2 "
-            onMouseEnter={() => {
-              props.setIsHovered(true);
-            }}
-            onMouseLeave={() => {
-              props.setIsHovered(false);
-            }}
-          >
+          <ul className="h-full flex flex-row items-center align-center mt-2 ">
             <div className="border-2 border-background rounded-full flex  flex-row">
               <ThemeSelector />
             </div>
-            <li className="mx-4 hidden md:flex">About Me</li>
-            <li className="mr-4 hidden md:flex">Projects</li>
-            <li className="mr-4 hidden md:flex">Contact Me</li>
-            <li className="mr-4 hidden md:flex">Resources</li>
+            <a href="#about" className="mx-4 hidden md:flex">
+              About Me
+            </a>
+            <a href="#projects" className="mr-4 hidden md:flex">
+              Projects
+            </a>
+            <a href="#contact" className="mr-4 hidden md:flex">
+              Contact Me
+            </a>
           </ul>
         </nav>
       </header>
-      <section className="h-[80vh] flex justify-center items-center ">
+      <section className="h-screen flex justify-center items-center mt-[-72px]">
         <span
           className="h-auto flex sm:flex-row flex-col items-center"
           onMouseEnter={() => {
