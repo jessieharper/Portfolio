@@ -1,6 +1,7 @@
 import Header from "./components/Header.js";
 import About from "./components/About.js";
 import Mask from "./components/Mask.js";
+import Projects from "./components/Projects.js";
 import LandingPage from "./components/LandingPage.js";
 import useMousePosition from "./utils/useMousePosition.js";
 import "./index.css";
@@ -37,6 +38,7 @@ const App = (): JSX.Element => {
         <Header />
         <LandingPage />
         <About />
+        <Projects />
       </ThemeProvider>
     </main>
   );
