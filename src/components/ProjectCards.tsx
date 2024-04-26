@@ -15,14 +15,7 @@ export const cards: {
       "Tech stack: PSQL, Express, Node.js, Supertest, JavaScript, React.js, Vanilla CSS.\\\nThe aim of this project was to build a RESTful API and use it to develop a social news aggregation, web content rating, and discussion website using the Northcoders News API I created in the backend project week. ",
     id: 1,
     link: "https://main--nc-news-hessie.netlify.app/",
-    techStack: [
-      "postgresql",
-      "express",
-      "nodejs",
-      "javascript",
-      "react",
-      "css3",
-    ],
+    techStack: ["postgresql", "nodejs", "javascript", "react", "css3"],
   },
   {
     url: "/codelingo.png",

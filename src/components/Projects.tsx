@@ -29,7 +29,7 @@ const Projects = (): JSX.Element => {
                 <div className="absolute inset-0 z-0 "></div>
                 <div className="absolute inset-0 z-10 grid place-content-center">
                   <section className="flex flex-row items-center justify-center">
-                    <h2 className="text-9xl [writing-mode:vertical-lr] rotate-180 font-black text-text backdrop-blur-lg text-center mr-8">
+                    <h2 className="text-8xl [writing-mode:vertical-lr] rotate-180 font-black text-text backdrop-blur-lg text-center mr-8 font-poppins">
                       {card.title}{" "}
                     </h2>
                     <div className="flex flex-col">
@@ -86,11 +86,13 @@ const Projects = (): JSX.Element => {
                         )}
                       </div>
                       <article className="flex flex-col items-center justify-center mt-6 min-h-[200px] sm:w-[700px] w-[90%] overflow-auto">
-                        <span className="w-full flex flex-row justify-between mb-4 bg-text rounded-full px-6 py-2">
+                        <div className="flex flex-row">
                           {card.techStack.map((logo) => (
-                            <img src={`/logos/${logo}.svg`} />
+                            <span className="flex flex-row justify-between mb-4  bg-text rounded-full p-4 mx-4">
+                              <img src={`/logos/${logo}.svg`} />
+                            </span>
                           ))}
-                        </span>
+                        </div>
                         {card.content.split("\\\n").map((line) => (
                           <p className="text-center">
                             {line}
