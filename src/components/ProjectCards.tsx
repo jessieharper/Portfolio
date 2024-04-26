@@ -8,8 +8,8 @@ export const cards: {
   techStack: string[];
 }[] = [
   {
-    url: "/nc-news.png",
-    phoneUrl: "",
+    url: "/projects/ncnews.png",
+    phoneUrl: "/projects/ncnews-phone.png",
     title: "NC News",
     content:
       "Tech stack: PSQL, Express, Node.js, Supertest, JavaScript, React.js, Vanilla CSS.\\\nThe aim of this project was to build a RESTful API and use it to develop a social news aggregation, web content rating, and discussion website using the Northcoders News API I created in the backend project week. ",
@@ -18,8 +18,8 @@ export const cards: {
     techStack: ["postgresql", "nodejs", "javascript", "react", "css3"],
   },
   {
-    url: "/codelingo.png",
-    phoneUrl: "/codelingo-phone.png",
+    url: "/projects/codelingo.png",
+    phoneUrl: "/projects/codelingo-phone.png",
     title: "CodeLingo",
     content:
       "Tech stack: NextJS, Tailwind, TypeScript, MongoDB.\\\nFor the final project I created on the Northcoders bootcamp, I collaborated with a team of peers to create an interactive app similar to Duolingo or Scratch to help young people learn JavaScript and Python. We had 8 days to learn a whole new tech stack and complete the project.",
@@ -33,8 +33,8 @@ export const cards: {
     ],
   },
   {
-    url: "/portfolio.png",
-    phoneUrl: "",
+    url: "/projects/portfolio.png",
+    phoneUrl: "/projects/portfolio-phone.png",
     title: "Portfolio",
     content: "Tech stack: TypeScript, Node.js, React.js, Tailwind",
     id: 3,
@@ -42,7 +42,7 @@ export const cards: {
     techStack: ["typescript-icon", "nodejs", "react", "tailwindcss-icon"],
   },
   {
-    url: "/wip.png",
+    url: "",
     phoneUrl: "",
     title: "WIP",
     content: "",

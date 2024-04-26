@@ -42,6 +42,35 @@ body {
   filter: contrast(300%) brightness(1000%);
 }
 
+.title {
+  --c: #1dd3b01a;
+  color: #ffffffa0;
+  text-shadow: 5px 5px var(--c), 10px 10px var(--c), 15px 15px var(--c),
+    20px 20px var(--c), 40px 40px 15px var(--c);
+  font-size: calc(5vw + 5vh);
+}
+
+.element {
+  background: radial-gradient(
+      110.35% 80.79% at 6% 103.92%,
+      rgba(37, 169, 239, 1) 0%,
+      rgba(37, 169, 239, 0) 100%
+    ),
+    linear-gradient(
+      169.3deg,
+      rgba(205, 249, 232, 1) 15%,
+      rgba(205, 249, 232, 0) 46%
+    ),
+    radial-gradient(
+      123% 73% at 107% 96%,
+      rgba(255, 253, 177, 1) 20%,
+      rgba(254, 228, 191, 1) 60%,
+      rgba(240, 189, 208, 1) 75%,
+      rgba(255, 129, 38, 0) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 204, 131, 1) 0%, rgba(0, 204, 131, 1) 100%);
+}
+
 h1,
 h2 {
   font-family: Fraunces;
