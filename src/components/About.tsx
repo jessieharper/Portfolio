@@ -15,18 +15,18 @@ const About = (): JSX.Element => {
           {TabsData.map((tab, index) => (
             <li
               onClick={() => setActiveTab(index)}
-              className={` bg-card h-full text-xl py-4 p-6 w-[35%] text-center cursor-pointer border-t-4  border-text rounded-t-xl transition-all ease-in-out border-x-2 ${
-                index !== activeTab && "noise border-b-4"
-              } ${index === activeTab && "underline font-semibold"} ${
-                tab.title === "Skills" && "border-r-4"
-              } ${tab.title === "About" && "border-l-4"}`}
+              className={` bg-card h-full text-xl py-4 p-6 w-[35%] text-center cursor-pointer  border-text rounded-t-xl transition-all ease-in-out font-bold  ${
+                index !== activeTab && "noise border-b-2"
+              } ${index === activeTab && "underline  border-t-2 border-x-2 "} $
+               
+              `}
               key={tab.title}
             >
               {tab.title}
             </li>
           ))}
         </ul>
-        <div className="bg-card dark:bg-background h-[560px] overflow-auto px-8 pt-8 w-full border-b-4 rounded-b-2xl border-x-4 border-text">
+        <div className="bg-card dark:bg-background h-[560px] overflow-auto px-8 pt-8 w-full border-b-2 rounded-b-2xl border-x-2 border-text">
           {TabsData.map((data, index) =>
             data.content.split("\\\n").map((line) => (
               <p
