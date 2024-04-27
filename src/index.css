@@ -39,7 +39,7 @@ body {
 .noise {
   background: radial-gradient(rgba(7, 7, 7, 0.806), transparent),
     url("/noise-filter.svg");
-  filter: contrast(300%) brightness(1000%);
+  filter: contrast(250%) brightness(600%);
   mix-blend-mode: screen;
 }
 

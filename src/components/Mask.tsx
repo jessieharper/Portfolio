@@ -1,4 +1,5 @@
 import ThemeSelector from "./ThemeSelector";
+import MyCV from "../assets/Jessica Harper CV.pdf";
 
 interface IMask {
   setIsHovered: (isHovered: boolean) => void;
@@ -63,9 +64,15 @@ const Mask = (props: IMask): JSX.Element => {
                 JavaScript | TypeScript | Tailwind | React | NextJS | Postgres
               </p>
             </span>
-            <button className="border-2 p-2 w-[80%] self-center bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 font-semibold border-background text-text">
-              See full stack
-            </button>
+            <a
+              href={MyCV}
+              download={"../assets/Jessica Harper CV.pdf"}
+              className="flex items-center justify-center"
+            >
+              <button className="border-2 p-2 w-[80%] self-center bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 font-semibold border-background text-text">
+                Download my CV
+              </button>
+            </a>
           </span>
         </span>
       </section>
