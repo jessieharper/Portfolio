@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Poppins;
   @apply transition-colors duration-100;
@@ -27,19 +31,16 @@ body {
 }
 
 .dark .noise {
-  width: full;
-  height: auto;
-  background: linear-gradient(#19110b00, #19110bb8), url("/noise-filter.svg");
+  background: radial-gradient(transparent, #19110b78), url("/noise-filter.svg");
   filter: contrast(1000%) brightness(100%);
   mix-blend-mode: screen;
 }
 
 .noise {
-  width: full;
-  height: auto;
-  background: linear-gradient(rgba(254, 248, 240, 0.291), rgba(7, 7, 7, 0.492)),
+  background: radial-gradient(rgba(7, 7, 7, 0.806), transparent),
     url("/noise-filter.svg");
   filter: contrast(300%) brightness(1000%);
+  mix-blend-mode: screen;
 }
 
 .title {

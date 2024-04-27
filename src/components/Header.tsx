@@ -11,7 +11,10 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <header className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto">
+      <header
+        id="home"
+        className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto"
+      >
         <h1 className="hidden md:flex text-4xl font-semibold">
           Jessica Harper
         </h1>

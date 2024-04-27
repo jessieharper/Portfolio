@@ -9,6 +9,7 @@ const LandingPage = (): JSX.Element => {
     >
       <div className="flex sm:flex-row flex-col items-center relative">
         <div className="hidden sm:flex self-center border-4 border-text absolute left-[15%] rounded-full w-[500px] h-[500px] z-10">
+          <div className="right-[-16%] absolute self-center z-0 rounded-full block noise w-[135%] h-[135%]"></div>
           <Earth />
         </div>
 
