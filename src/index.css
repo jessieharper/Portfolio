@@ -81,6 +81,13 @@ li {
   list-style: none;
 }
 
+.right-arrow {
+  mask-image: url("/arrow.png");
+  mask-repeat: no-repeat;
+  background: var(--text);
+  color: var(--background);
+}
+
 .mask {
   mask-image: url("/mask.svg");
   mask-repeat: no-repeat;

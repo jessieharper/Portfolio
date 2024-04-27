@@ -28,7 +28,8 @@ export const cards: {
     url: "/projects/portfolio.png",
     phoneUrl: "/projects/portfolio-phone.png",
     title: "Portfolio",
-    content: "Tech stack: TypeScript, Node.js, React.js, Tailwind",
+    content:
+      "Tech stack: TypeScript, Node.js, React.js, Tailwind, Figma\\\nFor my portfolio, I wanted to experiment with different animation tecniques. I used framer motion and three.js.",
     id: 3,
     link: "",
   },
