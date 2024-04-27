@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import { useState } from "react";
 import ThemeSelector from "./ThemeSelector";
 import NavBar from "./NavBar";
@@ -15,9 +18,14 @@ const Header = (): JSX.Element => {
         id="home"
         className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto"
       >
-        <h1 className="hidden md:flex text-4xl font-semibold">
-          Jessica Harper
-        </h1>
+        <div className="flex flex-row">
+          <h1 className="hidden md:flex text-4xl font-semibold">
+            Jessica Harper
+          </h1>
+          <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
+          <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
+        </div>
+
         <nav>
           <ul className="h-full flex flex-row items-center align-center mt-2 ">
             <div className="border-2 border-text rounded-full flex  flex-row">

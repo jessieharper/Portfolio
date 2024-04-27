@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import ThemeSelector from "./ThemeSelector";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 
@@ -9,17 +12,25 @@ const Mask = (props: IMask): JSX.Element => {
   return (
     <>
       <header className="flex flex-row h-auto w-[100%] justify-between items-center p-4 mb-10 m-auto">
-        <h1
-          className="hidden md:flex text-4xl font-semibold"
-          onMouseEnter={() => {
-            props.setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            props.setIsHovered(false);
-          }}
-        >
-          Jessica Harper
-        </h1>
+        <div className="flex flex-row">
+          <h1
+            className="hidden md:flex text-4xl font-semibold"
+            onMouseEnter={() => {
+              props.setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              props.setIsHovered(false);
+            }}
+          >
+            Jessica Harper
+          </h1>
+          <a href="https://github.com/jessieharper" target="_blank">
+            <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
+          </a>
+          <a href="https://www.linkedin.com/in/jessie-harper/" target="_blank">
+            <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
+          </a>
+        </div>
         <nav>
           <ul className="h-full flex flex-row items-center align-center mt-2 ">
             <div className="border-2 border-background rounded-full flex  flex-row">
