@@ -16,7 +16,7 @@ const About = (): JSX.Element => {
             <li
               onClick={() => setActiveTab(index)}
               className={` bg-card h-full text-xl py-4 p-6 w-[35%] text-center cursor-pointer  border-text rounded-t-xl transition-all ease-in-out font-bold  ${
-                index !== activeTab && "noise border-b-2"
+                index !== activeTab && "border-b-2"
               } ${index === activeTab && "underline  border-t-2 border-x-2 "} $
                
               `}

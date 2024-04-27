@@ -8,6 +8,7 @@ import "./index.css";
 import { useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { motion } from "framer-motion";
+import Footer from "./components/Footer.js";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
@@ -39,6 +40,7 @@ const App = (): JSX.Element => {
         <LandingPage />
         <About />
         <Projects />
+        <Footer />
       </ThemeProvider>
     </main>
   );
