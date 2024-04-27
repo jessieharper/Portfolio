@@ -8,8 +8,8 @@ const LandingPage = (): JSX.Element => {
       className="h-screen flex justify-center items-center  mt-[-72px]"
     >
       <div className="flex sm:flex-row flex-col items-center relative">
-        <div className="hidden sm:flex self-center border-4 border-text absolute left-[15%] rounded-full w-[500px] h-[500px] z-10">
-          <div className="right-[-16%] absolute self-center z-0 rounded-full block noise w-[135%] h-[135%]"></div>
+        <div className="hidden sm:flex self-center absolute left-[16%] rounded-full w-[500px] h-[500px] z-10">
+          <div className="right-[-20%] absolute self-center z-0 rounded-full block noise w-[145%] h-[145%]"></div>
           <Earth />
         </div>
 
@@ -28,8 +28,9 @@ const LandingPage = (): JSX.Element => {
           <span className="flex sm:flex-row flex-col items-center justify-center">
             <TechStackLogos />
           </span>
-          <button className="text-background border-2 p-2 border-text w-[80%] self-center bg-no-repeat mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 z-10 font-semibold">
-            See full stack
+
+          <button className="text-background border-2 p-2 border-text w-[80%] bg-no-repeat self-center mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 z-10 font-semibold">
+            Download my CV
           </button>
         </span>
       </div>

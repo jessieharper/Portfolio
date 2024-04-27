@@ -20,7 +20,7 @@ const Earth = () => {
   ]);
 
   return (
-    <Canvas>
+    <Canvas className="border-4 border-text rounded-full">
       <ambientLight intensity={0.25} />
       <directionalLight intensity={3.5} position={[-4.75, 0, 1.25]} />
       <motion.mesh
