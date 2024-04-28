@@ -21,7 +21,10 @@ const Projects = (): JSX.Element => {
   };
 
   return (
-    <section id="projects" className="relative h-[100vh] bg-background mt-44">
+    <section
+      id="projects"
+      className="relative h-[100vh] bg-background mt-44 overflow-hidden"
+    >
       <div className="sticky top-0 flex h-screen items-center">
         <motion.div
           className="flex"
@@ -48,9 +51,9 @@ const Projects = (): JSX.Element => {
                       whileTap={{ scale: 0.9 }}
                     />
                   )}
-                  <h2 className=" title uppercase [writing-mode:vertical-lr] rotate-180 font-black text-text backdrop-blur-lg mr-8 font-poppins">
+                  <h3 className=" title uppercase [writing-mode:vertical-lr] rotate-180 font-black text-text backdrop-blur-lg mr-8 font-poppins">
                     {card.title}
-                  </h2>
+                  </h3>
                   <div className="flex flex-col">
                     <div className="flex sm:flex-row flex-col relative">
                       <img
