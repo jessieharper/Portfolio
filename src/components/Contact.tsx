@@ -5,7 +5,7 @@ const Contact = (): JSX.Element => {
   return (
     <section
       id="contact"
-      className="flex flex-col h-[100vh] items-center justify-center mt-44 relative"
+      className="flex flex-col h-[100vh] items-center justify-center mt-24 relative"
     >
       <div className="flex flex-row">
         <h2 className="text-5xl font-semibold">Contact Me</h2>
@@ -13,17 +13,20 @@ const Contact = (): JSX.Element => {
         <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
       </div>
       <form
-        action=""
+        action="https://formsubmit.co/652f2b793bbf47b0c5d88e5824e6e8c7"
+        method="POST"
         className="flex flex-col w-[310px] sm:w-[550px] text-background border-2 border-text rounded-2xl p-6 mt-8"
       >
         <input
           type="text"
+          name="name"
           placeholder="Name*"
           className="px-4 py-2 my-4 rounded-2xl"
           required
         />
         <input
           type="email"
+          name="email"
           placeholder="Email*"
           className="px-4 py-2 my-4 rounded-2xl"
           required

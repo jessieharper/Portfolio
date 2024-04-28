@@ -34,19 +34,15 @@ const About = (): JSX.Element => {
         {theme === "dark" && (
           <div className="top-1 absolute self-center z-0 rounded-full block noise w-[40%] h-[70%]"></div>
         )}
-        <div className="bg-card dark:bg-background h-[560px] overflow-auto px-8 pt-8 w-full border-b-4 rounded-b-2xl border-x-4 border-text z-10">
-          {TabsData.map((data, index) =>
-            data.content.split("\\\n").map((line) => (
-              <p
-                className={index === activeTab ? "flex" : "hidden"}
-                key={index}
-              >
-                {line}
-                <br />
-                <br />
-              </p>
-            ))
-          )}
+        <div className="bg-card dark:bg-background h-[70vh] overflow-auto px-8 pt-8 w-full border-b-4 rounded-b-2xl border-x-4 border-text z-10">
+          {TabsData.map((data, index) => (
+            <section
+              className={index === activeTab ? "flex my-6 leading-7" : "hidden"}
+              key={index}
+            >
+              {data.content}
+            </section>
+          ))}
         </div>
         <p></p>
 
