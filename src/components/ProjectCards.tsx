@@ -19,8 +19,7 @@ export const cards: {
     url: "/projects/codelingo.png",
     phoneUrl: "/projects/codelingo-phone.png",
     title: "CodeLingo",
-    content:
-      "Tech stack: NextJS, Tailwind, TypeScript, MongoDB.\\\nFor the final project I created on the Northcoders bootcamp, I collaborated with a team of peers to create an interactive app similar to Duolingo or Scratch to help young people learn JavaScript and Python. We had 8 days to learn a whole new tech stack and complete the project.",
+    content: `Tech stack: NextJS, Tailwind, TypeScript, MongoDB.\\\nFor the final project I created on the Northcoders bootcamp, I collaborated with a team of peers to create an interactive app similar to Duolingo or Scratch to help young people learn JavaScript and Python. We had 8 days to learn a whole new tech stack and complete the project.`,
     id: 2,
     link: "https://codelingo-by-tpwogitlou.netlify.app/",
   },
