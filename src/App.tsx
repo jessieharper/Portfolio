@@ -3,12 +3,13 @@ import About from "./components/About.js";
 import Mask from "./components/Mask.js";
 import Projects from "./components/Projects.js";
 import LandingPage from "./components/LandingPage.js";
+import Footer from "./components/Footer.js";
+import Contact from "./components/Contact.js";
 import useMousePosition from "./utils/useMousePosition.js";
 import "./index.css";
 import { useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { motion } from "framer-motion";
-import Footer from "./components/Footer.js";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
@@ -40,6 +41,7 @@ const App = (): JSX.Element => {
         <LandingPage />
         <About />
         <Projects />
+        <Contact />
         <Footer />
       </ThemeProvider>
     </main>
