@@ -79,19 +79,19 @@ const Projects = (): JSX.Element => {
                           theme === "dark" ? "/phone-dark.png" : "/phone.png"
                         }
                         alt="phone vector drawing"
-                        className="h-[246px] relative self-center align-middle sm:ml-14 mb-14"
+                        className="h-[246px]  self-center align-middle sm:ml-14 mb-14"
                       />
                       {card.phoneUrl && (
                         <img
                           src={card.phoneUrl}
                           alt={`screenshot of ${card.title} app on a mobile phone`}
-                          className="absolute sm:right-[61px] sm:top-[23px] top-[16.75px] right-[34px] bg-background border-4 border-text rounded-b-xl"
+                          className="absolute sm:right-[1px] sm:top-[23px] top-[16.75px] right-[34px] bg-background border-4 border-text rounded-b-xl"
                           width={132}
                         />
                       )}
                       {card.link && (
                         <a href={card.link} target="_blank">
-                          <button className="sm:absolute sm:right-[3%] sm:top-[85%] w-[200px] text-background border-2 p-2 border-text bg-no-repeat rounded-full element z-10 font-bold uppercase text-xl">
+                          <button className="sm:absolute sm:right-[-30px] top-[85%] w-[200px] text-background border-2 p-2 border-text bg-no-repeat rounded-full element z-10 font-bold uppercase text-xl">
                             Visit site
                           </button>
                         </a>
