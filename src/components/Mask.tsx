@@ -1,11 +1,10 @@
 import AboutMask from "./AboutMask";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
-
 import ThemeSelector from "./ThemeSelector";
 import MyCV from "../assets/Jessica Harper CV.pdf";
+import ProjectsMask from "./ProjectsMask";
 
 export interface IMask {
   setIsHovered: (isHovered: boolean) => void;
@@ -91,6 +90,7 @@ const Mask = (props: IMask): JSX.Element => {
         </span>
       </section>
       <AboutMask setIsHovered={props.setIsHovered} />
+      <ProjectsMask setIsHovered={props.setIsHovered} />
       <footer className="sm:flex fixed hidden bottom-14 right-14">
         <a href="#home">
           <FontAwesomeIcon icon={faCircleUp} size="2xl" />
