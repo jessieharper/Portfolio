@@ -16,14 +16,20 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto"
+        className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto z-20 relative"
       >
-        <div className="flex flex-row">
-          <h1 className="hidden md:flex text-4xl font-semibold">
-            Jessica Harper
-          </h1>
-          <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
-          <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
+        <div className="hidden md:flex flex-row">
+          <h1 className="md:flex text-4xl font-semibold">Jessica Harper</h1>
+          <FontAwesomeIcon
+            icon={faGithub}
+            size="2xl"
+            className="mt-2 mx-6 hidden lg:flex"
+          />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            size="2xl"
+            className="mt-2 hidden lg:flex"
+          />
         </div>
 
         <nav>
@@ -37,7 +43,7 @@ const Header = (): JSX.Element => {
           </ul>
         </nav>
         <button
-          className="md:hidden flex cursor-pointer mr-4"
+          className="md:hidden flex cursor-pointer ml-2"
           onClick={toggleMenu}
         >
           Menu
