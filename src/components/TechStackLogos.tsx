@@ -6,7 +6,7 @@ const TechStackLogos = (): JSX.Element => {
 
   return (
     <>
-      <span className="w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
+      <span className="w-[280px] sm:w-[310px] flex flex-row justify-between mt-4 sm:mt-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="48"
@@ -45,7 +45,7 @@ const TechStackLogos = (): JSX.Element => {
           </g>
         </svg>
       </span>
-      <span className="w-[310px] flex flex-row justify-between mt-8 ml-2 sm:mt-0">
+      <span className="w-[280px] sm:w-[310px]  flex flex-row justify-between mt-8 ml-2 sm:mt-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="48"

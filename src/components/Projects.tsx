@@ -23,9 +23,9 @@ const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="relative h-[100vh] bg-background mt-44 overflow-hidden"
+      className="relative h-[100vh] w-[100vw] bg-background sm:mt-44 sm:overflow-hidden my-[25%] sm:mb-[0%] overflow-x-scroll"
     >
-      <div className="sticky top-0 flex h-screen items-center">
+      <div className="sm:sticky sm:top-0 flex sm:h-screen  h-[150%] items-center">
         <motion.div
           className="flex"
           animate={{ x: -scrollX }}
@@ -34,10 +34,10 @@ const Projects = (): JSX.Element => {
           {cards.map((card) => (
             <section
               key={card.id}
-              className="group relative h-[100vh] w-[100vw] overflow-hidden bg-background"
+              className="sm:group relative sm:h-[100vh] h-full w-[100vw] sm:overflow-hidden bg-background"
             >
-              <div className="absolute inset-0 z-10 grid place-content-center">
-                <div className="flex flex-row items-center justify-center">
+              <div className="sm:absolute sm:inset-0 z-10 sm:grid sm:place-content-center">
+                <div className="flex sm:flex-row flex-col items-center justify-center">
                   {card.id !== 1 && (
                     <motion.img
                       src={
@@ -51,10 +51,10 @@ const Projects = (): JSX.Element => {
                       whileTap={{ scale: 0.9 }}
                     />
                   )}
-                  <h3 className=" title uppercase [writing-mode:vertical-lr] rotate-180 font-black text-text backdrop-blur-lg mr-8 font-poppins">
+                  <h3 className=" title uppercase sm:[writing-mode:vertical-lr] sm:rotate-180 font-black text-text backdrop-blur-lg mr-8 font-poppins my-10 sm:my-0">
                     {card.title}
                   </h3>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col items-center justify-center">
                     <div className="flex sm:flex-row flex-col relative">
                       <img
                         src={
@@ -79,19 +79,19 @@ const Projects = (): JSX.Element => {
                           theme === "dark" ? "/phone-dark.png" : "/phone.png"
                         }
                         alt="phone vector drawing"
-                        className="h-[246px] relative self-center align-middle ml-14 mb-14"
+                        className="h-[246px] relative self-center align-middle sm:ml-14 mb-14"
                       />
                       {card.phoneUrl && (
                         <img
                           src={card.phoneUrl}
                           alt={`screenshot of ${card.title} app on a mobile phone`}
-                          className="absolute right-[61px] top-[23px]  bg-background border-4  border-text rounded-b-xl"
+                          className="absolute sm:right-[61px] sm:top-[23px] top-[16.75px] right-[34px] bg-background border-4 border-text rounded-b-xl"
                           width={132}
                         />
                       )}
                       {card.link && (
                         <a href={card.link} target="_blank">
-                          <button className="absolute right-[3%] top-[85%] w-[200px] text-background border-4 p-2 border-text bg-no-repeat rounded-full element z-10 font-bold uppercase text-xl">
+                          <button className="sm:absolute sm:right-[3%] sm:top-[85%] w-[200px] text-background border-2 p-2 border-text bg-no-repeat rounded-full element z-10 font-bold uppercase text-xl">
                             Visit site
                           </button>
                         </a>
@@ -115,7 +115,7 @@ const Projects = (): JSX.Element => {
                           : "/arrows/right-arrow-dark.png"
                       }
                       alt="right arrow"
-                      className="w-[15%] ml-8 cursor-pointer text-text opacity-80"
+                      className="w-[15%] ml-8 cursor-pointer text-text opacity-80 hidden sm:flex"
                       onClick={handleScrollForward}
                       whileTap={{ scale: 0.9 }}
                     />

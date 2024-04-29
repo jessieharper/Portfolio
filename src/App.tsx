@@ -20,7 +20,7 @@ const App = (): JSX.Element => {
     <main className="min-h-[100vh] w-[100vw]">
       <ThemeProvider>
         <motion.div
-          className="mask hidden md:block"
+          className="mask hidden lg:block"
           animate={{
             WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
             WebkitMaskSize: `${size}px`,

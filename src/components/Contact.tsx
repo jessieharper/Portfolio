@@ -7,15 +7,19 @@ const Contact = (): JSX.Element => {
       id="contact"
       className="flex flex-col h-[100vh] items-center justify-center mt-24 relative"
     >
-      <div className="flex flex-row">
-        <h2 className="text-5xl font-semibold">Contact Me</h2>
-        <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
-        <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
+      <h2 className="text-5xl font-semibold">Contact Me</h2>
+      <div className="flex flex-row justify-center">
+        <a href="https://github.com/jessieharper" target="_blank">
+          <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-6 mx-6" />
+        </a>
+        <a href="https://www.linkedin.com/in/jessie-harper/" target="_blank">
+          <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-6 mx-6" />
+        </a>
       </div>
       <form
         action="https://formsubmit.co/652f2b793bbf47b0c5d88e5824e6e8c7"
         method="POST"
-        className="flex flex-col w-[310px] sm:w-[550px] text-background border-2 border-text rounded-2xl p-6 mt-8"
+        className="flex flex-col w-[300px] sm:w-[550px] text-background border-2 border-text rounded-2xl p-6 mt-6"
       >
         <input
           type="text"

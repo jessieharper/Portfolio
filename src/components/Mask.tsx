@@ -11,7 +11,7 @@ interface IMask {
 const Mask = (props: IMask): JSX.Element => {
   return (
     <>
-      <header className="flex flex-row h-auto w-[100%] justify-between items-center p-4 mb-10 m-auto">
+      <header className="lg:flex flex-row h-auto w-[100%] justify-between items-center p-4 mb-10 m-auto">
         <div className="flex flex-row">
           <h1
             className="hidden md:flex text-4xl font-semibold"
