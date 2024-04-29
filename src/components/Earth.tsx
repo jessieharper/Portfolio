@@ -5,13 +5,14 @@ import { useScroll, useSpring } from "framer-motion";
 import { motion } from "framer-motion-3d";
 
 const Earth = () => {
-  const scene = useRef(null);
+  const scene = useRef<null | HTMLElement>(null);
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: scene,
     offset: ["start end", "end start"],
   });
 
-  const smoothRotation = useSpring(scrollYProgress, { damping: 40 });
+  const smoothRotation = useSpring(scrollYProgress, { damping: 20 });
 
   const [color, normal, aoMap] = useLoader(TextureLoader, [
     "/earthcloudmap.jpg",
