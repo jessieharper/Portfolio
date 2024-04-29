@@ -5,6 +5,8 @@ export const GlobalContext = createContext<IGlobalContext>({
   setActiveTab: () => {},
   scrollProgress: 0,
   setScrollProgress: () => {},
+  scrollX: 0,
+  setScrollX: () => {},
 });
 
 interface IGlobalContext {
@@ -12,6 +14,8 @@ interface IGlobalContext {
   setActiveTab: (activeTab: number) => void;
   scrollProgress: number;
   setScrollProgress: (scrollProgress: number) => void;
+  scrollX: number;
+  setScrollX: (scrollX: number) => void;
 }
 
 interface IGlobalProvider {
@@ -21,10 +25,18 @@ interface IGlobalProvider {
 export const GlobalProvider = ({ children }: IGlobalProvider) => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const [scrollX, setScrollX] = useState<number>(0);
 
   return (
     <GlobalContext.Provider
-      value={{ activeTab, setActiveTab, scrollProgress, setScrollProgress }}
+      value={{
+        activeTab,
+        setActiveTab,
+        scrollProgress,
+        setScrollProgress,
+        scrollX,
+        setScrollX,
+      }}
     >
       {children}
     </GlobalContext.Provider>
