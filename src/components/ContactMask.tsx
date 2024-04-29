@@ -2,15 +2,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import MyCV from "../assets/Jessica Harper CV.pdf";
+import { IMask } from "./Mask";
 
-const Contact = (): JSX.Element => {
+const ContactMask = (props: IMask): JSX.Element => {
   return (
     <section
       id="contact"
-      className="flex flex-col h-[100vh] items-center justify-center sm:mt-24 mt-44 relative"
+      className="flex flex-col h-[100vh] items-center justify-center mt-24 relative"
     >
-      <h2 className="text-5xl font-semibold">Contact Me</h2>
-      <div className="flex flex-row justify-center">
+      <h2
+        className="text-5xl font-semibold"
+        onMouseEnter={() => {
+          props.setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          props.setIsHovered(false);
+        }}
+      >
+        Contact Me
+      </h2>
+      <div
+        className="flex flex-row justify-center"
+        onMouseEnter={() => {
+          props.setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          props.setIsHovered(false);
+        }}
+      >
         <a href="https://github.com/jessieharper" target="_blank">
           <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-6 mx-6" />
         </a>
@@ -22,22 +41,22 @@ const Contact = (): JSX.Element => {
         </a>
       </div>
       <form
-        action="https://formsubmit.co/jessieharper12@gmail.com"
+        action="https://formsubmit.co/652f2b793bbf47b0c5d88e5824e6e8c7"
         method="POST"
-        className="flex flex-col w-[300px] sm:w-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
+        className="flex flex-col w-[300px] sm:w-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 "
       >
         <input
           type="text"
           name="name"
           placeholder="Name*"
-          className="px-4 py-2 my-4 rounded-2xl bg-[#fef8f0] border-2 border-[#19110b]"
+          className="px-4 py-2 my-4 rounded-2xl border-2"
           required
         />
         <input
           type="email"
           name="email"
           placeholder="Email*"
-          className="px-4 py-2 my-4 rounded-2xl bg-[#fef8f0] border-2 border-[#19110b]"
+          className="px-4 py-2 my-4 rounded-2xl border-2"
           required
         />
         <textarea
@@ -45,7 +64,7 @@ const Contact = (): JSX.Element => {
           id="message"
           cols={30}
           rows={8}
-          className=" rounded-xl my-6 p-4 bg-[#fef8f0] border-2 border-[#19110b]"
+          className="rounded-xl my-6 p-4 border-2"
           placeholder="Type your message..."
           required
         ></textarea>
@@ -53,11 +72,11 @@ const Contact = (): JSX.Element => {
         <input
           type="submit"
           value={"Submit"}
-          className=" text-text my-4 border-4 border-text rounded-full cursor-pointer py-2 w-[90%] self-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-no-repeat"
+          className=" text-text my-4 border-2 border-background rounded-full cursor-pointer py-2 w-[90%] self-center"
         />
       </form>
     </section>
   );
 };
 
-export default Contact;
+export default ContactMask;
