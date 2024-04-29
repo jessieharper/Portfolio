@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { ICursor } from "./models/CursorProps";
+
+interface ICursor {
+  isHovered: boolean;
+}
 
 const Cursor = (props: ICursor): JSX.Element => {
   const mouse = { x: 0, y: 0 };

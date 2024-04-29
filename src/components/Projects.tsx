@@ -98,8 +98,8 @@ const Projects = (): JSX.Element => {
                       )}
                     </div>
                     <article className="flex flex-col items-center justify-center mt-6 min-h-[200px] sm:w-[700px] w-[90%]">
-                      {card.content.split("\\\n").map((line) => (
-                        <p className="text-center">
+                      {card.content.split("\\\n").map((line, i) => (
+                        <p key={i} className="text-center">
                           {line}
                           <br />
                           <br />
