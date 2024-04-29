@@ -1,10 +1,22 @@
 import { TabsData } from "./TabsData";
-import { useState, useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { GlobalContext } from "../contexts/GlobalContext";
 
 const About = (): JSX.Element => {
   const { theme } = useContext(ThemeContext);
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const { activeTab, setActiveTab, scrollProgress } = useContext(GlobalContext);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const scrollableElement = containerRef.current;
+    if (scrollableElement) {
+      const scrollHeight = scrollableElement.scrollHeight;
+      const clientHeight = scrollableElement.clientHeight;
+      const scrollTop = (scrollProgress / 100) * (scrollHeight - clientHeight);
+      scrollableElement.scrollTop = scrollTop;
+    }
+  }, [scrollProgress]);
 
   return (
     <section
@@ -42,7 +54,10 @@ const About = (): JSX.Element => {
         {theme === "dark" && (
           <div className="top-1 absolute self-center z-0 rounded-full block noise w-[40%] h-[70%]"></div>
         )}
-        <div className="bg-card dark:bg-background h-[70vh] overflow-auto px-8 pt-8 w-full border-b-4 rounded-b-2xl border-x-4 border-text z-10">
+        <div
+          ref={containerRef}
+          className="bg-card h-[70vh] overflow-auto px-8 pt-8 w-full border-b-4 rounded-b-2xl border-x-4 border-text z-10"
+        >
           {TabsData.map((data, index) => (
             <section
               className={index === activeTab ? "flex my-6 leading-7" : "hidden"}

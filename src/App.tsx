@@ -10,6 +10,7 @@ import "./index.css";
 import { useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { motion } from "framer-motion";
+import { GlobalProvider } from "./contexts/GlobalContext.js";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
@@ -19,30 +20,33 @@ const App = (): JSX.Element => {
   return (
     <main className="min-h-[100vh] w-[100vw]">
       <ThemeProvider>
-        <motion.div
-          className="mask hidden lg:block"
-          animate={{
-            WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
-            WebkitMaskSize: `${size}px`,
-          }}
-          transition={{
-            ease: "tween",
-            WebkitMaskPosition: {
-              duration: 0,
-            },
-            WebkitMaskSize: {
-              duration: 0,
-            },
-          }}
-        >
-          <Mask setIsHovered={setIsHovered} />
-        </motion.div>
-        <Header />
-        <LandingPage />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
+        <GlobalProvider>
+          <motion.div
+            className="mask hidden lg:block"
+            animate={{
+              WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
+              WebkitMaskSize: `${size}px`,
+            }}
+            transition={{
+              ease: "tween",
+              WebkitMaskPosition: {
+                duration: 0,
+              },
+              WebkitMaskSize: {
+                duration: 0,
+              },
+            }}
+          >
+            <Mask setIsHovered={setIsHovered} />
+          </motion.div>
+
+          <Header />
+          <LandingPage />
+          <About />
+          <Projects />
+          <Contact />
+          <Footer />
+        </GlobalProvider>
       </ThemeProvider>
     </main>
   );
