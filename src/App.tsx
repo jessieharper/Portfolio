@@ -26,7 +26,7 @@ const App = (): JSX.Element => {
           <Routes>
             <Route path="/thanks" element={<ThankYouCard />} />
             <Route
-              path="*"
+              path="/"
               element={
                 <main className="min-h-[100vh] w-[100vw]">
                   <motion.div

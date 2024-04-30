@@ -6,6 +6,7 @@ import ThemeSelector from "./ThemeSelector";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import ProjectsMask from "./ProjectsMask";
 import ContactMask from "./ContactMask";
+import { Link } from "react-router-dom";
 
 export interface IMask {
   setIsHovered: (isHovered: boolean) => void;
@@ -16,17 +17,19 @@ const Mask = (props: IMask): JSX.Element => {
     <>
       <header className="lg:flex flex-row h-auto w-[100%] justify-between items-center p-4 mb-10 m-auto">
         <div className="flex flex-row">
-          <h1
-            className="hidden md:flex text-4xl font-semibold"
-            onMouseEnter={() => {
-              props.setIsHovered(true);
-            }}
-            onMouseLeave={() => {
-              props.setIsHovered(false);
-            }}
-          >
-            Jessica Harper
-          </h1>
+          <Link to="/thanks">
+            <h1
+              className="hidden md:flex text-4xl font-semibold"
+              onMouseEnter={() => {
+                props.setIsHovered(true);
+              }}
+              onMouseLeave={() => {
+                props.setIsHovered(false);
+              }}
+            >
+              Jessica Harper
+            </h1>
+          </Link>
 
           <a href="https://github.com/jessieharper" target="_blank">
             <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />

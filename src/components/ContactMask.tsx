@@ -40,7 +40,7 @@ const ContactMask = (props: IMask): JSX.Element => {
           <FontAwesomeIcon icon={faDownload} size="2xl" className="mt-6 mx-6" />
         </a>
       </div>
-      <div className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 "></div>
+      <div className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-text border-2 border-text rounded-2xl p-6 mt-6 "></div>
     </section>
   );
 };
