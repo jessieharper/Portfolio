@@ -36,7 +36,7 @@ const Contact = (): JSX.Element => {
           type="hidden"
           name="_next"
           value="https://jessicaharper.netlify.app/thanks"
-        ></input>
+        />
         <input type="hidden" name="_subject" value="New submission!"></input>
         <input type="hidden" name="_captcha" value="false"></input>
         <input type="hidden" name="_autoresponse" value="your custom message" />
