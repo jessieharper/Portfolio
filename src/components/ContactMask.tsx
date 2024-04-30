@@ -40,11 +40,7 @@ const ContactMask = (props: IMask): JSX.Element => {
           <FontAwesomeIcon icon={faDownload} size="2xl" className="mt-6 mx-6" />
         </a>
       </div>
-      <form
-        action="https://formsubmit.co/652f2b793bbf47b0c5d88e5824e6e8c7"
-        method="POST"
-        className="flex flex-col w-[300px] sm:w-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 "
-      >
+      <form className="flex flex-col w-[300px] sm:w-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 ">
         <input
           type="text"
           name="name"
