@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import MyCV from "../assets/Jessica Harper CV.pdf";
+import Loading from "./Loading";
 
 const Contact = (): JSX.Element => {
-  const [isFormSent, setIsFormSent] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   return (
     <section
       id="contact"
@@ -27,10 +28,7 @@ const Contact = (): JSX.Element => {
       <form
         action="https://formsubmit.co/jessieharper12@gmail.com"
         method="POST"
-        className={`flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999] ${
-          isFormSent && "hidden"
-        }`}
-        onSubmit={() => setIsFormSent(true)}
+        className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
       >
         <input type="hidden" name="_subject" value="New submission!" />
         <input
@@ -66,12 +64,18 @@ const Contact = (): JSX.Element => {
           placeholder="Type your message..."
           required
         ></textarea>
-
-        <input
-          type="submit"
-          value={"Submit"}
-          className=" text-text my-4 border-4 border-text rounded-full cursor-pointer py-2 w-[90%] self-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-no-repeat"
-        />
+        {!isLoading ? (
+          <input
+            type="submit"
+            value={"Submit"}
+            className=" text-text my-2 border-4 border-text rounded-full cursor-pointer py-2 w-[90%] self-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-no-repeat"
+            onClick={() => setIsLoading(true)}
+          />
+        ) : (
+          <div className="flex items-center justify-center my-2 py-2">
+            <Loading />
+          </div>
+        )}
       </form>
     </section>
   );

@@ -40,37 +40,7 @@ const ContactMask = (props: IMask): JSX.Element => {
           <FontAwesomeIcon icon={faDownload} size="2xl" className="mt-6 mx-6" />
         </a>
       </div>
-      <form className="flex flex-col w-[300px] sm:w-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 ">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name*"
-          className="px-4 py-2 my-4 rounded-2xl border-2"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email*"
-          className="px-4 py-2 my-4 rounded-2xl border-2"
-          required
-        />
-        <textarea
-          name="message"
-          id="message"
-          cols={30}
-          rows={8}
-          className="rounded-xl my-6 p-4 border-2"
-          placeholder="Type your message..."
-          required
-        ></textarea>
-
-        <input
-          type="submit"
-          value={"Submit"}
-          className=" text-text my-4 border-2 border-background rounded-full cursor-pointer py-2 w-[90%] self-center"
-        />
-      </form>
+      <div className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-text border-2 border-background rounded-2xl p-6 mt-6 "></div>
     </section>
   );
 };
