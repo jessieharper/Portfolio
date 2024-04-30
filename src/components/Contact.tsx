@@ -52,8 +52,6 @@ const Contact = (): JSX.Element => {
       </div>
 
       <form
-        action="https://formsubmit.co/jessieharper12@gmail.com"
-        method="POST"
         className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
         onSubmit={onSubmit}
       >
