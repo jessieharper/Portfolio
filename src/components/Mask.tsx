@@ -27,6 +27,7 @@ const Mask = (props: IMask): JSX.Element => {
           >
             Jessica Harper
           </h1>
+
           <a href="https://github.com/jessieharper" target="_blank">
             <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
           </a>

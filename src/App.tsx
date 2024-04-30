@@ -20,40 +20,49 @@ const App = (): JSX.Element => {
   const size = isHovered ? 250 : 30;
 
   return (
-    <main className="min-h-[100vh] w-[100vw]">
+    <>
       <ThemeProvider>
         <GlobalProvider>
-          <motion.div
-            className="mask hidden lg:block"
-            animate={{
-              WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
-              WebkitMaskSize: `${size}px`,
-            }}
-            transition={{
-              ease: "tween",
-              WebkitMaskPosition: {
-                duration: 0,
-              },
-              WebkitMaskSize: {
-                duration: 0,
-              },
-            }}
-          >
-            <Mask setIsHovered={setIsHovered} />
-          </motion.div>
-
-          <Header />
-          <LandingPage />
-          <About />
-          <Projects />
-          <Contact />
-          <Footer />
           <Routes>
             <Route path="/thanks" element={<ThankYouCard />} />
+            <Route
+              path="*"
+              element={
+                <main className="min-h-[100vh] w-[100vw]">
+                  <motion.div
+                    className="mask hidden lg:block"
+                    animate={{
+                      WebkitMaskPosition: `${x! - size / 2}px ${
+                        y! - size / 2
+                      }px`,
+                      WebkitMaskSize: `${size}px`,
+                    }}
+                    transition={{
+                      ease: "tween",
+                      WebkitMaskPosition: {
+                        duration: 0,
+                      },
+                      WebkitMaskSize: {
+                        duration: 0,
+                      },
+                    }}
+                  >
+                    <Mask setIsHovered={setIsHovered} />
+                  </motion.div>
+
+                  <Header />
+                  <LandingPage />
+                  <About />
+                  <Projects />
+                  <Contact />
+                  <Footer />
+                </main>
+              }
+            />
           </Routes>
         </GlobalProvider>
       </ThemeProvider>
-    </main>
+    </>
   );
 };
 
