@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const ThankYouCard = (): JSX.Element => {
   return (
     <section>
@@ -7,7 +5,7 @@ const ThankYouCard = (): JSX.Element => {
         <h3 className="text-4xl font-semibold">
           Thank you for your message! I'll get back to you ASAP.
         </h3>
-        <Link to="/">Go back</Link>
+        <a href="https://jessicaharper.netlify.app/">Go back</a>
       </div>
     </section>
   );

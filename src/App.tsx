@@ -50,7 +50,6 @@ const App = (): JSX.Element => {
           <Footer />
           <Routes>
             <Route path="/thanks" element={<ThankYouCard />}></Route>
-            <Route path="/" element={<LandingPage />}></Route>
           </Routes>
         </GlobalProvider>
       </ThemeProvider>
