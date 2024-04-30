@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import MyCV from "../assets/Jessica Harper CV.pdf";
+import ThankYouCard from "./ThankYouCard";
 
 const Contact = (): JSX.Element => {
+  const [isFormSent, setIsFormSent] = useState<boolean>(false);
   return (
     <section
       id="contact"
@@ -21,23 +24,37 @@ const Contact = (): JSX.Element => {
           <FontAwesomeIcon icon={faDownload} size="2xl" className="mt-6 mx-6" />
         </a>
       </div>
+      {isFormSent && <ThankYouCard />}
       <form
         action="https://formsubmit.co/jessieharper12@gmail.com"
         method="POST"
-        className="flex flex-col w-[300px] sm:w-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
+        className={`flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999] ${
+          isFormSent && "hidden"
+        }`}
+        onSubmit={() => setIsFormSent(true)}
       >
+        <input type="hidden" name="_subject" value="New submission!" />
+        <input
+          type="hidden"
+          name="_next"
+          value="jessicaharper.netlify.app/#thanks"
+        ></input>
+        <input type="hidden" name="_subject" value="New submission!"></input>
+        <input type="hidden" name="_captcha" value="false"></input>
+        <input type="hidden" name="_autoresponse" value="your custom message" />
+
         <input
           type="text"
           name="name"
           placeholder="Name*"
-          className="px-4 py-2 my-4 rounded-2xl bg-[#fef8f0] border-2 border-[#19110b]"
+          className="px-4 py-2 my-4 rounded-2xl bg-[#ffffff] border-2 border-[#19110b]"
           required
         />
         <input
           type="email"
           name="email"
           placeholder="Email*"
-          className="px-4 py-2 my-4 rounded-2xl bg-[#fef8f0] border-2 border-[#19110b]"
+          className="px-4 py-2 my-4 rounded-2xl bg-[#ffffff] border-2 border-[#19110b]"
           required
         />
         <textarea
@@ -45,7 +62,7 @@ const Contact = (): JSX.Element => {
           id="message"
           cols={30}
           rows={8}
-          className=" rounded-xl my-6 p-4 bg-[#fef8f0] border-2 border-[#19110b]"
+          className=" rounded-xl my-6 p-4 bg-[#ffffff] border-2 border-[#19110b]"
           placeholder="Type your message..."
           required
         ></textarea>

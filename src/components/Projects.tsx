@@ -92,7 +92,7 @@ const Projects = (): JSX.Element => {
                       )}
                       {card.link && (
                         <a href={card.link} target="_blank">
-                          <button className="sm:absolute sm:right-[-30px] top-[85%] w-[200px] text-background border-2 p-2 border-text bg-no-repeat rounded-full element z-10 font-bold uppercase text-xl">
+                          <button className="sm:absolute sm:right-[-30px] top-[85%] w-[200px] text-background border-2 p-2 border-text bg-no-repeat rounded-full element z-10 uppercase text-xl">
                             Visit site
                           </button>
                         </a>
