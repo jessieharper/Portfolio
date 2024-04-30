@@ -8,9 +8,11 @@ import Contact from "./components/Contact.js";
 import useMousePosition from "./utils/useMousePosition.js";
 import "./index.css";
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { motion } from "framer-motion";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
+import ThankYouCard from "./components/ThankYouCard.js";
 
 const App = (): JSX.Element => {
   const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
@@ -46,6 +48,10 @@ const App = (): JSX.Element => {
           <Projects />
           <Contact />
           <Footer />
+          <Routes>
+            <Route path="/thanks" element={<ThankYouCard />}></Route>
+            <Route path="/" element={<LandingPage />}></Route>
+          </Routes>
         </GlobalProvider>
       </ThemeProvider>
     </main>
