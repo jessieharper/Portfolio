@@ -29,6 +29,7 @@ const Contact = (): JSX.Element => {
         action="https://formsubmit.co/jessieharper12@gmail.com"
         method="POST"
         className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
+        onSubmit={() => setIsLoading(true)}
       >
         <input type="hidden" name="_subject" value="New submission!" />
         <input
@@ -69,7 +70,6 @@ const Contact = (): JSX.Element => {
             type="submit"
             value={"Submit"}
             className=" text-text my-2 border-4 border-text rounded-full cursor-pointer py-2 w-[90%] self-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-no-repeat"
-            onClick={() => setIsLoading(true)}
           />
         ) : (
           <div className="flex items-center justify-center my-2 py-2">
