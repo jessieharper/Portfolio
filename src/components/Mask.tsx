@@ -6,7 +6,6 @@ import ThemeSelector from "./ThemeSelector";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import ProjectsMask from "./ProjectsMask";
 import ContactMask from "./ContactMask";
-import { Link } from "react-router-dom";
 
 export interface IMask {
   setIsHovered: (isHovered: boolean) => void;
