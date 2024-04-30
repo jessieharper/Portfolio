@@ -7,6 +7,32 @@ import Loading from "./Loading";
 
 const Contact = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [result, setResult] = useState<string | null>("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.currentTarget);
+
+    formData.append("access_key", "8400f33f-baff-49dc-b140-6ae3dc46f830");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.currentTarget.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -29,7 +55,7 @@ const Contact = (): JSX.Element => {
         action="https://formsubmit.co/jessieharper12@gmail.com"
         method="POST"
         className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
-        onSubmit={() => setIsLoading(true)}
+        onSubmit={onSubmit}
       >
         <input type="hidden" name="_subject" value="New submission!" />
         <input
@@ -75,6 +101,7 @@ const Contact = (): JSX.Element => {
           </div>
         )}
       </form>
+      <span>{result}</span>
     </section>
   );
 };
