@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
           <Contact />
           <Footer />
           <Routes>
-            <Route path="/thanks" element={<ThankYouCard />}></Route>
+            <Route path="/thanks" element={<ThankYouCard />} />
           </Routes>
         </GlobalProvider>
       </ThemeProvider>

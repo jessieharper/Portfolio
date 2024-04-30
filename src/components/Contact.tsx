@@ -24,7 +24,7 @@ const Contact = (): JSX.Element => {
           <FontAwesomeIcon icon={faDownload} size="2xl" className="mt-6 mx-6" />
         </a>
       </div>
-      {isFormSent && <ThankYouCard />}
+
       <form
         action="https://formsubmit.co/jessieharper12@gmail.com"
         method="POST"
