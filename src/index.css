@@ -96,7 +96,7 @@ li {
   background: var(--text);
   position: absolute;
   color: var(--background);
-  width: 100%;
+  width: full;
   height: full;
   z-index: 9999;
 }

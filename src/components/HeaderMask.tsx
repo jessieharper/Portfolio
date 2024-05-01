@@ -6,7 +6,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const HeaderMask = (props: IMask): JSX.Element => {
   return (
     <>
-      <header className="lg:flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto">
+      <header className="flex flex-row h-auto w-[100vw] justify-between items-center p-4 mb-10 m-auto z-20 relative">
         <div className="md:flex flex-row">
           <h1
             className="hidden md:flex text-4xl font-semibold"
