@@ -43,7 +43,7 @@ const Projects = (props: IMask): JSX.Element => {
                       width="543"
                       height="249"
                       viewBox="0 0 543 249"
-                      className="fill-current hidden lg:flex w-[15%] ml-8 cursor-pointer opacity-80"
+                      className="fill-current text-text  hidden lg:flex w-[15%] ml-8 cursor-pointer opacity-80"
                       onClick={handleScrollBackward}
                       whileTap={{ scale: 0.9 }}
                       xmlns="http://www.w3.org/2000/svg"

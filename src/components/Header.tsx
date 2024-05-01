@@ -31,7 +31,6 @@ const Header = (): JSX.Element => {
             className="mt-2 hidden lg:flex"
           />
         </div>
-
         <nav>
           <ul className="h-full flex flex-row items-center align-center mt-2 ">
             <div className="border-2 border-text rounded-full flex  flex-row">
@@ -39,7 +38,7 @@ const Header = (): JSX.Element => {
             </div>
             <li className="mx-4 hidden md:flex">About Me</li>
             <li className="mr-4 hidden md:flex">Projects</li>
-            <li className="mr-4 hidden md:flex">Contact Me</li>
+            <li className="mr-4 hidden md:flex ml-2">Contact Me</li>
           </ul>
         </nav>
         <button
