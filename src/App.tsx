@@ -28,7 +28,7 @@ const App = (): JSX.Element => {
             <Route
               path="*"
               element={
-                <main className="min-h-[100vh] w-[100vw] overflow-x-hidden overflow-y-scroll">
+                <main className="min-h-[100vh] w-[100vw] overflow-x-hidden">
                   <motion.div
                     className="mask hidden lg:block"
                     animate={{

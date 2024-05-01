@@ -9,7 +9,7 @@ const HeaderMask = (props: IMask): JSX.Element => {
       <header className="hidden lg:flex flex-row h-auto w-[100vw] justify-between items-center p-4 mb-10 m-auto z-20 relative">
         <div className="md:flex flex-row">
           <h1
-            className="hidden md:flex text-4xl font-semibold"
+            className="flex text-4xl font-semibold"
             onMouseEnter={() => {
               props.setIsHovered(true);
             }}

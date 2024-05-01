@@ -17,8 +17,10 @@ const Header = (): JSX.Element => {
         id="home"
         className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto z-20 relative"
       >
-        <div className="flex flex-row">
-          <h1 className="md:flex text-4xl font-semibold">Jessica Harper</h1>
+        <div className="md:flex hidden flex-row">
+          <h1 className="md:flex hidden text-4xl font-semibold">
+            Jessica Harper
+          </h1>
 
           <FontAwesomeIcon
             icon={faGithub}

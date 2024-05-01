@@ -189,7 +189,7 @@ const Projects = (): JSX.Element => {
                       height="249"
                       viewBox="0 0 543 249"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="fill-current text-text w-[15%] mr-8 cursor-pointer hidden lg:flex opacity-80"
+                      className="fill-current text-text w-[15%] mr-8 cursor-pointer md:hidden lg:flex flex opacity-80"
                       onClick={handleScrollForward}
                       whileTap={{ scale: 0.9 }}
                     >
