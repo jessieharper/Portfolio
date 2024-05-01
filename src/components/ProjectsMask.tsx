@@ -21,7 +21,7 @@ const Projects = (props: IMask): JSX.Element => {
   };
 
   return (
-    <section className="relative lg:h-[100vh] h-[160vh] sm:my-[25%] w-[100vw] sm:mt-44 lg:overflow-hidden overflow-x-scrolll">
+    <section className="relative sm:h-[100vh] h-[160vh] w-[100vw] sm:mt-44 sm:mb-0 mb-[-25%] lg:overflow-hidden overflow-x-scroll">
       <div className="sm:sticky sm:top-0 flex sm:h-screen  h-[150%] items-center">
         <motion.div
           className="flex"

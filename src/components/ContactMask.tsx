@@ -6,7 +6,7 @@ import { IMask } from "./Mask";
 
 const ContactMask = (props: IMask): JSX.Element => {
   return (
-    <section className="flex flex-col h-[100vh] items-center justify-center mt-24 relative">
+    <section className="flex flex-col h-[100vh] items-center justify-center sm:mt-24 mt-0 relative">
       <h2
         className="text-5xl font-semibold"
         onMouseEnter={() => {
