@@ -7,6 +7,7 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       oswald: ["Fraunces", "serif"],
     },
+
     extend: {
       colors: {
         background: "var(--background)",
