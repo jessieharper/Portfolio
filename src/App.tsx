@@ -38,12 +38,13 @@ const App = (): JSX.Element => {
                       WebkitMaskSize: `${size}px`,
                     }}
                     transition={{
-                      ease: "tween",
                       WebkitMaskPosition: {
                         duration: 0,
                       },
                       WebkitMaskSize: {
-                        duration: 0,
+                        duration: 0.25,
+                        type: "tween",
+                        ease: "easeOut",
                       },
                     }}
                   >

@@ -14,7 +14,7 @@ export interface IMask {
 const Mask = (props: IMask): JSX.Element => {
   return (
     <>
-      <header className="lg:flex flex-row h-auto w-[100%] justify-between items-center p-4 mb-10 m-auto">
+      <header className="lg:flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto">
         <div className="flex flex-row">
           <h1
             className="hidden md:flex text-4xl font-semibold"
@@ -62,7 +62,7 @@ const Mask = (props: IMask): JSX.Element => {
             props.setIsHovered(false);
           }}
         >
-          <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl text-8xl font-extrabold ">
+          <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto text-9xl font-extrabold ">
             Hiya, <br />
             World
           </h2>
