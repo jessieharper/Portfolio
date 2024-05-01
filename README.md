@@ -1,4 +1,4 @@
-#Click [here](https://jessicaharper.netlify.app/) to visit my portfolio!
+# Click [here](https://jessicaharper.netlify.app/) to visit my portfolio!
 
 Tech stack: : TypeScript, React.js, Tailwind, Node.js, Framer Motion, Three.js.
 
