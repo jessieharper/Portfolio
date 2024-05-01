@@ -1,11 +1,10 @@
 import AboutMask from "./AboutMask";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
-import ThemeSelector from "./ThemeSelector";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import ProjectsMask from "./ProjectsMask";
 import ContactMask from "./ContactMask";
+import HeaderMask from "./HeaderMask";
 
 export interface IMask {
   setIsHovered: (isHovered: boolean) => void;
@@ -14,44 +13,7 @@ export interface IMask {
 const Mask = (props: IMask): JSX.Element => {
   return (
     <>
-      <header className="lg:flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto">
-        <div className="flex flex-row">
-          <h1
-            className="hidden md:flex text-4xl font-semibold"
-            onMouseEnter={() => {
-              props.setIsHovered(true);
-            }}
-            onMouseLeave={() => {
-              props.setIsHovered(false);
-            }}
-          >
-            Jessica Harper
-          </h1>
-
-          <a href="https://github.com/jessieharper" target="_blank">
-            <FontAwesomeIcon icon={faGithub} size="2xl" className="mt-2 mx-6" />
-          </a>
-          <a href="https://www.linkedin.com/in/jessie-harper/" target="_blank">
-            <FontAwesomeIcon icon={faLinkedin} size="2xl" className="mt-2" />
-          </a>
-        </div>
-        <nav>
-          <ul className="h-full flex flex-row items-center align-center mt-2 ">
-            <div className="border-2 border-background rounded-full flex  flex-row">
-              <ThemeSelector />
-            </div>
-            <a href="#about" className="mx-4 hidden md:flex">
-              About Me
-            </a>
-            <a href="#projects" className="mr-4 hidden md:flex">
-              Projects
-            </a>
-            <a href="#contact" className="mr-4 hidden md:flex">
-              Contact Me
-            </a>
-          </ul>
-        </nav>
-      </header>
+      <HeaderMask setIsHovered={props.setIsHovered} />
       <section className="h-screen flex justify-center items-center mt-[-72px]">
         <span
           className="h-auto flex sm:flex-row flex-col items-center"
