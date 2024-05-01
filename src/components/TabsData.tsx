@@ -33,7 +33,7 @@ export const TabsData = [
         <br />
         <br />I started working as a freelance translator and game tester in
         2021, translating video game content, and I started thinking more about
-        the posibility of becoming a dev. My interest in tech intensified last
+        the possibility of becoming a dev. My interest in tech intensified last
         year, leading me to start teaching myself Python and exploring coding
         bootcamps. Facing redundancy in October 2023, I seized the opportunity,
         promptly enrolling in the Northcoders Software Engineering Bootcamp,

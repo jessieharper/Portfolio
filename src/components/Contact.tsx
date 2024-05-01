@@ -36,7 +36,7 @@ const Contact = (): JSX.Element => {
   return (
     <section
       id="contact"
-      className="flex flex-col h-[100vh] items-center justify-center sm:mt-24 mt-44 relative"
+      className="flex flex-col h-[100vh] items-center justify-center sm:mt-24 mt-0 relative"
     >
       <h2 className="text-5xl font-semibold">Contact Me</h2>
       <div className="flex flex-row justify-center">
@@ -52,7 +52,7 @@ const Contact = (): JSX.Element => {
       </div>
 
       <form
-        className="flex flex-col w-[300px] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
+        className="flex flex-col w-[90%] sm:w-[550px] h-[550px] text-[#19110b] border-2 border-text rounded-2xl p-6 mt-6 z-[99999]"
         onSubmit={onSubmit}
       >
         <input

@@ -52,7 +52,7 @@ const About = (): JSX.Element => {
           </li>
         </ul>
         {theme === "dark" && (
-          <div className="top-1 absolute self-center z-0 rounded-full block noise w-[40%] h-[70%]"></div>
+          <div className="top-1 absolute self-center z-0 rounded-full block noise lg:w-[40%] md:w-[60%] w-[80%] h-[70%]"></div>
         )}
         <div
           ref={containerRef}

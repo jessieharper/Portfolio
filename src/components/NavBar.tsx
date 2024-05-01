@@ -79,17 +79,14 @@ const NavBar = (props: INavBar): JSX.Element => {
                 exit="initial"
                 className="flex flex-col h-full justify-center font-lora items-center gap-4 "
               >
-                {navLinks.map((link, index) => {
+                {navLinks.map((link) => {
                   return (
                     <div
+                      key={link.title}
                       className="overflow-hidden"
                       onClick={() => props.setIsOpen(!props.isOpen)}
                     >
-                      <MobileNavLinks
-                        key={index}
-                        title={link.title}
-                        href={link.href}
-                      />
+                      <MobileNavLinks title={link.title} href={link.href} />
                     </div>
                   );
                 })}

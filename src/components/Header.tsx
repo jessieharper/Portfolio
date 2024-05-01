@@ -17,7 +17,7 @@ const Header = (): JSX.Element => {
         id="home"
         className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto z-20 relative"
       >
-        <div className="hidden md:flex flex-row">
+        <div className="flex flex-row">
           <h1 className="md:flex text-4xl font-semibold">Jessica Harper</h1>
 
           <FontAwesomeIcon
@@ -36,9 +36,15 @@ const Header = (): JSX.Element => {
             <div className="border-2 border-text rounded-full flex  flex-row">
               <ThemeSelector />
             </div>
-            <li className="mx-4 hidden md:flex">About Me</li>
-            <li className="mr-4 hidden md:flex">Projects</li>
-            <li className="mr-4 hidden md:flex ml-2">Contact Me</li>
+            <a href="#about" className="mx-4 hidden md:flex">
+              About Me
+            </a>
+            <a href="#projects" className="mr-4 hidden md:flex">
+              Projects
+            </a>
+            <a href="#contact" className="mr-4 hidden md:flex ml-2">
+              Contact Me
+            </a>
           </ul>
         </nav>
         <button

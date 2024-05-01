@@ -21,10 +21,7 @@ const Projects = (props: IMask): JSX.Element => {
   };
 
   return (
-    <section
-      id="projects"
-      className="relative h-[100vh] w-[100vw] sm:mt-44 lg:overflow-hidden my-[25%] sm:mb-[0%] overflow-x-scroll"
-    >
+    <section className="relative lg:h-[100vh] h-[160vh] sm:my-[25%] w-[100vw] sm:mt-44 lg:overflow-hidden overflow-x-scrolll">
       <div className="sm:sticky sm:top-0 flex sm:h-screen  h-[150%] items-center">
         <motion.div
           className="flex"
@@ -81,44 +78,44 @@ const Projects = (props: IMask): JSX.Element => {
                       >
                         <path
                           d="M4 79.5872H1292V867.587C1292 887.469 1275.88 903.587 1256 903.587H40C20.1177 903.587 4 887.469 4 867.587V79.5872Z"
-                          stroke-width="8"
+                          strokeWidth="8"
                         />
                         <path
                           d="M1288 80H1292V76V41C1292 20.5655 1275.43 4 1255 4H41C20.5655 4 4 20.5655 4 41V76V80H8H1288Z"
-                          stroke-width="8"
+                          strokeWidth="8"
                         />
                         <path
                           d="M43.1454 41.9491C43.1454 46.3466 39.3554 50.1618 34.3636 50.1618C29.3718 50.1618 25.5818 46.3466 25.5818 41.9491C25.5818 37.5516 29.3718 33.7365 34.3636 33.7365C39.3554 33.7365 43.1454 37.5516 43.1454 41.9491Z"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                         <path
                           d="M83.4001 41.9491C83.4001 46.3466 79.61 50.1618 74.6182 50.1618C69.6265 50.1618 65.8364 46.3466 65.8364 41.9491C65.8364 37.5516 69.6265 33.7365 74.6182 33.7365C79.61 33.7365 83.4001 37.5516 83.4001 41.9491Z"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                         <path
                           d="M123.654 41.9491C123.654 46.3466 119.864 50.1618 114.873 50.1618C109.881 50.1618 106.091 46.3466 106.091 41.9491C106.091 37.5516 109.881 33.7365 114.873 33.7365C119.864 33.7365 123.654 37.5516 123.654 41.9491Z"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                         <line
                           x1="1169.35"
                           y1="27.7365"
                           x2="1237.09"
                           y2="27.7365"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                         <line
                           x1="1169.35"
                           y1="52.0305"
                           x2="1237.09"
                           y2="52.0305"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                         <line
                           x1="1169.35"
                           y1="39.8835"
                           x2="1237.09"
                           y2="39.8835"
-                          stroke-width="6"
+                          strokeWidth="6"
                         />
                       </svg>
 
@@ -133,23 +130,23 @@ const Projects = (props: IMask): JSX.Element => {
                       >
                         <path
                           d="M3 44H317V555C317 571.569 303.569 585 287 585H33C16.4315 585 3 571.569 3 555V44Z"
-                          stroke-width="8"
+                          strokeWidth="8"
                         />
                         <path
                           d="M3 33C3 16.4315 16.4315 3 33 3H287C303.569 3 317 16.4315 317 33V43.5369H3V33Z"
-                          stroke-width="8"
+                          strokeWidth="8"
                         />
                         <path
                           d="M30 24.2586C30 26.6899 28.004 28.6946 25.5 28.6946C22.996 28.6946 21 26.6899 21 24.2586C21 21.8273 22.996 19.8227 25.5 19.8227C28.004 19.8227 30 21.8273 30 24.2586Z"
-                          stroke-width="4"
+                          strokeWidth="4"
                         />
                         <path
                           d="M47 24.2586C47 26.6899 45.004 28.6946 42.5 28.6946C39.996 28.6946 38 26.6899 38 24.2586C38 21.8273 39.996 19.8227 42.5 19.8227C45.004 19.8227 47 21.8273 47 24.2586Z"
-                          stroke-width="4"
+                          strokeWidth="4"
                         />
                         <path
                           d="M64 24.2586C64 26.6899 62.004 28.6946 59.5 28.6946C56.996 28.6946 55 26.6899 55 24.2586C55 21.8273 56.996 19.8227 59.5 19.8227C62.004 19.8227 64 21.8273 64 24.2586Z"
-                          stroke-width="4"
+                          strokeWidth="4"
                         />
                       </svg>
 
