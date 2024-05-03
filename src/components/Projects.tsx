@@ -2,6 +2,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useContext } from "react";
 import { cards } from "./ProjectCards";
 import { GlobalContext } from "../contexts/GlobalContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = (): JSX.Element => {
   const { scrollX, setScrollX } = useContext(GlobalContext);
@@ -22,7 +24,7 @@ const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="relative sm:h-[100vh] h-[160vh] w-[100vw] bg-background sm:mt-44 sm:mb-0 mb-[-25%] lg:overflow-hidden overflow-x-scroll"
+      className="relative sm:h-[100vh] h-[160vh] w-[100vw] bg-background sm:mt-44 lg:overflow-hidden overflow-x-scroll"
     >
       <div className="sm:sticky sm:top-0 flex sm:h-screen items-center">
         <motion.div
@@ -42,7 +44,7 @@ const Projects = (): JSX.Element => {
                       width="543"
                       height="249"
                       viewBox="0 0 543 249"
-                      className="fill-current hidden lg:flex w-[15%] ml-8 cursor-pointer opacity-80"
+                      className="fill-current hidden lg:flex w-[15%] ml-8 cursor-pointer opacity-90"
                       onClick={handleScrollBackward}
                       whileTap={{ scale: 0.9 }}
                       xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +114,6 @@ const Projects = (): JSX.Element => {
                           strokeWidth="6"
                         />
                       </svg>
-
                       {card.url && (
                         <img
                           src={card.url}
@@ -121,7 +122,6 @@ const Projects = (): JSX.Element => {
                           width={450}
                         />
                       )}
-
                       <svg
                         width="320"
                         height="588"
@@ -152,7 +152,6 @@ const Projects = (): JSX.Element => {
                           strokeWidth="4"
                         />
                       </svg>
-
                       {card.phoneUrl && (
                         <img
                           src={card.phoneUrl}
@@ -161,6 +160,24 @@ const Projects = (): JSX.Element => {
                           width={134}
                         />
                       )}
+                      <motion.div className="flex flex-row items-center justify-center">
+                        {card.id !== 1 && (
+                          <FontAwesomeIcon
+                            icon={faArrowLeft}
+                            className="block sm:hidden cursor-pointer m-4 mt-[-5%]"
+                            size="2xl"
+                            onClick={handleScrollBackward}
+                          />
+                        )}
+                        {card.id !== cards.length && (
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="block sm:hidden cursor-pointer m-4 mt-[-5%]"
+                            size="2xl"
+                            onClick={handleScrollForward}
+                          />
+                        )}
+                      </motion.div>
                       {card.link && (
                         <a
                           href={card.link}
@@ -189,7 +206,7 @@ const Projects = (): JSX.Element => {
                       height="249"
                       viewBox="0 0 543 249"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="fill-current text-text w-[15%] mr-8 cursor-pointer md:hidden lg:flex flex opacity-80"
+                      className="fill-current text-text w-[15%] mr-8 cursor-pointer hidden lg:flex opacity-90"
                       onClick={handleScrollForward}
                       whileTap={{ scale: 0.9 }}
                     >
