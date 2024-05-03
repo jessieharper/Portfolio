@@ -31,7 +31,7 @@ const AboutMask = (props: IMask): JSX.Element => {
   }, []);
 
   return (
-    <section className="flex flex-col h-[100vh] w-full mt-44 items-center relative">
+    <section className="flex flex-col h-[100vh] w-full mt-14 items-center relative">
       <h2
         onMouseEnter={() => {
           props.setIsHovered(true);

@@ -6,7 +6,7 @@ const LandingPage = (): JSX.Element => {
   return (
     <section
       id="main"
-      className="h-screen flex justify-center items-center  mt-[-72px]"
+      className="h-screen w-screen flex justify-center items-center  mt-[-72px]"
     >
       <div className="flex sm:flex-row flex-col  sm:items-center relative">
         <div className="hidden sm:flex self-center absolute left-[16%] rounded-full w-[500px] h-[500px] z-10">
@@ -14,11 +14,11 @@ const LandingPage = (): JSX.Element => {
           <Earth />
         </div>
 
-        <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto ml-[1.5rem] text-6xl font-extrabold z-10">
+        <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto ml-0 text-6xl font-extrabold z-10">
           Hiya, <br />
           World
         </h2>
-        <span className="ml-6 flex flex-col w-[280px] sm:w-[350px] z-10 sm:p-2 sm:py-4 sm:rounded-2xl sm:bg-background sm:border-2 sm:border-text">
+        <span className="sm:ml-6 flex flex-col w-[280px] sm:w-[350px] z-10 sm:p-2 sm:py-4 sm:rounded-2xl sm:bg-background sm:border-2 sm:border-text">
           <p className="text-wrap ">
             My name is Jessica, and I am a Sheffield-based Junior Software
             Developer, amateur animator, and burgeoning crazy cat lady. Welcome
