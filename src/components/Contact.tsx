@@ -36,7 +36,7 @@ const Contact = (): JSX.Element => {
   return (
     <section
       id="contact"
-      className="flex flex-col h-[100vh] items-center justify-center mt-24  relative"
+      className="flex flex-col h-[100vh] items-center justify-center mt-14  relative"
     >
       <h2 className="text-5xl font-semibold">Contact Me</h2>
       <div className="flex flex-row justify-center">

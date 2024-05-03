@@ -21,7 +21,7 @@ const About = (): JSX.Element => {
   return (
     <section
       id="about"
-      className="flex flex-col h-[100vh] w-full mt-44 items-center relative"
+      className="flex flex-col h-[100vh] w-full mt-14 items-center relative"
     >
       <h2 className="text-5xl font-semibold p-4 mt-4 z-20">About Me</h2>
       <article className=" flex flex-col w-[90%] sm:w-[650px] m-auto justify-center z-10">
