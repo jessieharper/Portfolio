@@ -76,11 +76,7 @@ const TechStackLogos = (): JSX.Element => {
           </g>
         </svg>
 
-        <img
-          src="/logos/postgresql.svg"
-          alt="PostgreSQL logo"
-          className="mr-2"
-        />
+        <img src="/postgresql.svg" alt="PostgreSQL logo" className="mr-2" />
       </span>
     </>
   );
