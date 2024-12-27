@@ -1,20 +1,22 @@
-import Earth from "./Earth";
-import TechStackLogos from "./TechStackLogos";
+import Earth from "../components/Earth";
+import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 
 const LandingPage = (): JSX.Element => {
   return (
     <section
       id="main"
-      className="h-screen w-screen flex justify-center items-center  mt-[-72px]"
+      className="h-5/6 w-sfull flex flex-auto justify-center items-center relative -mt-10"
     >
-      <div className="flex sm:flex-row flex-col  sm:items-center relative">
-        <div className="hidden sm:flex self-center absolute left-[16%] rounded-full w-[500px] h-[500px] z-10">
-          <div className="right-[-20%] absolute self-center z-0 rounded-full block noise w-[145%] h-[145%]"></div>
+      <div className="flex sm:flex-row flex-col sm:items-center">
+        <div className="absolute -top-20 right-0 z-10">
           <Earth />
         </div>
+        {/* <div>
+          <img src="/images/merged.gif" />
+        </div> */}
 
-        <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto ml-0 text-6xl font-extrabold z-10">
+        {/* <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto ml-0 text-6xl font-extrabold z-10">
           Hiya, <br />
           World
         </h2>
@@ -38,7 +40,7 @@ const LandingPage = (): JSX.Element => {
               Download my CV
             </button>
           </a>
-        </span>
+        </span> */}
       </div>
     </section>
   );

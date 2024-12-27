@@ -1,4 +1,4 @@
-import { TabsData } from "./TabsData";
+import { TabsData } from "../components/TabsData";
 import { useContext, useRef, useEffect } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { GlobalContext } from "../contexts/GlobalContext";

@@ -1,40 +1,72 @@
-import { Canvas, useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import { useRef } from "react";
-import { useScroll, useSpring } from "framer-motion";
-import { motion } from "framer-motion-3d";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
-const Earth = () => {
-  const scene = useRef<null | HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    layoutEffect: false,
-    target: scene,
-    offset: ["start end", "end start"],
-  });
+const Earth = (): JSX.Element => {
+  const mountRef = useRef<HTMLDivElement | null>(null);
 
-  const smoothRotation = useSpring(scrollYProgress, { damping: 20 });
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff, 0);
 
-  const [color, normal, aoMap] = useLoader(TextureLoader, [
-    "/earthcloudmap.jpg",
-    "/normal.png",
-    "/earthmap1k.jpg",
-  ]);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
 
-  return (
-    <Canvas className="border-4 border-text rounded-full">
-      <ambientLight intensity={0.25} />
-      <directionalLight intensity={3.5} position={[-4.75, 0, 1.25]} />
-      <motion.mesh
-        scale={3}
-        rotation-y={smoothRotation}
-        rotation={[-Math.PI / 0.1, 0, 0.1]}
-      >
-        <sphereGeometry args={[1, 64, 64]} />
+    if (mountRef.current) {
+      mountRef.current.appendChild(renderer.domElement);
+    }
 
-        <meshStandardMaterial map={color} normalMap={normal} aoMap={aoMap} />
-      </motion.mesh>
-    </Canvas>
-  );
+    const textureLoader = new THREE.TextureLoader();
+    const map = textureLoader.load("/images/spritesheet.png", (texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.minFilter = THREE.NearestFilter;
+      texture.magFilter = THREE.NearestFilter;
+      const tileWidth = 1000;
+      const tileHeight = 800;
+      const tileAspectRatio = tileWidth / tileHeight;
+
+      sprite.scale.set(tileAspectRatio, 1, 1);
+    });
+
+    const material = new THREE.SpriteMaterial({ map });
+    const sprite = new THREE.Sprite(material);
+
+    sprite.position.x = 0;
+
+    let currentTile = 0;
+    const tileHorizontal = 3;
+    const tileVertical = 2;
+    map.repeat.set(1 / tileHorizontal, 1 / tileVertical);
+    map.offset.x = 0;
+    map.offset.y = 0;
+
+    scene.add(sprite);
+
+    camera.position.z = 0.7;
+
+    const animate = () => {
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    return () => {
+      renderer.dispose();
+    };
+  }, []);
+
+  return <div ref={mountRef} />;
 };
 
 export default Earth;

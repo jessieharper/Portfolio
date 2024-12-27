@@ -1,11 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
 import { useContext } from "react";
-import { cards } from "./ProjectCards";
+import { cards } from "../components/ProjectCards";
 import { GlobalContext } from "../contexts/GlobalContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import LargeProjectCard from "./LargeProjectCard";
-import SmallProjectCard from "./SmallProjectCard";
+import LargeProjectCard from "../components/LargeProjectCard";
+import SmallProjectCard from "../components/SmallProjectCard";
 
 const Projects = (): JSX.Element => {
   const { scrollX, setScrollX } = useContext(GlobalContext);

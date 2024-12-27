@@ -15,7 +15,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto z-20 relative"
+        className="flex flex-row h-1/6 w-full justify-between items-center p-4 m-auto z-20 relative"
       >
         <div className="md:flex hidden flex-row">
           <h1 className="md:flex hidden text-4xl font-semibold">

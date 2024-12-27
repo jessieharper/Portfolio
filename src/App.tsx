@@ -1,24 +1,16 @@
 import Header from "./components/Header.js";
-import About from "./components/About.js";
-import Mask from "./components/Mask.js";
-import Projects from "./components/Projects.js";
-import LandingPage from "./components/LandingPage.js";
+import About from "./pages/About.js";
+import Projects from "./pages/Projects.js";
+import LandingPage from "./pages/LandingPage.js";
 import Footer from "./components/Footer.js";
-import Contact from "./components/Contact.js";
-import useMousePosition from "./utils/useMousePosition.js";
+import Contact from "./pages/Contact.js";
 import "./index.css";
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { motion } from "framer-motion";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
 import ThankYouCard from "./components/ThankYouCard.js";
 
 const App = (): JSX.Element => {
-  const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
-  const { x, y } = useMousePosition();
-  const size = isHovered ? 250 : 30;
-
   return (
     <>
       <ThemeProvider>
@@ -28,29 +20,7 @@ const App = (): JSX.Element => {
             <Route
               path="*"
               element={
-                <main className="min-h-[100vh] w-[100vw] overflow-x-hidden">
-                  <motion.div
-                    className="mask hidden lg:block"
-                    animate={{
-                      WebkitMaskPosition: `${x! - size / 2}px ${
-                        y! - size / 2
-                      }px`,
-                      WebkitMaskSize: `${size}px`,
-                    }}
-                    transition={{
-                      WebkitMaskPosition: {
-                        duration: 0,
-                      },
-                      WebkitMaskSize: {
-                        duration: 0.25,
-                        type: "tween",
-                        ease: "easeOut",
-                      },
-                    }}
-                  >
-                    <Mask setIsHovered={setIsHovered} />
-                  </motion.div>
-
+                <main className="h-screen">
                   <Header />
                   <LandingPage />
                   <About />

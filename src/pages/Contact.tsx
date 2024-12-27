@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import MyCV from "../assets/Jessica Harper CV.pdf";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 
 const Contact = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
