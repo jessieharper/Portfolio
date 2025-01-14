@@ -1,77 +1,89 @@
-import { useEffect, useRef } from "react";
+import { Scene } from "three";
+import * as THREE from "three";
 
-interface Position {
-  x: number;
-  y: number;
-}
+export class SpriteAnimator {
+  private currentTile = 0;
+  private tilesHorizontal = 3;
+  private tilesVertical = 2;
 
-interface SpriteAnimationProps {
-  spriteWidth: number;
-  spriteHeight: number;
-  borderWidth?: number;
-  spacingWidth?: number;
-  animationCycle: Position[];
-  animationSpeed: number;
-  imageSrc: string;
-}
+  private map: THREE.Texture;
+  private sprite: THREE.Sprite;
+  private maxDisplayTime = 0;
+  private elapsedTime = 0;
+  private runningTileArrayIndex = 0;
+  private playSpriteIndices: number[] = [];
 
-const SpriteAnimator: React.FC<SpriteAnimationProps> = ({
-  spriteWidth,
-  spriteHeight,
-  animationCycle,
-  animationSpeed,
-  imageSrc,
-}) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imageRef = useRef<HTMLImageElement | null>(null);
-  const contextRef = useRef<CanvasRenderingContext2D | null>(null);
+  constructor(
+    spriteTexture: string,
+    tilesHorizontal: number,
+    tilesVertical: number,
+    scene: THREE.Scene
+  ) {
+    this.tilesHorizontal = tilesHorizontal;
+    this.tilesVertical = tilesVertical;
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const context = canvas?.getContext("2d");
+    this.map = new THREE.TextureLoader().load(spriteTexture);
+    this.map.magFilter = THREE.NearestFilter;
+    this.map.colorSpace = THREE.SRGBColorSpace;
 
-    if (!canvas || !context) return;
+    const tileWidth = 1000;
+    const tileHeight = 800;
+    const tileAspectRatio = tileWidth / tileHeight;
 
-    contextRef.current = context;
+    this.map.repeat.set(1 / tilesHorizontal, 1 / tilesVertical);
 
-    const image = new Image();
-    imageRef.current = image;
-    image.src = imageSrc;
-    image.crossOrigin = "anonymous";
+    this.update(0);
 
-    image.onload = () => {
-      setInterval(animate, animationSpeed);
-    };
+    const material = new THREE.SpriteMaterial({ map: this.map });
+    this.sprite = new THREE.Sprite(material);
+    this.sprite.scale.set(tileAspectRatio, 1, 1);
 
-    let frameIndex = 0;
-    let frame: Position;
+    scene.add(this.sprite);
+  }
 
-    function animate() {
-      if (frameIndex === animationCycle.length) {
-        frameIndex = 0;
-      }
-      frame = animationCycle[frameIndex];
-      if (canvas) {
-        contextRef.current?.clearRect(0, 0, canvas.width, canvas.height);
-      }
-      contextRef.current?.drawImage(
-        imageRef.current!,
-        frame.x,
-        frame.y,
-        spriteWidth,
-        spriteHeight,
-        0,
-        0,
-        spriteWidth,
-        spriteHeight
-      );
-      frameIndex += 1;
+  public loop(playSpriteIndices: number[], totalDuration: number) {
+    this.playSpriteIndices = playSpriteIndices;
+    this.runningTileArrayIndex = 0;
+    this.currentTile = playSpriteIndices[this.runningTileArrayIndex];
+    this.maxDisplayTime = totalDuration / this.playSpriteIndices.length;
+    this.elapsedTime = this.maxDisplayTime; // force to play new animation
+  }
+
+  public setPosition(x: number, y: number, z: number) {
+    this.sprite.position.x = x;
+    this.sprite.position.y = y;
+    this.sprite.position.z = z;
+  }
+
+  public addPosition(x: number, y: number, z: number) {
+    this.sprite.position.x += x;
+    this.sprite.position.y += y;
+    this.sprite.position.z += z;
+  }
+
+  public getPosition(): THREE.Vector3 {
+    return this.sprite.position;
+  }
+
+  public update(delta: number) {
+    this.elapsedTime += delta;
+
+    if (this.maxDisplayTime > 0 && this.elapsedTime >= this.maxDisplayTime) {
+      this.elapsedTime = 0;
+      this.runningTileArrayIndex =
+        (this.runningTileArrayIndex + 1) % this.playSpriteIndices.length;
+      this.currentTile = this.playSpriteIndices[this.runningTileArrayIndex];
+
+      const offsetX =
+        (this.currentTile % this.tilesHorizontal) / this.tilesHorizontal;
+      const offsetY =
+        (this.tilesVertical -
+          Math.floor(this.currentTile / this.tilesHorizontal) -
+          1) /
+        this.tilesVertical;
+
+      this.map.offset.x = offsetX;
+      this.map.offset.y = offsetY;
     }
-
-    return () => clearInterval(undefined);
-  }, [animationCycle, animationSpeed, imageSrc, spriteWidth, spriteHeight]);
-
-  return <canvas ref={canvasRef} width={spriteWidth} height={spriteHeight} />;
-};
-
-export default SpriteAnimator;
+  }
+}

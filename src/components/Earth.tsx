@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { SpriteAnimator } from "./SpriteAnimator";
 
 const Earth = (): JSX.Element => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -21,36 +22,50 @@ const Earth = (): JSX.Element => {
       mountRef.current.appendChild(renderer.domElement);
     }
 
-    const textureLoader = new THREE.TextureLoader();
-    const map = textureLoader.load("/images/spritesheet.png", (texture) => {
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.minFilter = THREE.NearestFilter;
-      texture.magFilter = THREE.NearestFilter;
-      const tileWidth = 1000;
-      const tileHeight = 800;
-      const tileAspectRatio = tileWidth / tileHeight;
+    const flipbook = new SpriteAnimator("/images/spritesheet.png", 3, 2, scene);
+    flipbook.loop([0, 1, 2, 3, 4], 0.3);
 
-      sprite.scale.set(tileAspectRatio, 1, 1);
-    });
+    // let currentTile = 0;
+    // const tilesHorizontal = 3;
+    // const tilesVertical = 2;
 
-    const material = new THREE.SpriteMaterial({ map });
-    const sprite = new THREE.Sprite(material);
+    // const textureLoader = new THREE.TextureLoader();
+    // const map = textureLoader.load("/images/spritesheet.png", (texture) => {
+    //   texture.colorSpace = THREE.SRGBColorSpace;
+    //   texture.minFilter = THREE.NearestFilter;
+    //   texture.magFilter = THREE.NearestFilter;
+    //   const tileWidth = 1000;
+    //   const tileHeight = 800;
+    //   const tileAspectRatio = tileWidth / tileHeight;
 
-    sprite.position.x = 0;
+    //   sprite.scale.set(tileAspectRatio, 1, 1);
+    // });
 
-    let currentTile = 0;
-    const tileHorizontal = 3;
-    const tileVertical = 2;
-    map.repeat.set(1 / tileHorizontal, 1 / tileVertical);
-    map.offset.x = 0;
-    map.offset.y = 0;
+    // const material = new THREE.SpriteMaterial({ map });
+    // const sprite = new THREE.Sprite(material);
 
-    scene.add(sprite);
+    // sprite.position.x = 0;
 
-    camera.position.z = 0.7;
+    // map.repeat.set(1 / tilesHorizontal, 1 / tilesVertical);
 
+    // const offsetX = (currentTile % tilesHorizontal) / tilesHorizontal;
+    // const offsetY =
+    //   (tilesVertical - Math.floor(currentTile / tilesHorizontal) - 1) /
+    //   tilesVertical;
+
+    // map.offset.x = offsetX;
+    // map.offset.y = offsetY;
+
+    // scene.add(sprite);
+
+    camera.position.z = 0.8;
+
+    const clock = new THREE.Clock();
     const animate = () => {
       renderer.render(scene, camera);
+      let deltaTime = clock.getDelta();
+      flipbook.update(deltaTime);
+
       requestAnimationFrame(animate);
     };
     animate();
