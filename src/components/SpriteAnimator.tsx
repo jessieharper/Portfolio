@@ -1,10 +1,9 @@
-import { Scene } from "three";
 import * as THREE from "three";
 
 export class SpriteAnimator {
   private currentTile = 0;
-  private tilesHorizontal = 3;
-  private tilesVertical = 2;
+  private tilesHorizontal = 20;
+  private tilesVertical = 10;
 
   private map: THREE.Texture;
   private sprite: THREE.Sprite;
@@ -46,7 +45,7 @@ export class SpriteAnimator {
     this.runningTileArrayIndex = 0;
     this.currentTile = playSpriteIndices[this.runningTileArrayIndex];
     this.maxDisplayTime = totalDuration / this.playSpriteIndices.length;
-    this.elapsedTime = this.maxDisplayTime; // force to play new animation
+    this.elapsedTime = this.maxDisplayTime;
   }
 
   public setPosition(x: number, y: number, z: number) {
