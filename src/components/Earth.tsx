@@ -22,8 +22,17 @@ const Earth = (): JSX.Element => {
       mountRef.current.appendChild(renderer.domElement);
     }
 
-    const flipbook = new SpriteAnimator("/images/spritesheet.png", 3, 2, scene);
-    flipbook.loop([0, 1, 2, 3, 4], 0.3);
+    const flipbook = new SpriteAnimator(
+      "/images/spritesheet.png",
+      10,
+      20,
+      scene
+    );
+
+    flipbook.loop(
+      Array.from({ length: 200 }, (_, i) => i),
+      10
+    );
 
     // let currentTile = 0;
     // const tilesHorizontal = 3;
