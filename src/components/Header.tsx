@@ -15,39 +15,26 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-1/6 w-full justify-between items-center p-4 m-auto z-20 relative"
+        className="flex flex-row h-min w-full justify-between items-center p-4 z-20 relative"
       >
-        <div className="md:flex hidden flex-row">
-          <h1 className="md:flex hidden text-4xl font-semibold">
-            Jessica Harper
-          </h1>
-
-          <FontAwesomeIcon
-            icon={faGithub}
-            size="2xl"
-            className="mt-2 mx-6 hidden lg:flex"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            size="2xl"
-            className="mt-2 hidden lg:flex"
-          />
+        <div className="hidden md:block md:w-96">
+          <img className="w-full h-full" src={"/JESSICA HARPER.svg"} alt="" />
         </div>
-        <nav>
-          <ul className="h-full flex flex-row items-center align-center mt-2 ">
-            <div className="border-2 border-text rounded-full flex  flex-row">
-              <ThemeSelector />
-            </div>
-            <a href="#about" className="mx-4 hidden md:flex">
+        <nav className="flex flex-col mb-auto gap-12">
+          <div className="w-auto inline-flex justify-end">
+            <ThemeSelector />
+          </div>
+          <div className="h-full flex flex-row items-center align-center mt-2 font-depixel font-light tracking-widest uppercase text-lg gap-16">
+            <a href="#about" className="hidden md:flex">
               About Me
             </a>
-            <a href="#projects" className="mr-4 hidden md:flex">
+            <a href="#projects" className="hidden md:flex">
               Projects
             </a>
-            <a href="#contact" className="mr-4 hidden md:flex ml-2">
+            <a href="#contact" className="hidden md:flex ">
               Contact Me
             </a>
-          </ul>
+          </div>
         </nav>
         <button
           className="md:hidden flex cursor-pointer ml-2"

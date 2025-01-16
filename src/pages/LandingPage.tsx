@@ -4,12 +4,9 @@ import MyCV from "../assets/Jessica Harper CV.pdf";
 
 const LandingPage = (): JSX.Element => {
   return (
-    <section
-      id="main"
-      className="h-5/6 w-sfull flex flex-auto justify-center items-center relative -mt-10"
-    >
-      <div className="flex sm:flex-row flex-col sm:items-center">
-        <div className="absolute -top-20 right-0 z-10">
+    <section id="main" className=" absolute top-0 h-full w-full ">
+      <div className="">
+        <div className="absolute inset-0 z-10">
           <Earth />
         </div>
         {/* <div>

@@ -34,59 +34,30 @@ const Earth = (): JSX.Element => {
       10
     );
 
-    // let currentTile = 0;
-    // const tilesHorizontal = 3;
-    // const tilesVertical = 2;
-
-    // const textureLoader = new THREE.TextureLoader();
-    // const map = textureLoader.load("/images/spritesheet.png", (texture) => {
-    //   texture.colorSpace = THREE.SRGBColorSpace;
-    //   texture.minFilter = THREE.NearestFilter;
-    //   texture.magFilter = THREE.NearestFilter;
-    //   const tileWidth = 1000;
-    //   const tileHeight = 800;
-    //   const tileAspectRatio = tileWidth / tileHeight;
-
-    //   sprite.scale.set(tileAspectRatio, 1, 1);
-    // });
-
-    // const material = new THREE.SpriteMaterial({ map });
-    // const sprite = new THREE.Sprite(material);
-
-    // sprite.position.x = 0;
-
-    // map.repeat.set(1 / tilesHorizontal, 1 / tilesVertical);
-
-    // const offsetX = (currentTile % tilesHorizontal) / tilesHorizontal;
-    // const offsetY =
-    //   (tilesVertical - Math.floor(currentTile / tilesHorizontal) - 1) /
-    //   tilesVertical;
-
-    // map.offset.x = offsetX;
-    // map.offset.y = offsetY;
-
-    // scene.add(sprite);
-
-    camera.position.z = 0.8;
+    camera.position.z = 1;
 
     const clock = new THREE.Clock();
     const animate = () => {
       renderer.render(scene, camera);
-      let deltaTime = clock.getDelta();
+      const deltaTime = clock.getDelta();
       flipbook.update(deltaTime);
-
       requestAnimationFrame(animate);
     };
     animate();
 
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       renderer.dispose();
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
