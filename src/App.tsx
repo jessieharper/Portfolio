@@ -20,12 +20,9 @@ const App = (): JSX.Element => {
             <Route
               path="*"
               element={
-                <main className="h-screen">
+                <main className="h-screen relative">
                   <Header />
                   <LandingPage />
-                  <About />
-                  <Projects />
-                  <Contact />
                   <Footer />
                 </main>
               }
