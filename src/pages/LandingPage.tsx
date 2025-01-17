@@ -4,7 +4,7 @@ import MyCV from "../assets/Jessica Harper CV.pdf";
 
 const LandingPage = (): JSX.Element => {
   return (
-    <section id="main" className=" absolute top-0 h-full w-full ">
+    <section id="main" className="absolute top-0 h-full w-full ">
       <div className="">
         <div className="absolute inset-0 z-10">
           <Earth />

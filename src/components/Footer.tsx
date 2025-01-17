@@ -1,12 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = (): JSX.Element => {
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
-    <footer className="sm:flex fixed hidden bottom-14 right-14 z-30">
+    <footer className="fixed bottom-5 right-5 flex items-end gap-8">
       <a href="#home">
-        <FontAwesomeIcon icon={faCircleUp} size="2xl" />
+        <FontAwesomeIcon icon={faGithub} size="2xl" />
       </a>
+      <a href="#home">
+        <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+      </a>
+      <p className="text-sm font-depixel">Jessica Harper {year}</p>
     </footer>
   );
 };
