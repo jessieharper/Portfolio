@@ -17,14 +17,18 @@ const Header = (): JSX.Element => {
         id="home"
         className="flex flex-row h-min w-full justify-between items-center p-4 z-20 relative"
       >
-        <div className="hidden md:block md:w-96">
-          <img className="w-full h-full" src={"/JESSICA HARPER.svg"} alt="" />
-        </div>
-        <nav className="flex flex-col mb-auto gap-12">
+        <div
+          style={{
+            maskImage: "url('/JESSICA HARPER.svg')",
+            WebkitMaskImage: "url('/JESSICA HARPER.svg')",
+          }}
+          className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
+        ></div>
+        <nav className="flex flex-col lg:gap-8">
           <div className="w-auto inline-flex justify-end">
             <ThemeSelector />
           </div>
-          <div className="h-full flex flex-row items-center align-center mt-2 font-depixel font-light tracking-widest uppercase text-lg gap-16">
+          <div className="h-full w-full flex items-center font-depixel tracking-widest uppercase text-sm lg:text-lg gap-4 lg:gap-8">
             <a href="#about" className="hidden md:flex">
               About Me
             </a>
