@@ -12,7 +12,7 @@ const Earth = (): JSX.Element => {
     renderer.setClearColor(0xffffff, 0);
 
     const camera = new THREE.PerspectiveCamera(
-      75,
+      50,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -31,10 +31,10 @@ const Earth = (): JSX.Element => {
 
     flipbook.loop(
       Array.from({ length: 200 }, (_, i) => i),
-      10
+      8
     );
 
-    camera.position.z = 1;
+    camera.position.z = 1.2;
 
     const clock = new THREE.Clock();
     const animate = () => {

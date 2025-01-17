@@ -56,13 +56,13 @@ const ThemeSelector = (): JSX.Element => {
       {options.map((option) => (
         <button
           key={option.text}
-          className={`w-6 h-auto my-1 mx-1 flex justify-center ${
-            theme === option.text && "text-[#ec4c95]"
+          className={`w-8 h-8 my-1 mx-1 flex justify-center ${
+            theme === option.text && "text-accent"
           }`}
           aria-hidden="true"
           onClick={() => setTheme(option.text)}
         >
-          <FontAwesomeIcon icon={option.name} />
+          <FontAwesomeIcon size="lg" icon={option.name} />
         </button>
       ))}
     </>
