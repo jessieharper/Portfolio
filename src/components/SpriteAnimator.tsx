@@ -2,8 +2,8 @@ import * as THREE from "three";
 
 export class SpriteAnimator {
   private currentTile = 0;
-  private tilesHorizontal = 20;
-  private tilesVertical = 10;
+  private tilesHorizontal = 10;
+  private tilesVertical = 1;
 
   private map: THREE.Texture;
   private sprite: THREE.Sprite;
@@ -25,8 +25,8 @@ export class SpriteAnimator {
     this.map.magFilter = THREE.NearestFilter;
     this.map.colorSpace = THREE.SRGBColorSpace;
 
-    const tileWidth = 1000;
-    const tileHeight = 800;
+    const tileWidth = 500;
+    const tileHeight = 400;
     const tileAspectRatio = tileWidth / tileHeight;
 
     this.map.repeat.set(1 / tilesHorizontal, 1 / tilesVertical);
