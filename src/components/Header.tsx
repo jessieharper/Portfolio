@@ -13,15 +13,17 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-min w-full justify-between items-center p-4 z-20 relative"
+        className="fixed flex flex-row h-min w-full justify-between items-center p-4 z-20"
       >
-        <div
-          style={{
-            maskImage: "url('/JESSICA HARPER.svg')",
-            WebkitMaskImage: "url('/JESSICA HARPER.svg')",
-          }}
-          className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
-        ></div>
+        <a href="/">
+          <div
+            style={{
+              maskImage: "url('/JESSICA HARPER.svg')",
+              WebkitMaskImage: "url('/JESSICA HARPER.svg')",
+            }}
+            className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
+          ></div>
+        </a>
         <nav className="flex flex-col lg:gap-8">
           <div className="w-auto inline-flex justify-end">
             <ThemeSelector />
