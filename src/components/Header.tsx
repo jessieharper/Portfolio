@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ThemeSelector from "./ThemeSelector";
 import NavBar from "./NavBar";
 
@@ -15,7 +16,7 @@ const Header = (): JSX.Element => {
         id="home"
         className="fixed flex flex-row h-min w-full justify-between items-center p-4 z-20"
       >
-        <a href="/">
+        <Link to="/">
           <div
             style={{
               maskImage: "url('/JESSICA HARPER.svg')",
@@ -23,21 +24,21 @@ const Header = (): JSX.Element => {
             }}
             className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
           ></div>
-        </a>
+        </Link>
         <nav className="flex flex-col lg:gap-8">
           <div className="w-auto inline-flex justify-end">
             <ThemeSelector />
           </div>
           <div className="h-full w-full flex items-center font-depixel tracking-widest uppercase text-sm lg:text-lg gap-4 lg:gap-8">
-            <a href="#about" className="hidden md:flex">
+            <Link to="/about" className="hidden md:flex">
               About Me
-            </a>
-            <a href="#projects" className="hidden md:flex">
+            </Link>
+            <Link to="/projects" className="hidden md:flex">
               Projects
-            </a>
-            <a href="#contact" className="hidden md:flex ">
+            </Link>
+            <Link to="/contact" className="hidden md:flex ">
               Contact Me
-            </a>
+            </Link>
           </div>
         </nav>
         <button
