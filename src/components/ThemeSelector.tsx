@@ -43,8 +43,8 @@ const ThemeSelector = (): JSX.Element => {
               maskImage: `url('/images/icons/${option}.svg')`,
               WebkitMaskImage: `url('/images/icons/${option}.svg')`,
             }}
-            className={`h-6 w-6 icon-mask bg-primary ${
-              theme === option ? "bg-accent" : ""
+            className={`h-6 w-6 icon-mask  ${
+              theme === option ? "bg-accent" : "bg-primary"
             }`}
           ></div>
         </button>

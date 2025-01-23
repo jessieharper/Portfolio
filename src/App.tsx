@@ -1,36 +1,26 @@
-import Header from "./components/Header.js";
-import About from "./pages/About.js";
-import Projects from "./pages/Projects.js";
-import LandingPage from "./pages/LandingPage.js";
-import Footer from "./components/Footer.js";
-import Contact from "./pages/Contact.js";
-import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
-import ThankYouCard from "./components/ThankYouCard.js";
+import "./index.css";
+import { Header, Footer } from "./components/Index.js";
+import { LandingPage, About, Projects, Contact } from "./pages/Index.js";
 
 const App = (): JSX.Element => {
   return (
-    <>
+    <main className="h-screen">
       <ThemeProvider>
         <GlobalProvider>
+          <Header />
           <Routes>
-            <Route path="/thanks" element={<ThankYouCard />} />
-            <Route
-              path="*"
-              element={
-                <main className="h-screen">
-                  <Header />
-                  <LandingPage />
-                  <Footer />
-                </main>
-              }
-            />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </GlobalProvider>
       </ThemeProvider>
-    </>
+    </main>
   );
 };
 
