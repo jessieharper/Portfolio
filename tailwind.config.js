@@ -17,6 +17,7 @@ module.exports = {
         },
         body: "var(--body)",
         primary: "var(--primary)",
+        card: "var(--card)",
       },
     },
   },
