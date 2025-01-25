@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
 import "./index.css";
-import { Header, Footer } from "./components/Index.js";
-import { LandingPage, About, Projects, Contact } from "./pages/Index.js";
+import { Header, Footer } from "./components/index.js";
+import { LandingPage, About, Projects, Contact } from "./pages/index.js";
 
 const App = (): JSX.Element => {
   return (

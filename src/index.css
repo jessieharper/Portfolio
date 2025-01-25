@@ -8,12 +8,14 @@
   :root {
     --body: hsl(35, 55%, 92%);
     --primary: hsl(24, 28%, 7%);
+    --card: hsl(0, 0%, 100%);
   }
 }
 
 .dark {
   --body: hsl(24, 28%, 7%);
   --primary: hsl(35, 55%, 92%);
+  --card: hsl(24, 28%, 7%);
 }
 
 .dark #main {
@@ -25,6 +27,11 @@ body {
   @apply transition-colors duration-100;
   @apply font-dogica;
   @apply bg-body text-primary;
+}
+
+.container {
+  @apply max-w-screen-xl;
+  @apply px-4;
 }
 
 .icon-mask {

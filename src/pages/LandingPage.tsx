@@ -5,39 +5,23 @@ import MyCV from "../assets/Jessica Harper CV.pdf";
 const LandingPage = (): JSX.Element => {
   return (
     <section id="main" className="absolute top-0 h-full w-full ">
-      <div className="">
+      <div className="container flex items-center h-full">
         <div className="absolute inset-0 z-10">
           <Earth />
         </div>
-        {/* <div>
-          <img src="/images/merged.gif" />
-        </div> */}
 
-        {/* <h2 className="max-w-[310px] sm:max-w-[350px] sm:text-9xl sm:ml-auto ml-0 text-6xl font-extrabold z-10">
-          Hiya, <br />
-          World
-        </h2>
-        <span className="sm:ml-6 flex flex-col w-[280px] sm:w-[350px] z-10 sm:p-2 sm:py-4 sm:rounded-2xl sm:bg-background sm:border-2 sm:border-text">
-          <p className="text-wrap ">
-            My name is Jessica, and I am a Sheffield-based Junior Software
-            Developer, amateur animator, and burgeoning crazy cat lady. Welcome
-            to my portfolio!
-          </p>
-          <br />
-          <h3 className="font-semibold mb-2">Tech stack: </h3>
-          <span className="flex sm:flex-row flex-col items-center justify-center">
-            <TechStackLogos />
-          </span>
-          <a
-            href={MyCV}
-            download={"../assets/Jessica Harper CV.pdf"}
-            className="flex items-center justify-center"
-          >
-            <button className="text-background border-2 p-2 border-text w-[80%] bg-no-repeat self-center mt-6 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 z-10 font-semibold">
-              Download my CV
-            </button>
-          </a>
-        </span> */}
+        <div className="relative mt-12 flex flex-col w-full max-w-[21.5rem] z-10">
+          <div className="absolute left-14 top-2 w-full h-full bg-primary opacity-75 z-0"></div>
+
+          <div className="relative w-full bg-card border-4 border-primary p-8 ml-12 gap-8 justify-center items-center flex flex-col">
+            <h1 className="text-4xl text-center">Hiya, World!</h1>
+            <p className="text-xs leading-6 h-full">
+              My name is Jessica, and I am a Sheffield-based Junior Software
+              Developer, amateur animator, and burgeoning crazy cat lady.
+              Welcome to my portfolio!
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

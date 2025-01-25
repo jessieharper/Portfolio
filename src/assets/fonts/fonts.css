@@ -10,9 +10,9 @@
   text-rendering: optimizeLegibility;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Dogica";
-  src: url("dogicabold.ttf") format("truetype"); /* Safari, Android, iOS */
+  src: url("dogicabold.ttf") format("truetype");
   text-rendering: optimizeLegibility;
   font-style: bold;
-}
+} */
