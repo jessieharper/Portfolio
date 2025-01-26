@@ -30,8 +30,8 @@ body {
 }
 
 .container {
-  @apply max-w-screen-xl;
-  @apply px-4;
+  @apply max-w-screen-2xl;
+  @apply px-4 mx-auto;
 }
 
 .icon-mask {
@@ -39,4 +39,8 @@ body {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
+}
+
+.shadow {
+  box-shadow: 10px 10px;
 }
