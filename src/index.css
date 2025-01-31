@@ -8,6 +8,7 @@
   :root {
     --body: hsl(35, 55%, 92%);
     --primary: hsl(24, 28%, 7%);
+    --primary-50: hsla(24, 28%, 7%, 0.5);
     --card: hsl(0, 0%, 100%);
   }
 }
@@ -15,6 +16,7 @@
 .dark {
   --body: hsl(24, 28%, 7%);
   --primary: hsl(35, 55%, 92%);
+  --primary-50: hsla(35, 55%, 92%, 0.5);
   --card: hsl(24, 28%, 7%);
 }
 
@@ -27,6 +29,17 @@ body {
   @apply transition-colors duration-100;
   @apply font-dogica;
   @apply bg-body text-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  @apply font-depixel;
+  @apply tracking-widest;
+  @apply uppercase;
 }
 
 .container {
@@ -42,5 +55,37 @@ body {
 }
 
 .shadow {
-  box-shadow: 10px 10px;
+  box-shadow: 10px 10px var(--primary-50);
+}
+
+.shadow-sm {
+  box-shadow: 5px 5px var(--primary-50);
+}
+
+.card {
+  @apply w-full h-min;
+  @apply relative z-20;
+  @apply border-4 border-primary;
+  @apply p-8 gap-8;
+  @apply flex flex-col;
+  @apply bg-card;
+  @apply shadow;
+  max-width: 21.5rem;
+}
+
+.tooltip {
+  @apply hidden group-hover:flex;
+  @apply items-center justify-center;
+  @apply w-min h-min;
+  @apply bg-primary text-body;
+  @apply absolute -top-10 left-5 z-20;
+  @apply p-2 px-4;
+  @apply text-xs text-center;
+  @apply border border-body;
+}
+
+.tooltip::after {
+  @apply content-[''];
+  @apply absolute top-full left-2;
+  @apply border-4 border-transparent border-t-primary;
 }
