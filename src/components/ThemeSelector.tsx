@@ -1,55 +1,71 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const ThemeSelector = (): JSX.Element => {
   const { theme, setTheme } = useContext(ThemeContext);
+
+  const element = document.documentElement;
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const options = ["system", "dark", "light"];
+  const options = [
+    {
+      name: faDesktop,
+      text: "system",
+    },
+    {
+      name: faMoon,
+      text: "dark",
+    },
+    {
+      name: faSun,
+      text: "light",
+    },
+  ];
 
   useEffect(() => {
-    const updateTheme = () => {
-      if (theme === "dark" || (theme === "system" && darkQuery.matches)) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-
-      if (theme === "dark" || theme === "light") {
-        localStorage.setItem("theme", theme);
-      } else {
+    switch (theme) {
+      case "dark":
+        element.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        break;
+      case "light":
+        element.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        break;
+      default:
         localStorage.removeItem("theme");
-      }
-    };
-
-    updateTheme();
-
-    if (theme === "system") {
-      darkQuery.addEventListener("change", updateTheme);
-      return () => darkQuery.removeEventListener("change", updateTheme);
+        onWindowMatch();
+        break;
     }
-  }, [theme, darkQuery]);
+  }, [theme]);
+
+  function onWindowMatch() {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && darkQuery.matches)
+    ) {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  }
 
   return (
-    <div className="flex gap-6">
+    <>
       {options.map((option) => (
         <button
-          key={option}
-          className="my-1 flex justify-center"
-          onClick={() => setTheme(option)}
-          aria-label={`Set theme to ${option}`}
+          key={option.text}
+          className={`w-6 h-auto my-1 mx-1 flex justify-center ${
+            theme === option.text && "text-[#ec4c95]"
+          }`}
+          aria-hidden="true"
+          onClick={() => setTheme(option.text)}
         >
-          <div
-            style={{
-              maskImage: `url('/images/icons/${option}.svg')`,
-              WebkitMaskImage: `url('/images/icons/${option}.svg')`,
-            }}
-            className={`h-6 w-6 icon-mask  ${
-              theme === option ? "bg-accent" : "bg-primary"
-            }`}
-          ></div>
+          <FontAwesomeIcon icon={option.name} />
         </button>
       ))}
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import ThemeSelector from "./ThemeSelector";
 import NavBar from "./NavBar";
 
@@ -14,32 +15,39 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="fixed flex flex-row h-min w-full justify-between items-center p-4 z-20"
+        className="flex flex-row h-auto w-full justify-between items-center p-4 mb-10 m-auto z-20 relative"
       >
-        <Link to="/">
-          <div
-            style={{
-              maskImage: "url('/JESSICA_HARPER.svg')",
-              WebkitMaskImage: "url('/JESSICA_HARPER.svg')",
-            }}
-            className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
-          ></div>
-        </Link>
-        <nav className="flex flex-col lg:gap-8">
-          <div className="w-auto inline-flex justify-end">
-            <ThemeSelector />
-          </div>
-          <div className="h-full w-full flex items-center text-sm lg:text-lg gap-4 lg:gap-8">
-            <Link to="/about" className="hidden md:flex">
+        <div className="md:flex hidden flex-row">
+          <h1 className="md:flex hidden text-4xl font-semibold">
+            Jessica Harper
+          </h1>
+
+          <FontAwesomeIcon
+            icon={faGithub}
+            size="2xl"
+            className="mt-2 mx-6 hidden lg:flex"
+          />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            size="2xl"
+            className="mt-2 hidden lg:flex"
+          />
+        </div>
+        <nav>
+          <ul className="h-full flex flex-row items-center align-center mt-2 ">
+            <div className="border-2 border-text rounded-full flex  flex-row">
+              <ThemeSelector />
+            </div>
+            <a href="#about" className="mx-4 hidden md:flex">
               About Me
-            </Link>
-            <Link to="/projects" className="hidden md:flex">
+            </a>
+            <a href="#projects" className="mr-4 hidden md:flex">
               Projects
-            </Link>
-            <Link to="/contact" className="hidden md:flex ">
+            </a>
+            <a href="#contact" className="mr-4 hidden md:flex ml-2">
               Contact Me
-            </Link>
-          </div>
+            </a>
+          </ul>
         </nav>
         <button
           className="md:hidden flex cursor-pointer ml-2"

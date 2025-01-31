@@ -1,67 +1,40 @@
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
-import { SpriteAnimator } from "./SpriteAnimator";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three/src/loaders/TextureLoader";
+import { useRef } from "react";
+import { useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion-3d";
 
-const Earth = (): JSX.Element => {
-  const mountRef = useRef<HTMLDivElement | null>(null);
+const Earth = () => {
+  const scene = useRef<null | HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    layoutEffect: false,
+    target: scene,
+    offset: ["start end", "end start"],
+  });
 
-  useEffect(() => {
-    const scene = new THREE.Scene();
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffffff, 0);
+  const smoothRotation = useSpring(scrollYProgress, { damping: 20 });
 
-    const camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+  const [color, normal, aoMap] = useLoader(TextureLoader, [
+    "/earthcloudmap.jpg",
+    "/normal.png",
+    "/earthmap1k.jpg",
+  ]);
 
-    if (mountRef.current) {
-      mountRef.current.appendChild(renderer.domElement);
-    }
+  return (
+    <Canvas className="border-4 border-text rounded-full">
+      <ambientLight intensity={0.25} />
+      <directionalLight intensity={3.5} position={[-4.75, 0, 1.25]} />
+      <motion.mesh
+        scale={3}
+        rotation-y={smoothRotation}
+        rotation={[-Math.PI / 0.1, 0, 0.1]}
+      >
+        <sphereGeometry args={[1, 64, 64]} />
 
-    const flipbook = new SpriteAnimator(
-      "/images/spritesheet.png",
-      10,
-      20,
-      scene
-    );
-
-    flipbook.loop(
-      Array.from({ length: 200 }, (_, i) => i),
-      8
-    );
-
-    camera.position.z = 1.2;
-
-    const clock = new THREE.Clock();
-    const animate = () => {
-      renderer.render(scene, camera);
-      const deltaTime = clock.getDelta();
-      flipbook.update(deltaTime);
-      requestAnimationFrame(animate);
-    };
-    animate();
-
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      renderer.dispose();
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
-    };
-  }, []);
-
-  return <div ref={mountRef} />;
+        <meshStandardMaterial map={color} normalMap={normal} aoMap={aoMap} />
+      </motion.mesh>
+    </Canvas>
+  );
 };
 
 export default Earth;
