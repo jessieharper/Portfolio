@@ -1,23 +1,23 @@
-@import "../src/assets/fonts/fonts.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --body: hsl(35, 55%, 92%);
-    --primary: hsl(24, 28%, 7%);
-    --primary-50: hsla(24, 28%, 7%, 0.5);
-    --card: hsl(0, 0%, 100%);
-  }
+html,
+body {
+  scroll-behavior: smooth;
 }
 
-.dark {
-  --body: hsl(24, 28%, 7%);
-  --primary: hsl(35, 55%, 92%);
-  --primary-50: hsla(35, 55%, 92%, 0.5);
-  --card: hsl(24, 28%, 7%);
+body {
+  font-family: Poppins;
+  @apply transition-colors duration-100;
+}
+
+@layer base {
+  :root {
+    --background: hsl(32, 87%, 97%);
+    --text: hsl(28, 41%, 7%);
+    --card: #ffffff;
+  }
 }
 
 .dark #main {
@@ -25,67 +25,78 @@
   background-repeat: repeat;
 }
 
-body {
-  @apply transition-colors duration-100;
-  @apply font-dogica;
-  @apply bg-body text-primary;
+.dark {
+  --background: hsl(28, 41%, 7%);
+  --text: hsl(32, 87%, 97%);
+  --card: hsl(28, 41%, 7%);
+}
+
+.dark .noise {
+  background: radial-gradient(transparent, #19110b78), url("/noise-filter.svg");
+  filter: contrast(1000%) brightness(100%);
+  mix-blend-mode: screen;
+}
+
+.noise {
+  background: radial-gradient(rgba(7, 7, 7, 0.806), transparent),
+    url("/noise-filter.svg");
+  filter: contrast(250%) brightness(600%);
+  mix-blend-mode: screen;
+}
+
+.title {
+  --c: #1dd3b01a;
+  color: #ffffffa0;
+  text-shadow: 5px 5px var(--c), 10px 10px var(--c), 15px 15px var(--c),
+    20px 20px var(--c), 40px 40px 15px var(--c);
+  font-size: calc(5vw + 5vh);
+}
+
+.element {
+  background: radial-gradient(
+      110.35% 80.79% at 6% 103.92%,
+      rgba(37, 169, 239, 1) 0%,
+      rgba(37, 169, 239, 0) 100%
+    ),
+    linear-gradient(
+      169.3deg,
+      rgba(205, 249, 232, 1) 15%,
+      rgba(205, 249, 232, 0) 46%
+    ),
+    radial-gradient(
+      123% 73% at 107% 96%,
+      rgba(255, 253, 177, 1) 20%,
+      rgba(254, 228, 191, 1) 60%,
+      rgba(240, 189, 208, 1) 75%,
+      rgba(255, 129, 38, 0) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 204, 131, 1) 0%, rgba(0, 204, 131, 1) 100%);
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-a {
-  @apply font-depixel;
-  @apply tracking-widest;
-  @apply uppercase;
+h2 {
+  font-family: Fraunces;
 }
 
-.container {
-  @apply max-w-screen-2xl;
-  @apply px-4 mx-auto;
+li {
+  list-style: none;
 }
 
-.icon-mask {
-  -webkit-mask-repeat: no-repeat;
+.right-arrow {
+  mask-image: url("/arrow.png");
   mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
+  background: var(--text);
+  color: var(--background);
 }
 
-.shadow {
-  box-shadow: 10px 10px var(--primary-50);
-}
-
-.shadow-sm {
-  box-shadow: 5px 5px var(--primary-50);
-}
-
-.card {
-  @apply w-full h-min;
-  @apply relative z-20;
-  @apply border-4 border-primary;
-  @apply p-8 gap-8;
-  @apply flex flex-col;
-  @apply bg-card;
-  @apply shadow;
-  max-width: 21.5rem;
-}
-
-.tooltip {
-  @apply hidden group-hover:flex;
-  @apply items-center justify-center;
-  @apply w-min h-min;
-  @apply bg-primary text-body;
-  @apply absolute -top-10 left-5 z-20;
-  @apply p-2 px-4;
-  @apply text-xs text-center;
-  @apply border border-body;
-}
-
-.tooltip::after {
-  @apply content-[''];
-  @apply absolute top-full left-2;
-  @apply border-4 border-transparent border-t-primary;
+.mask {
+  mask-image: url("/mask.svg");
+  mask-repeat: no-repeat;
+  mask-size: 30px;
+  background: var(--text);
+  position: absolute;
+  color: var(--background);
+  width: full;
+  height: full;
+  z-index: 9999;
 }
