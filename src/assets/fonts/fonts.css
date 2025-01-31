@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "DePixel";
+  src: url("DePixelHalbfett.ttf") format("truetype"); /* Safari, Android, iOS */
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Dogica";
+  src: url("dogica.ttf") format("truetype"); /* Safari, Android, iOS */
+  text-rendering: optimizeLegibility;
+}
+
+/* @font-face {
+  font-family: "Dogica";
+  src: url("dogicabold.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+  font-style: bold;
+} */

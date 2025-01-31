@@ -1,69 +1,26 @@
-import Header from "./components/Header.js";
-import About from "./components/About.js";
-import Mask from "./components/Mask.js";
-import Projects from "./components/Projects.js";
-import LandingPage from "./components/LandingPage.js";
-import Footer from "./components/Footer.js";
-import Contact from "./components/Contact.js";
-import useMousePosition from "./utils/useMousePosition.js";
-import "./index.css";
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { motion } from "framer-motion";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
-import ThankYouCard from "./components/ThankYouCard.js";
+import "./index.css";
+import { Header, Footer } from "./components/index.js";
+import { LandingPage, About, Projects, Contact } from "./pages/index.js";
 
 const App = (): JSX.Element => {
-  const [isHovered, setIsHovered] = useState<boolean | undefined>(false);
-  const { x, y } = useMousePosition();
-  const size = isHovered ? 250 : 30;
-
   return (
-    <>
+    <main className="h-screen">
       <ThemeProvider>
         <GlobalProvider>
+          <Header />
           <Routes>
-            <Route path="/thanks" element={<ThankYouCard />} />
-            <Route
-              path="*"
-              element={
-                <main className="min-h-[100vh] w-[100vw] overflow-x-hidden">
-                  <motion.div
-                    className="mask hidden lg:block"
-                    animate={{
-                      WebkitMaskPosition: `${x! - size / 2}px ${
-                        y! - size / 2
-                      }px`,
-                      WebkitMaskSize: `${size}px`,
-                    }}
-                    transition={{
-                      WebkitMaskPosition: {
-                        duration: 0,
-                      },
-                      WebkitMaskSize: {
-                        duration: 0.25,
-                        type: "tween",
-                        ease: "easeOut",
-                      },
-                    }}
-                  >
-                    <Mask setIsHovered={setIsHovered} />
-                  </motion.div>
-
-                  <Header />
-                  <LandingPage />
-                  <About />
-                  <Projects />
-                  <Contact />
-                  <Footer />
-                </main>
-              }
-            />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </GlobalProvider>
       </ThemeProvider>
-    </>
+    </main>
   );
 };
 

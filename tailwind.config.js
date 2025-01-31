@@ -4,14 +4,19 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
-      oswald: ["Fraunces", "serif"],
+      dogica: ["Dogica"],
+      depixel: ["DePixel"],
     },
 
     extend: {
       colors: {
-        background: "var(--background)",
-        text: "var(--text)",
+        accent: {
+          DEFAULT: "#CB6192",
+          dark: "#932B5C",
+          light: "#D7B9C0",
+        },
+        body: "var(--body)",
+        primary: "var(--primary)",
         card: "var(--card)",
       },
     },
