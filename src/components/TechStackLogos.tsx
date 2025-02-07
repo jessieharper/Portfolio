@@ -5,7 +5,6 @@ const TechStackLogos = (): JSX.Element => {
     <div className="flex flex-wrap items-center justify-around gap-2">
       {logos.map((logo) => (
         <div key={logo} className="relative group">
-          {/* Masked Icon */}
           <div
             style={{
               maskImage: `url('/images/icons/${logo}.svg')`,

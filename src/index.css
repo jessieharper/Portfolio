@@ -11,13 +11,25 @@
     --primary-50: hsla(24, 28%, 7%, 0.5);
     --card: hsl(0, 0%, 100%);
   }
-}
 
-.dark {
-  --body: hsl(24, 28%, 7%);
-  --primary: hsl(35, 55%, 92%);
-  --primary-50: hsla(35, 55%, 92%, 0.5);
-  --card: hsl(24, 28%, 7%);
+  .about {
+    background: var(--body) !important;
+  }
+
+  .about {
+    --body: linear-gradient(
+      to right,
+      hsl(197, 49%, 61%),
+      hsl(224, 74%, 63%)
+    ) !important;
+  }
+
+  .dark {
+    --body: hsl(24, 28%, 7%);
+    --primary: hsl(35, 55%, 92%);
+    --primary-50: hsla(35, 55%, 92%, 0.5);
+    --card: hsl(24, 28%, 7%);
+  }
 }
 
 .dark #main {
