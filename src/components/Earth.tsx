@@ -61,7 +61,7 @@ const Earth = (): JSX.Element => {
     };
   }, []);
 
-  return <div ref={mountRef} />;
+  return <div className="max-w-screen-2xl" ref={mountRef} />;
 };
 
 export default Earth;
