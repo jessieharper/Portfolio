@@ -1,3 +1,4 @@
+import { gsap } from "gsap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeSelector from "./ThemeSelector";
@@ -14,7 +15,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="fixed flex flex-row h-min w-full justify-between items-center p-4 z-20"
+        className="fixed flex flex-row h-min w-full justify-between items-center p-4 z-20 container"
       >
         <Link to="/">
           <div

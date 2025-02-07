@@ -16,3 +16,9 @@
   text-rendering: optimizeLegibility;
   font-style: bold;
 } */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-VariableFont_wdth,wght.ttf") format("truetype"); /* Safari, Android, iOS */
+  text-rendering: optimizeLegibility;
+}

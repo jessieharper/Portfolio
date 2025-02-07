@@ -2,7 +2,7 @@ const TechStackLogos = (): JSX.Element => {
   const logos = ["javascript", "php", "sql", "react", "node", "laravel"];
 
   return (
-    <div className="flex flex-wrap items-center justify-around gap-4">
+    <div className="flex flex-wrap items-center justify-around gap-2">
       {logos.map((logo) => (
         <div key={logo} className="relative group">
           {/* Masked Icon */}

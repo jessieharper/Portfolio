@@ -6,6 +6,7 @@ module.exports = {
     fontFamily: {
       dogica: ["Dogica"],
       depixel: ["DePixel"],
+      roboto: ["Roboto"],
     },
 
     extend: {

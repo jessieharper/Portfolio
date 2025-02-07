@@ -22,7 +22,7 @@ const LandingPage = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="card space-y-4">
+          <div className="card space-y-2">
             <h2>Tech stack: </h2>
 
             <TechStackLogos />
@@ -32,9 +32,7 @@ const LandingPage = (): JSX.Element => {
               download={"../assets/Jessica Harper CV.pdf"}
               className="flex items-center justify-center"
             >
-              <button className="text-body border-primary border-2 px-6 py-4 bg-no-repeat bg-gradient-to-r from-pink-500 to-yellow-500 w-full shadow-sm">
-                Download my CV
-              </button>
+              <button className="btn">Download my CV</button>
             </a>
           </div>
         </div>

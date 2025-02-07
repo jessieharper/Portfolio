@@ -39,7 +39,7 @@ h5,
 a {
   @apply font-depixel;
   @apply tracking-widest;
-  @apply uppercase;
+  @apply uppercase font-bold;
 }
 
 .container {
@@ -88,4 +88,26 @@ a {
   @apply content-[''];
   @apply absolute top-full left-2;
   @apply border-4 border-transparent border-t-primary;
+}
+
+.border-3 {
+  border: 3px solid var(--primary);
+}
+
+.btn {
+  @apply w-full relative;
+  @apply active:top-1 active:left-1 active:shadow-none;
+  @apply shadow-sm active:shadow-none;
+  @apply px-6 py-4;
+  @apply bg-no-repeat bg-gradient-to-r from-pink-500 to-yellow-500;
+  @apply text-body border-3;
+}
+
+/* About Page Changes */
+:where(.about *) {
+  @apply font-roboto !important;
+}
+
+:where(.about a) {
+  @apply text-2xl;
 }
