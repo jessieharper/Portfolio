@@ -10,22 +10,24 @@ const App = (): JSX.Element => {
   const isAboutPage = location.pathname === "/about";
 
   return (
-    <main
-      className={`h-screen flex justify-center  ${isAboutPage ? "about" : ""}`}
-    >
-      <ThemeProvider>
-        <GlobalProvider>
-          <Header />
+    <ThemeProvider>
+      <GlobalProvider>
+        <Header />
+        <main
+          className={`h-full flex flex-col justify-center  ${
+            isAboutPage ? "about" : ""
+          }`}
+        >
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </GlobalProvider>
-      </ThemeProvider>
-    </main>
+          </Routes>{" "}
+        </main>
+        <Footer />
+      </GlobalProvider>
+    </ThemeProvider>
   );
 };
 

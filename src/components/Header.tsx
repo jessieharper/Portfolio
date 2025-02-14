@@ -18,13 +18,13 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-min w-full justify-between items-center p-4 z-20 container"
+        className="flex flex-row h-full w-full justify-between items-center p-4 relative z-20 container"
       >
         <Link to="/">
           <div
             style={{
-              maskImage: "url('/JESSICA_HARPER.svg')",
-              WebkitMaskImage: "url('/JESSICA_HARPER.svg')",
+              maskImage: "url('/images/logos/JESSICA_HARPER.svg')",
+              WebkitMaskImage: "url('/images/logos/JESSICA_HARPER.svg')",
             }}
             className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
           ></div>

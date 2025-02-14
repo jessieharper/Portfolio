@@ -32,8 +32,13 @@
   }
 }
 
+/* #main {
+  background-image: url("/images/stars-drk.png");
+  background-repeat: repeat;
+} */
+
 .dark #main {
-  background-image: url("/stars.png");
+  background-image: url("/images/stars.png");
   background-repeat: repeat;
 }
 
@@ -41,6 +46,7 @@ body {
   @apply transition-colors duration-100;
   @apply font-dogica;
   @apply bg-body text-primary;
+  @apply h-screen;
 }
 
 h1,
