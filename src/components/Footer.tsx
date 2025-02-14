@@ -5,7 +5,7 @@ const Footer = (): JSX.Element => {
     "h-8 w-8 icon-mask bg-primary hover:bg-accent transition-colors ease-in-out";
 
   return (
-    <footer className="fixed bottom-5 right-5 z-50 flex items-end gap-8">
+    <footer className="absolute bottom-5 z-20 container w-full flex items-end justify-end gap-8">
       <a
         href="https://github.com/jessieharper"
         target="_blank"

@@ -1,5 +1,5 @@
 const TechStackLogos = (): JSX.Element => {
-  const logos = ["javascript", "php", "sql", "react", "node", "laravel"];
+  const logos = ["javascript", "php", "sql", "react", "tailwind", "laravel"];
 
   return (
     <div className="flex flex-wrap items-center justify-around gap-2">

@@ -34,7 +34,7 @@ const Earth = (): JSX.Element => {
       8
     );
 
-    camera.position.z = 1.2;
+    camera.position.z = 1.4;
 
     const clock = new THREE.Clock();
     const animate = () => {
