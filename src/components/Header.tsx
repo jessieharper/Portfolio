@@ -10,6 +10,8 @@ const Header = (): JSX.Element => {
   const isAboutPage = location.pathname === "/about";
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const logo = isAboutPage ? "jessharper-about" : "jessharper";
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -23,8 +25,8 @@ const Header = (): JSX.Element => {
         <Link to="/">
           <div
             style={{
-              maskImage: "url('/images/logos/JESSICA_HARPER.svg')",
-              WebkitMaskImage: "url('/images/logos/JESSICA_HARPER.svg')",
+              maskImage: `url('/images/logos/${logo}.svg')`,
+              WebkitMaskImage: `url('/images/logos/${logo}.svg')`,
             }}
             className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
           ></div>
@@ -35,14 +37,17 @@ const Header = (): JSX.Element => {
           </div>
           <div className="h-full w-full flex items-center text-sm lg:text-lg gap-4 lg:gap-8 ">
             <Link to="/about" className="hidden md:flex">
-              {!isHomePage ? <TextShuffler text="About Me" /> : "About Me"}
+              {/* {!isHomePage ? <TextShuffler text="About Me" /> : "About Me"} */}
+              About Me
             </Link>
 
             <Link to="/projects" className="hidden md:flex">
-              {!isHomePage ? <TextShuffler text="Projects" /> : "Projects"}
+              {/* {!isHomePage ? <TextShuffler text="Projects" /> : "Projects"} */}
+              Projects
             </Link>
             <Link to="/contact" className="hidden md:flex ">
-              {!isHomePage ? <TextShuffler text="Contact" /> : "Contact"}
+              {/* {!isHomePage ? <TextShuffler text="Contact" /> : "Contact"} */}
+              Contact
             </Link>
           </div>
         </nav>
