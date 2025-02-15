@@ -1,4 +1,8 @@
+import { useLocation } from "react-router-dom";
+
 const Footer = (): JSX.Element => {
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
   const today = new Date();
   const year = today.getFullYear();
   const iconClass =
@@ -33,7 +37,13 @@ const Footer = (): JSX.Element => {
         ></div>
       </a>
 
-      <p className="text-sm font-depixel">Jessica Harper {year}</p>
+      <p
+        className={`text-sm font-depixel ${
+          isAboutPage ? "text-xl tracking-wider" : "text-sm"
+        }`}
+      >
+        Jessica Harper {year}
+      </p>
     </footer>
   );
 };
