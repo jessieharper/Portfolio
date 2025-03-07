@@ -88,7 +88,10 @@ a {
   @apply flex flex-col;
   @apply bg-card;
   @apply shadow;
-  max-width: 21.5rem;
+  max-width: 28rem;
+  @screen md {
+    max-width: 21.5rem;
+  }
 }
 
 .tooltip {
