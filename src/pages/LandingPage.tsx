@@ -4,13 +4,16 @@ import MyCV from "../assets/Jessica Harper CV.pdf";
 
 const LandingPage = (): JSX.Element => {
   return (
-    <section id="main" className="absolute top-0 h-full w-full px-12">
-      <div className="container flex items-center w-full h-full">
+    <section
+      id="main"
+      className="h-full w-full flex items-center justify-center lg:px-12 pt-96 lg:pt-8 pb-8 "
+    >
+      <div className="container flex my-auto items-center justify-center w-full h-full">
         <div className="absolute inset-0 z-10">
           <Earth />
         </div>
 
-        <div className="flex w-full mx-auto justify-between items-end">
+        <div className="flex flex-col md:flex-row w-full mx-auto justify-center md:justify-between items-center gap-10">
           <div className="card">
             <h1 className="text-4xl text-center leading-normal">
               Hiya, World!

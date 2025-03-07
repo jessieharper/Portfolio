@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-full w-full justify-between items-center p-4 relative z-20 container"
+        className="flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-20 container border-b-2 md:border-0  border-[var(--primary-50)]"
       >
         <Link to="/">
           <div
@@ -28,11 +28,11 @@ const Header = (): JSX.Element => {
               maskImage: `url('/images/logos/${logo}.svg')`,
               WebkitMaskImage: `url('/images/logos/${logo}.svg')`,
             }}
-            className="hidden md:block w-72 lg:w-96 h-20 lg:h-32 icon-mask bg-primary"
+            className="block w-56 md:w-72 lg:w-96 h-20 md:h-24 lg:h-32 icon-mask bg-primary"
           ></div>
         </Link>
         <nav className="flex flex-col lg:gap-8 h-[96px]">
-          <div className="w-auto inline-flex justify-end">
+          <div className="hidden w-auto md:inline-flex justify-end">
             <ThemeSelector />
           </div>
           <div className="h-full w-full flex items-center text-sm lg:text-lg gap-4 lg:gap-8 ">
@@ -55,7 +55,13 @@ const Header = (): JSX.Element => {
           className="md:hidden flex cursor-pointer ml-2"
           onClick={toggleMenu}
         >
-          Menu
+          <div
+            style={{
+              maskImage: `url('/images/icons/menu.svg')`,
+              WebkitMaskImage: `url('/images/icons/menu.svg')`,
+            }}
+            className="icon-mask bg-primary h-10 w-10"
+          ></div>
         </button>
         <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>

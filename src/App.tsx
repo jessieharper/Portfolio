@@ -12,20 +12,20 @@ const App = (): JSX.Element => {
   return (
     <ThemeProvider>
       <GlobalProvider>
-        <Header />
         <main
-          className={`h-full flex flex-col justify-center  ${
+          className={`h-full lg:h-screen flex flex-col ${
             isAboutPage ? "about" : ""
           }`}
         >
+          <Header />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>{" "}
+          <Footer />
         </main>
-        <Footer />
       </GlobalProvider>
     </ThemeProvider>
   );
