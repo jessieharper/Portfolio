@@ -98,17 +98,16 @@ a {
   @apply hidden group-hover:flex;
   @apply items-center justify-center;
   @apply w-min h-min;
-  @apply bg-primary text-body;
+  @apply bg-accent text-body;
   @apply absolute -top-10 left-5 z-20;
   @apply p-2 px-4;
   @apply text-xs text-center;
-  @apply border border-body;
 }
 
 .tooltip::after {
   @apply content-[''];
   @apply absolute top-full left-2;
-  @apply border-4 border-transparent border-t-primary;
+  @apply border-4 border-transparent border-t-accent;
 }
 
 .border-3 {
