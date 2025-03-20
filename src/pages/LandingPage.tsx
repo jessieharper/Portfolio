@@ -30,7 +30,7 @@ const LandingPage = (): JSX.Element => {
 
           <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
             <div className="h-full space-y-2">
-              <h3 className="text-sm">Tech stack: </h3>
+              <h3 className="text-sm">Main Tech stack: </h3>
             </div>
             <div className="relative z-40 gap-8 flex flex-col">
               <TechStackLogos />

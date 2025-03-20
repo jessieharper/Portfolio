@@ -9,6 +9,7 @@ const Header = (): JSX.Element => {
   const isHomePage = location.pathname === "/";
   const isAboutPage = location.pathname === "/about";
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuIcon = !isOpen ? "menu.svg" : "times.svg";
 
   const logo = isAboutPage ? "jessharper-about" : "jessharper";
 
@@ -20,7 +21,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-40 container border-b-2 md:border-0  border-[var(--primary-50)]"
+        className="bg-body flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-50 container border-b-2 md:border-0  border-[var(--primary-50)]"
       >
         <Link to="/">
           <div
@@ -57,14 +58,14 @@ const Header = (): JSX.Element => {
         >
           <div
             style={{
-              maskImage: `url('/images/icons/menu.svg')`,
-              WebkitMaskImage: `url('/images/icons/menu.svg')`,
+              maskImage: `url('/images/icons/${menuIcon}')`,
+              WebkitMaskImage: `url('/images/icons/${menuIcon}')`,
             }}
             className="icon-mask bg-primary h-10 w-10"
           ></div>
         </button>
-        <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>
+      <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };
