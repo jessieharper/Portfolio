@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MobileNavLinks from "./MobileNavLinks";
+import Footer from "./Footer";
 
 interface INavBar {
   isOpen: boolean;
@@ -9,7 +11,7 @@ interface INavBar {
 const navLinks = [
   { title: "About", href: "#about" },
   { title: "Projects", href: "#projects" },
-  { title: "Contact Me", href: "#contact" },
+  { title: "Contact", href: "#contact" },
 ];
 
 const menuVariables = {
@@ -32,6 +34,7 @@ const menuVariables = {
     },
   },
 };
+
 const containerVariables = {
   initial: {
     transition: {
@@ -49,9 +52,17 @@ const containerVariables = {
 };
 
 const NavBar = (props: INavBar): JSX.Element => {
-  const toggleMenu = () => {
-    props.setIsOpen(!props.isOpen);
-  };
+  useEffect(() => {
+    if (props.isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [props.isOpen]);
+
   return (
     <>
       <AnimatePresence>
@@ -61,36 +72,27 @@ const NavBar = (props: INavBar): JSX.Element => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top backdrop-blur-lg text-text p-10 z-20"
+            className="fixed inset-0 origin-top w-full h-full bg-body text-text z-40 container py-4"
           >
             <div className="flex h-full flex-col">
-              <div className="flex justify-start">
-                <p
-                  className="cursor-pointer text-md text-text"
-                  onClick={toggleMenu}
-                >
-                  Close
-                </p>
-              </div>
               <motion.div
                 variants={containerVariables}
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full justify-center font-lora items-center gap-4 "
+                className="flex flex-col h-full w-full justify-center divide-primary-50 divide-y-2"
               >
-                {navLinks.map((link) => {
-                  return (
-                    <div
-                      key={link.title}
-                      className="overflow-hidden"
-                      onClick={() => props.setIsOpen(!props.isOpen)}
-                    >
-                      <MobileNavLinks title={link.title} href={link.href} />
-                    </div>
-                  );
-                })}
+                {navLinks.map((link) => (
+                  <div
+                    key={link.title}
+                    className="overflow-hidden"
+                    onClick={() => props.setIsOpen(!props.isOpen)}
+                  >
+                    <MobileNavLinks title={link.title} href={link.href} />
+                  </div>
+                ))}
               </motion.div>
+              <Footer />
             </div>
           </motion.div>
         )}

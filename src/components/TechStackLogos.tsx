@@ -1,8 +1,17 @@
 const TechStackLogos = (): JSX.Element => {
-  const logos = ["javascript", "php", "sql", "react", "tailwind", "laravel"];
+  const logos = [
+    "javascript",
+    "react",
+    "typescript",
+    "php",
+    "tailwind",
+    "laravel",
+    "wordpress",
+    "sql",
+  ];
 
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-4 gap-4">
       {logos.map((logo) => (
         <div key={logo} className="relative z-50 group flex justify-center">
           <div
