@@ -9,34 +9,40 @@ const LandingPage = (): JSX.Element => {
       className="h-full w-full flex items-center justify-center lg:px-12 pt-96 lg:pt-8 pb-8 "
     >
       <div className="container flex my-auto items-center justify-center w-full h-full">
-        <div className="absolute inset-0 z-10">
+        <div className="absolute inset-0 -z-10 xl:z-10 2xl:z-30">
           <Earth />
         </div>
 
-        <div className="flex flex-col md:flex-row w-full mx-auto justify-center md:justify-between items-center gap-10">
-          <div className="card">
-            <h1 className="text-4xl text-center leading-normal">
-              Hiya, World!
-            </h1>
-            <p className="text-xs leading-6 h-full">
-              My name is Jessica, and I am a Sheffield-based Junior Software
-              Developer, amateur animator, and burgeoning crazy cat lady.
-              Welcome to my portfolio!
+        <div className="flex flex-col md:flex-row w-full mx-auto justify-center md:justify-between gap-10 h-full">
+          <div className="card mb-auto mx-auto lg:mx-0 flex">
+            <p className="text-xs leading-5 h-full">
+              <span className="font-depixel text-3xl">Yo!</span> My name is
+              Jessica, and I am a Sheffield-based Software Developer, amateur
+              animator, and burgeoning crazy cat lady.
+              <br />
+              <br />
+              This is my creative dumping ground. Take a look around - any
+              feedback/praise/criticism/~
+              <span className="uppercase font-bold">job offers</span>
+              ~/questions(?) are welcome.
             </p>
           </div>
 
-          <div className="card space-y-2">
-            <h2>Tech stack: </h2>
+          <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
+            <div className="h-full space-y-2">
+              <h3 className="text-sm">Tech stack: </h3>
+            </div>
+            <div className="relative z-40 gap-8 flex flex-col">
+              <TechStackLogos />
 
-            <TechStackLogos />
-
-            <a
-              href={MyCV}
-              download={"../assets/Jessica Harper CV.pdf"}
-              className="flex items-center justify-center"
-            >
-              <button className="btn">Download my CV</button>
-            </a>
+              <a
+                href={MyCV}
+                download={"../assets/Jessica Harper CV.pdf"}
+                className="flex items-center justify-center"
+              >
+                <button className="btn text-sm">Download my CV</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

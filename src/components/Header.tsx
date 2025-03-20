@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-20 container border-b-2 md:border-0  border-[var(--primary-50)]"
+        className="flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-40 container border-b-2 md:border-0  border-[var(--primary-50)]"
       >
         <Link to="/">
           <div
