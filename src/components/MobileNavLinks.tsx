@@ -25,7 +25,7 @@ const MobileNavLinks = (props: IMobileNavLinks): JSX.Element => {
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="text-4xl font-semibold uppercase text-text text-center leading-normal py-4 "
+      className="text-3xl font-semibold uppercase text-text text-center leading-normal py-4 "
     >
       <a href={props.href}>{props.title}</a>
     </motion.div>

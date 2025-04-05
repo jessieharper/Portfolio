@@ -9,7 +9,7 @@ const Footer = (): JSX.Element => {
     "h-8 w-8 icon-mask bg-primary hover:bg-accent transition-colors ease-in-out";
 
   return (
-    <footer className="container h-30 w-full flex items-end justify-center md:justify-end gap-8 py-4 relative z-50">
+    <footer className="container h-30 w-full flex items-end justify-center md:justify-end gap-4 md:gap-8 py-4 relative z-50">
       <a
         href="https://github.com/jessieharper"
         target="_blank"
@@ -38,7 +38,7 @@ const Footer = (): JSX.Element => {
       </a>
 
       <p
-        className={`text-sm font-depixel ${
+        className={`font-depixel ${
           isAboutPage
             ? "text-lg sm:text-xl tracking-wider"
             : "text-xs sm:text-sm"

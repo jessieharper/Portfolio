@@ -72,7 +72,7 @@ const NavBar = (props: INavBar): JSX.Element => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed inset-0 origin-top w-full h-full bg-body text-text z-40 container py-4"
+            className="fixed inset-0 origin-top w-full h-full bg-body text-text z-40 py-4"
           >
             <div className="flex h-full flex-col">
               <motion.div
@@ -80,7 +80,7 @@ const NavBar = (props: INavBar): JSX.Element => {
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full w-full justify-center divide-primary-50 divide-y-2"
+                className="flex flex-col h-full w-full justify-center pt-24 divide-primary-50 divide-y-2"
               >
                 {navLinks.map((link) => (
                   <div

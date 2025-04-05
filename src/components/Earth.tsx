@@ -9,6 +9,7 @@ const Earth = (): JSX.Element => {
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+
     renderer.setClearColor(0xffffff, 0);
 
     const camera = new THREE.PerspectiveCamera(
@@ -38,6 +39,7 @@ const Earth = (): JSX.Element => {
 
     const clock = new THREE.Clock();
     const animate = () => {
+      camera.position.z = 1.4;
       renderer.render(scene, camera);
       const deltaTime = clock.getDelta();
       flipbook.update(deltaTime);
@@ -50,7 +52,10 @@ const Earth = (): JSX.Element => {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
-    window.addEventListener("resize", handleResize);
+
+    if (window.innerWidth > 400) {
+      window.addEventListener("resize", handleResize);
+    }
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -61,7 +66,7 @@ const Earth = (): JSX.Element => {
     };
   }, []);
 
-  return <div className="max-w-screen-2xl" ref={mountRef} />;
+  return <div className="w-full h-full flex mx-auto" ref={mountRef} />;
 };
 
 export default Earth;

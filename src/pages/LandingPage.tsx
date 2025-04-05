@@ -6,14 +6,14 @@ const LandingPage = (): JSX.Element => {
   return (
     <section
       id="main"
-      className="h-full w-full flex items-center justify-center lg:px-12 pt-96 lg:pt-8 pb-8 "
+      className="h-full w-full flex flex-auto lg:px-12 pt-96 lg:pt-8 pb-8 "
     >
-      <div className="container flex my-auto items-center justify-center w-full h-full">
-        <div className="absolute inset-0 -z-10 xl:z-10 2xl:z-30">
+      <div className="container flex  w-full">
+        <div className="absolute top-[2rem] md:inset-0 z-0 xl:z-10 2xl:z-30 w-full">
           <Earth />
         </div>
 
-        <div className="flex flex-col md:flex-row w-full mx-auto justify-center md:justify-between gap-10 h-full">
+        <div className="flex flex-col md:flex-row w-full justify-center md:justify-between gap-10 h-full">
           <div className="card mb-auto mx-auto lg:mx-0 flex">
             <p className="text-xs leading-5 h-full">
               <span className="font-depixel text-3xl">Yo!</span> My name is
@@ -22,9 +22,9 @@ const LandingPage = (): JSX.Element => {
               <br />
               <br />
               This is my creative dumping ground. Take a look around - any
-              feedback/praise/criticism/~
+              feedback, praise, criticisms, ~
               <span className="uppercase font-bold">job offers</span>
-              ~/questions(?) are welcome.
+              ~, or questions(?) are welcome.
             </p>
           </div>
 
