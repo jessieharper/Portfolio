@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
     <ThemeProvider>
       <GlobalProvider>
         <main
-          className={`h-full lg:h-screen flex flex-col ${
+          className={`h-full md:min-h-screen flex flex-col ${
             isAboutPage ? "about" : ""
           }`}
         >

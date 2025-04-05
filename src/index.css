@@ -12,9 +12,9 @@
     --card: hsl(0, 0%, 100%);
   }
 
-  .about {
+  /* .about {
     background: var(--body) !important;
-  }
+  } */
 
   .about {
     --body: linear-gradient(
@@ -45,8 +45,9 @@
 body {
   @apply transition-colors duration-100;
   @apply font-dogica;
-  @apply bg-body text-primary;
+  @apply text-primary;
   @apply h-screen;
+  background: var(--body) !important;
 }
 
 h1,
