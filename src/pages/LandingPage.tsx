@@ -1,10 +1,13 @@
 import Earth from "../components/Earth";
 import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
+import { motion } from "framer-motion";
 
 const LandingPage = (): JSX.Element => {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       id="main"
       className="h-full w-full flex flex-auto lg:px-12 pt-96 lg:pt-8 pb-8 "
     >
@@ -46,7 +49,7 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,14 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const Projects = (): JSX.Element => {
   const { scrollX, setScrollX } = useContext(GlobalContext);
   const controls = useAnimation();
+
+  useEffect(() => {
+    document.documentElement.classList.add("projects");
+
+    return () => {
+      document.documentElement.classList.remove("projects");
+    };
+  }, []);
 
   const handleScrollForward = () => {
     const nextScrollX = scrollX + window.innerWidth;

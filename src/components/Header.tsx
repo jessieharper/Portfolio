@@ -2,16 +2,25 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeSelector from "./ThemeSelector";
 import NavBar from "./NavBar";
+
 import TextShuffler from "./TextScrambler";
 
 const Header = (): JSX.Element => {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const isAboutPage = location.pathname === "/about";
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuIcon = !isOpen ? "menu.svg" : "times.svg";
+  let logo;
 
-  const logo = isAboutPage ? "jessharper-about" : "jessharper";
+  switch (location.pathname) {
+    case "/about":
+      logo = "about-logo";
+      break;
+    case "/projects":
+      logo = "projects-logo";
+      break;
+    default:
+      logo = "jessharper";
+  }
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

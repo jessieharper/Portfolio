@@ -7,6 +7,7 @@ module.exports = {
       dogica: ["Dogica"],
       depixel: ["DePixel"],
       roboto: ["Roboto"],
+      kirang: ["Kirang"],
     },
 
     extend: {

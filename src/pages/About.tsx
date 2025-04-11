@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 const About = (): JSX.Element => {
@@ -10,7 +11,11 @@ const About = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="h-[500vh]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="h-[500vh]"
+    >
       <div className="h-[100vh] w-full flex items-center gap-40 -mt-24 md:-mt-28 container">
         <div className="w-1/2 flex justify-center items-center">
           <img
@@ -37,7 +42,7 @@ const About = (): JSX.Element => {
           <img className="w-full h-full" src="/images/clouds.png" alt="" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
