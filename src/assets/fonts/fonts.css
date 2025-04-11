@@ -22,3 +22,9 @@
   src: url("Roboto-VariableFont_wdth,wght.ttf") format("truetype"); /* Safari, Android, iOS */
   text-rendering: optimizeLegibility;
 }
+
+@font-face {
+  font-family: "Kirang";
+  src: url("KirangHaerang-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+  text-rendering: optimizeLegibility;
+}

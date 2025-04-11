@@ -24,6 +24,10 @@
     ) !important;
   }
 
+  .projects {
+    --body: #f77d5d !important;
+  }
+
   .dark {
     --body: hsl(24, 28%, 7%);
     --primary: hsl(35, 55%, 92%);
@@ -47,6 +51,7 @@ body {
   @apply font-dogica;
   @apply text-primary;
   @apply h-screen;
+  @apply transition-all ease-in-out;
   background: var(--body) !important;
 }
 
@@ -131,4 +136,13 @@ a {
 
 :where(.about a) {
   @apply text-2xl;
+}
+
+/* Projects Page Changes */
+:where(.projects *) {
+  @apply font-kirang !important;
+}
+
+:where(.projects a) {
+  @apply text-3xl;
 }
