@@ -9,7 +9,7 @@ const Header = (): JSX.Element => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuIcon = !isOpen ? "menu.svg" : "times.svg";
-  let logo;
+  let logo: string;
 
   switch (location.pathname) {
     case "/about":
