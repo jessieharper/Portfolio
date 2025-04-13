@@ -33,7 +33,7 @@ const Projects = (): JSX.Element => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       id="projects"
-      className="h-full w-full "
+      className="h-full w-full"
     >
       <ProjectCarousel projects={projects} />
     </motion.section>
