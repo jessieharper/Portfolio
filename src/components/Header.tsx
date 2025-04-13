@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import ThemeSelector from "./ThemeSelector";
 import NavBar from "./NavBar";
 
-import TextShuffler from "./TextScrambler";
-
 const Header = (): JSX.Element => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);

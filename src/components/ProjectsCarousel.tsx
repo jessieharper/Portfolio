@@ -12,6 +12,7 @@ export default function ProjectCarousel({ projects }: Props) {
   const [currentX, setCurrentX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isDraggable, setIsDraggable] = useState(window.innerWidth <= 768);
+  const btnClass = "hidden my-auto md:flex w-32 z-30";
 
   const slideCount = projects.length;
   console.log(slideCount);
@@ -47,7 +48,7 @@ export default function ProjectCarousel({ projects }: Props) {
 
   return (
     <div
-      className="w-full flex flex-col items-center overflow-hidden"
+      className="container h-full w-full flex flex-col items-center overflow-hidden content-height"
       onMouseDown={startDrag}
       onMouseMove={onDrag}
       onMouseUp={endDrag}
@@ -56,11 +57,18 @@ export default function ProjectCarousel({ projects }: Props) {
       onTouchMove={onDrag}
       onTouchEnd={endDrag}
     >
-      <div className="container w-full h-[600px] flex justify-center relative mx-auto">
+      <div className="h-full w-full flex flex-auto justify-center relative mx-auto">
+        <button onClick={prevSlide} className={`mr-auto ${btnClass}`}>
+          <img
+            src="/images/icons/arrow.svg"
+            alt="Prev"
+            className="h-full w-full"
+          />
+        </button>
         {projects.map((project, i) => (
           <div
             key={i}
-            className={`absolute transition-all duration-500 ease-in-out  ${getSlideClass(
+            className={`absolute h-min transition-all duration-500 ease-in-out  ${getSlideClass(
               i,
               activeIndex,
               projects.length
@@ -88,26 +96,16 @@ export default function ProjectCarousel({ projects }: Props) {
             </div>
           </div>
         ))}
+        <button onClick={nextSlide} className={`ml-auto ${btnClass}`}>
+          <img
+            src="/images/icons/arrow.svg"
+            alt="Next"
+            className="h-full w-full rotate-180"
+          />
+        </button>
       </div>
 
-      <button
-        onClick={prevSlide}
-        className="hidden md:flex absolute left-0 bottom-1/2 translate-y-1/2 w-12 h-12 md:w-16 md:h-16 z-30 backdrop-blur-lg items-center justify-center rounded-full"
-      >
-        <img src="/icons/arrow.svg" alt="Prev" className="h-8 md:h-10" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="hidden md:flex absolute right-0 bottom-1/2 translate-y-1/2 w-12 h-12 md:w-16 md:h-16 z-30 backdrop-blur-lg items-center justify-center rounded-full"
-      >
-        <img
-          src="/icons/arrow.svg"
-          alt="Next"
-          className="h-8 md:h-10 rotate-180"
-        />
-      </button>
-
-      <div className="flex gap-2 mt-4">
+      <div className="flex gap-2">
         {projects.map((_, i) => (
           <button
             key={i}
