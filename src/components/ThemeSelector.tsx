@@ -1,10 +1,12 @@
 import { useEffect, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { useLocation } from "react-router-dom";
 
 const ThemeSelector = (): JSX.Element => {
   const { theme, setTheme } = useContext(ThemeContext);
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const options = ["system", "dark", "light"];
+  const location = useLocation();
 
   useEffect(() => {
     const updateTheme = () => {
@@ -44,7 +46,11 @@ const ThemeSelector = (): JSX.Element => {
               WebkitMaskImage: `url('/images/icons/${option}.svg')`,
             }}
             className={`h-6 w-6 icon-mask  ${
-              theme === option ? "bg-accent" : "bg-primary"
+              theme === option
+                ? "bg-accent"
+                : location.pathname == "/projects"
+                ? "bg-dark"
+                : "bg-primary"
             }`}
           ></div>
         </button>
