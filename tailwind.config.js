@@ -13,14 +13,16 @@ module.exports = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: "#CB6192",
-          dark: "#932B5C",
-          light: "#D7B9C0",
+          DEFAULT: "var(--accent)",
+          dark: "var(--accent-dark)",
+          light: "var(--accent-light)",
         },
         body: "var(--body)",
         primary: "var(--primary)",
         "primary-50": "var(--primary-50)",
         card: "var(--card)",
+
+        dark: "#18110C",
       },
     },
   },

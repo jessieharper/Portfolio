@@ -48,7 +48,7 @@ export default function ProjectCarousel({ projects }: Props) {
 
   return (
     <div
-      className="container h-full w-full flex flex-col items-center overflow-hidden content-height"
+      className="container content-height w-full flex my-auto flex-col items-center overflow-hidden "
       onMouseDown={startDrag}
       onMouseMove={onDrag}
       onMouseUp={endDrag}
@@ -57,7 +57,7 @@ export default function ProjectCarousel({ projects }: Props) {
       onTouchMove={onDrag}
       onTouchEnd={endDrag}
     >
-      <div className="h-full w-full flex flex-auto justify-center relative mx-auto">
+      <div className="h-full w-full flex flex-auto justify-center relative ">
         <button onClick={prevSlide} className={`mr-auto ${btnClass}`}>
           <img
             src="/images/icons/arrow.svg"
@@ -65,37 +65,42 @@ export default function ProjectCarousel({ projects }: Props) {
             className="h-full w-full"
           />
         </button>
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            className={`absolute h-min transition-all duration-500 ease-in-out  ${getSlideClass(
-              i,
-              activeIndex,
-              projects.length
-            )}`}
-          >
-            {" "}
-            <div className=" card min-w-72 h-full w-full  flex flex-col">
-              <img
-                src={project.image}
-                className="rounded-t-xl object-cover h-48 w-full"
-              />
+        <div className="h-full w-full flex justify-center items-center py-4">
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              className={`absolute h-full flex items-center transition-all duration-500 ease-in-out  ${getSlideClass(
+                i,
+                activeIndex,
+                projects.length
+              )}`}
+            >
+              <div className="project-card">
+                <div className="h-1/2 w-full overflow-y-scroll">
+                  <img
+                    src={`/images/${project.image}`}
+                    className="object-cover object-top h-full w-full"
+                  />
+                </div>
 
-              <h3 className="h4 text-primary-dark text-center">
-                {project.title}
-              </h3>
-              <p className="text-center text-sm text-gray-500">
-                {project.excerpt}
-              </p>
-              <a
-                href={project.link}
-                className="btn btn-dark-blue text-sm mt-auto w-full text-center"
-              >
-                View {project.title}
-              </a>
+                <div className="p-8 gap-4 flex flex-col">
+                  <h3 className="h4 text-primary-dark text-center">
+                    {project.title}
+                  </h3>
+                  <p className="text-center text-sm text-gray-500">
+                    {project.excerpt}
+                  </p>
+                  <a
+                    href={project.link}
+                    className="btn btn-dark-blue text-sm mt-auto w-full text-center"
+                  >
+                    View {project.title}
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <button onClick={nextSlide} className={`ml-auto ${btnClass}`}>
           <img
             src="/images/icons/arrow.svg"
