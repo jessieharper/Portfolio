@@ -97,7 +97,7 @@ a {
 }
 
 .card {
-  @apply w-full h-full;
+  @apply w-full h-min;
   @apply relative z-20;
   @apply border-4 border-primary;
   @apply p-8 gap-8;
@@ -111,13 +111,16 @@ a {
 }
 
 .project-card {
-  @apply w-full h-max;
+  @apply w-full h-min;
   @apply relative z-20;
   @apply border-4 border-dark;
-  @apply gap-4;
   @apply flex flex-col;
   @apply bg-card;
-  max-width: 22rem;
+  max-width: 23rem;
+  @screen xl {
+    max-width: 28rem;
+    height: 80%;
+  }
 }
 
 .tooltip {
@@ -141,12 +144,12 @@ a {
 }
 
 .btn {
-  @apply w-full relative;
+  @apply relative;
   @apply active:top-1 active:left-1 active:shadow-none;
   @apply shadow-sm active:shadow-none;
-  @apply px-6 py-4;
-  @apply bg-no-repeat bg-gradient-to-r from-pink-500 to-yellow-500;
   @apply text-body border-3;
+  width: 272px;
+  background-repeat: repeat-x;
 }
 
 /* About Page Changes */

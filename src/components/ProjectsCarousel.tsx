@@ -15,7 +15,6 @@ export default function ProjectCarousel({ projects }: Props) {
   const btnClass = "hidden my-auto md:flex w-32 z-30";
 
   const slideCount = projects.length;
-  console.log(slideCount);
 
   useEffect(() => {
     const handleResize = () => setIsDraggable(window.innerWidth <= 768);
@@ -48,7 +47,7 @@ export default function ProjectCarousel({ projects }: Props) {
 
   return (
     <div
-      className="container content-height w-full flex my-auto flex-col items-center overflow-hidden "
+      className="h-full w-full flex my-auto flex-col items-center overflow-hidden "
       onMouseDown={startDrag}
       onMouseMove={onDrag}
       onMouseUp={endDrag}
@@ -76,10 +75,10 @@ export default function ProjectCarousel({ projects }: Props) {
               )}`}
             >
               <div className="project-card">
-                <div className="h-1/2 w-full overflow-y-scroll">
+                <div className="h-1/2 w-full overflow-y-auto">
                   <img
                     src={`/images/${project.image}`}
-                    className="object-cover object-top h-full w-full"
+                    className="object-cover object-top w-full"
                   />
                 </div>
 
@@ -87,7 +86,7 @@ export default function ProjectCarousel({ projects }: Props) {
                   <h3 className="h4 text-primary-dark text-center">
                     {project.title}
                   </h3>
-                  <p className="text-center text-sm text-gray-500">
+                  <p className="text-center text-gray-500 text-xs">
                     {project.excerpt}
                   </p>
                   <a
