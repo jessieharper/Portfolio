@@ -57,7 +57,7 @@ const LandingPage = (): JSX.Element => {
             <Earth />
           </div>
 
-          <div className="flex flex-col md:flex-row w-full h-full justify-center md:justify-between gap-8">
+          <div className="flex flex-col md:flex-row w-full  justify-center md:justify-between gap-8">
             <div className="card mb-auto mx-auto lg:mx-0 flex">
               <p className="text-xs leading-5 h-full">
                 <span className="font-depixel text-3xl">Yo!</span> My name is

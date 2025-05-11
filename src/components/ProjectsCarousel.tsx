@@ -47,7 +47,7 @@ export default function ProjectCarousel({ projects }: Props) {
 
   return (
     <div
-      className="h-full w-full flex my-auto flex-col items-center overflow-hidden "
+      className="h-full w-full flex flex-col items-center overflow-hidden "
       onMouseDown={startDrag}
       onMouseMove={onDrag}
       onMouseUp={endDrag}
