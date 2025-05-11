@@ -12,19 +12,21 @@ const App = (): JSX.Element => {
   return (
     <ThemeProvider>
       <GlobalProvider>
+        <Header />
+
         <main
-          className={`h-full md:min-h-screen flex flex-col ${
+          id="main"
+          className={`container h-full flex flex-col gap-8 lg:px-12 py-8 ${
             isAboutPage ? "about" : ""
           }`}
         >
-          <Header />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact />} /> */}
           </Routes>{" "}
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </GlobalProvider>
     </ThemeProvider>
