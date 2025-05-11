@@ -3,11 +3,10 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { GlobalProvider } from "./contexts/GlobalContext.js";
 import "./index.css";
 import { Header, Footer } from "./components/index.js";
-import { LandingPage, About, Projects, Contact } from "./pages/index.js";
+import { LandingPage } from "./pages/index.js";
 
 const App = (): JSX.Element => {
   const location = useLocation();
-  const isAboutPage = location.pathname === "/about";
 
   return (
     <ThemeProvider>
@@ -16,9 +15,7 @@ const App = (): JSX.Element => {
 
         <main
           id="main"
-          className={`container h-full flex flex-col gap-8 lg:px-12 py-8 ${
-            isAboutPage ? "about" : ""
-          }`}
+          className="container h-full flex flex-col gap-8 lg:px-12 py-8"
         >
           <Routes>
             <Route path="/" element={<LandingPage />} />
