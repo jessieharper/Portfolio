@@ -28,7 +28,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="bg-body flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-50 container border-b-2 md:border-0  border-[var(--primary-50)]"
+        className="bg-body flex flex-row h-30 w-full justify-between items-center p-2 md:p-4 relative z-50 border-b-2 md:border-0  border-[var(--primary-50)]"
       >
         <Link to="/">
           <div

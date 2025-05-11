@@ -76,10 +76,10 @@ export default function ProjectCarousel({ projects }: Props) {
               )}`}
             >
               <div className="project-card">
-                <div className="h-1/2 w-full overflow-y-scroll">
+                <div className="h-1/2 w-full overflow-y-auto">
                   <img
                     src={`/images/${project.image}`}
-                    className="object-cover object-top h-full w-full"
+                    className="object-cover object-top w-full"
                   />
                 </div>
 
