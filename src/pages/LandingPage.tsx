@@ -2,8 +2,48 @@ import Earth from "../components/Earth";
 import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import { motion } from "framer-motion";
+import { projects } from "../data/ProjectData";
+import { getPixels, updatePixels, shiftPixels } from "../utils/utils";
+import ProjectsCarousel from "../components/ProjectsCarousel";
+import { useEffect } from "react";
 
 const LandingPage = (): JSX.Element => {
+  useEffect(() => {
+    const order = ["#EC4899", "#EB6A6A", "#EB7D51", "#EB9630", "#EBB305"];
+    const initialPixels = getPixels(5, order);
+    const button = document.getElementById("pixelBtn");
+    let interval: number | null = null;
+    let directions = new Map<number, number>();
+
+    let pixels = [...initialPixels];
+    directions = new Map();
+    updatePixels(pixels);
+
+    const handleEnter = () => {
+      if (interval) return;
+      directions = new Map();
+      interval = setInterval(() => {
+        shiftPixels(pixels, directions, order);
+      }, 75);
+    };
+
+    const handleLeave = () => {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+
+    button?.addEventListener("mouseenter", handleEnter);
+    button?.addEventListener("mouseleave", handleLeave);
+
+    return () => {
+      button?.removeEventListener("mouseenter", handleEnter);
+      button?.removeEventListener("mouseleave", handleLeave);
+      if (interval) clearInterval(interval);
+    };
+  }, []);
+
   return (
     <>
       {" "}
@@ -17,7 +57,7 @@ const LandingPage = (): JSX.Element => {
             <Earth />
           </div>
 
-          <div className="flex flex-col md:flex-row w-full h-full justify-center md:justify-between gap-8">
+          <div className="flex flex-col md:flex-row w-full  justify-center md:justify-between gap-8">
             <div className="card mb-auto mx-auto lg:mx-0 flex">
               <p className="text-xs leading-5 h-full">
                 <span className="font-depixel text-3xl">Yo!</span> My name is
@@ -44,7 +84,9 @@ const LandingPage = (): JSX.Element => {
                   download={"../assets/Jessica Harper CV.pdf"}
                   className="flex items-center justify-center"
                 >
-                  <button className="btn text-sm">Download my CV</button>
+                  <button id="pixelBtn" className="btn text-sm">
+                    Download my CV
+                  </button>
                 </a>
               </div>
             </div>
@@ -90,6 +132,14 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        id="projects"
+        className="h-screen w-full"
+      >
+        <ProjectsCarousel projects={projects} />
+      </motion.section>
     </>
   );
 };
