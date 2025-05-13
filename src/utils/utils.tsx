@@ -30,6 +30,15 @@ const getSlideClass = (
   return slideClass;
 };
 
+const countColours = (row: string[], currentColour: string) => {
+  let count = 0;
+  for (const color of row) {
+    if (color === currentColour) count++;
+    else break;
+  }
+  return count;
+};
+
 const getPixels = (
   range: number,
   hexCodes?: string[] | null,
@@ -47,9 +56,20 @@ const getPixels = (
   }
 
   for (let i = 0; i < range; i++) {
-    let row: string[] = [...pixels[i]];
+    const prevRow: string[] = pixels[i];
+    const row: string[] = [...prevRow];
+
+    const currentColor = row[0];
+    const count = countColours(row, currentColor);
+
     row.pop();
-    row.unshift(row[0]);
+
+    if (count < range) {
+      row.unshift(currentColor);
+    } else {
+      row.unshift(currentColor);
+    }
+
     pixels.push(row);
   }
 
@@ -92,37 +112,33 @@ const updatePixels = (pixels: string[][]) => {
 
 const shiftPixels = (
   pixels: string[][],
-  directions: Map<number, number>,
-  order: string[]
+  order: string[],
+  direction: number
 ) => {
-  const newRow = pixels[0];
-  const currentColor = newRow[0];
-  let count = 0;
-  for (const color of newRow) {
-    if (color === currentColor) count++;
-    else break;
-  }
-  if (!directions.has(0)) directions.set(0, 1);
+  const newRow = [...pixels[0]];
+  const currentColour = newRow[0];
+
+  const count = countColours(newRow, currentColour);
+  let newColour;
 
   if (count < order.length - 1) {
     newRow.pop();
-    newRow.unshift(currentColor);
+    newRow.unshift(currentColour);
   } else {
-    let index = order.indexOf(currentColor);
-    let dir = directions.get(0)!;
+    let index = order.indexOf(currentColour);
 
-    if (index <= 0) dir = 1;
-    else if (index >= order.length - 1) dir = -1;
+    if (index <= 0) direction = 1;
+    else if (index >= order.length - 1) direction = -1;
 
-    directions.set(0, dir);
-    const newColor = order[index + dir];
+    newColour = order[index + direction];
     newRow.pop();
-    newRow.unshift(newColor);
+    newRow.unshift(newColour);
   }
   pixels[0] = newRow;
   const newPixels = getPixels(pixels.length - 1, null, newRow);
 
   updatePixels(newPixels);
+  return direction;
 };
 
 export { getSlideClass, getPixels, updatePixels, shiftPixels };
