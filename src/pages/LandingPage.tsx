@@ -10,20 +10,19 @@ import { useEffect } from "react";
 const LandingPage = (): JSX.Element => {
   useEffect(() => {
     const order = ["#EC4899", "#EB6A6A", "#EB7D51", "#EB9630", "#EBB305"];
+    let direction = 1;
+
     const initialPixels = getPixels(5, order);
     const button = document.getElementById("pixelBtn");
     let interval: number | null = null;
-    let directions = new Map<number, number>();
-
     let pixels = [...initialPixels];
-    directions = new Map();
+
     updatePixels(pixels);
 
     const handleEnter = () => {
       if (interval) return;
-      directions = new Map();
       interval = setInterval(() => {
-        shiftPixels(pixels, directions, order);
+        direction = shiftPixels(pixels, order, direction);
       }, 75);
     };
 
@@ -128,6 +127,25 @@ const LandingPage = (): JSX.Element => {
                   and SCRUM methodologies
                 </span>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className=" h-full md:h-screen w-full flex flex-col flex-auto ">
+        <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-end gap-8 ">
+          <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
+            <div className="h-full space-y-2">
+              <h3 className="text-sm">Experience:</h3>
+              <ul className="text-xs leading-5 h-full flex flex-col gap-2">
+                <li>
+                  Junior Software Developer, Northcoders | 11/2023 to 3/2024
+                  JavaScript, TypeScript, PSQL, React, Node.js, MongoDB
+                </li>
+                <li>
+                  Freelance Translator, INLINGO | 10/2022 to 08/2024 &
+                  AllCorrect Games | 08/2021 to 08/2024
+                </li>
+              </ul>
             </div>
           </div>
         </div>
