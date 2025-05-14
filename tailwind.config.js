@@ -11,6 +11,15 @@ module.exports = {
     },
 
     extend: {
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 1s linear infinite",
+      },
       colors: {
         accent: {
           DEFAULT: "var(--accent)",
