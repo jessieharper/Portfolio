@@ -3,46 +3,11 @@ import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import { motion } from "framer-motion";
 import { projects } from "../data/ProjectData";
-import { getPixels, updatePixels, shiftPixels } from "../utils/utils";
+
 import ProjectsCarousel from "../components/ProjectsCarousel";
-import { useEffect } from "react";
+import Button from "../components/Button";
 
 const LandingPage = (): JSX.Element => {
-  useEffect(() => {
-    const order = ["#EC4899", "#EB6A6A", "#EB7D51", "#EB9630", "#EBB305"];
-    let direction = 1;
-
-    const initialPixels = getPixels(5, order);
-    const button = document.getElementById("pixelBtn");
-    let interval: number | null = null;
-    let pixels = [...initialPixels];
-
-    updatePixels(pixels);
-
-    const handleEnter = () => {
-      if (interval) return;
-      interval = setInterval(() => {
-        direction = shiftPixels(pixels, order, direction);
-      }, 75);
-    };
-
-    const handleLeave = () => {
-      if (interval) {
-        clearInterval(interval);
-        interval = null;
-      }
-    };
-
-    button?.addEventListener("mouseenter", handleEnter);
-    button?.addEventListener("mouseleave", handleLeave);
-
-    return () => {
-      button?.removeEventListener("mouseenter", handleEnter);
-      button?.removeEventListener("mouseleave", handleLeave);
-      if (interval) clearInterval(interval);
-    };
-  }, []);
-
   return (
     <>
       {" "}
@@ -78,15 +43,20 @@ const LandingPage = (): JSX.Element => {
               <div className="relative z-40 gap-8 flex flex-col">
                 <TechStackLogos />
 
-                <a
+                <Button
                   href={MyCV}
-                  download={"../assets/Jessica Harper CV.pdf"}
-                  className="flex items-center justify-center"
-                >
-                  <button id="pixelBtn" className="btn text-sm">
-                    Download my CV
-                  </button>
-                </a>
+                  download=""
+                  id="pixelBtn"
+                  title="Download my CV"
+                  colours={[
+                    "#EC4899",
+
+                    "#EB6A6A",
+                    "#EB7D51",
+                    "#EB9630",
+                    "#EBB305",
+                  ]}
+                />
               </div>
             </div>
           </div>

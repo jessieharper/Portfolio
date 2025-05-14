@@ -1,6 +1,7 @@
 import { useEffect, useState, TouchEvent, MouseEvent } from "react";
 import { Project } from "../types/ProjectTypes";
 import { getSlideClass } from "../utils/utils";
+import Button from "./Button";
 
 type Props = {
   projects: Project[];
@@ -95,6 +96,20 @@ export default function ProjectCarousel({ projects }: Props) {
                   >
                     View {project.title}
                   </a>
+                  <Button
+                    href={project.link}
+                    download=""
+                    id=""
+                    title={`View ${project.title}`}
+                    colours={[
+                      "#EC4899",
+
+                      "#EB6A6A",
+                      "#EB7D51",
+                      "#EB9630",
+                      "#EBB305",
+                    ]}
+                  />
                 </div>
               </div>
             </div>

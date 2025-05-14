@@ -147,7 +147,8 @@ a {
   @apply active:top-1 active:left-1 active:shadow-none;
   @apply shadow-sm active:shadow-none;
   @apply text-body border-3;
-  width: 272px;
+  @apply mx-auto;
+  width: 260px;
   background-repeat: repeat-x;
 }
 
