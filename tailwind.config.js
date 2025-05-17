@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       keyframes: {
         marquee: {
-          "0%": { transform: "translateX(-100%)" },
+          "0%": { transform: "translateX(-33%)" },
           "100%": { transform: "translateX(0%)" },
         },
       },

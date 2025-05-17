@@ -1,36 +1,53 @@
-const countColours = (row: string[], currentColour: string) => {
+const countLeadingColours = (row: string[], colour: string): number => {
   let count = 0;
-  for (const color of row) {
-    if (color === currentColour) count++;
+  for (const c of row) {
+    if (c === colour) count++;
     else break;
   }
   return count;
 };
 
-const getPixels = (
+export const generatePixels = (
   range: number,
-  hexCodes?: string[] | null,
+  colours: string[],
+  direction: number,
   baseRow?: string[]
-) => {
-  let pixels = [];
-
-  if (hexCodes) {
-    const base = hexCodes.flatMap((code, i) =>
-      Array(i === 0 ? 1 : range).fill(code)
-    );
-    pixels.push(base);
-  } else if (baseRow) {
-    pixels.push(baseRow);
+): string[][] => {
+  if (
+    (!colours || colours.length === 0) &&
+    (!baseRow || baseRow.length === 0)
+  ) {
+    return [];
   }
 
-  for (let i = 0; i <= range; i++) {
-    const prevRow: string[] = pixels[i];
-    const row: string[] = [...prevRow];
+  const pixels: string[][] = [];
 
-    const currentColor = row[0];
+  const base =
+    baseRow && baseRow.length > 0
+      ? baseRow
+      : colours.flatMap((colour, i) => Array(i === 0 ? 1 : range).fill(colour));
 
-    row.pop();
-    row.unshift(currentColor);
+  pixels.push(base);
+
+  for (let i = 0; i < range; i++) {
+    const prev = pixels[i];
+    const row = [...prev];
+    const current = row[0];
+
+    const count = countLeadingColours(row, current);
+
+    if (count < range) {
+      row.pop();
+      row.unshift(current);
+    } else {
+      let index = colours.indexOf(current);
+      if (index <= 0) direction = 1;
+      else if (index >= colours.length - 1) direction = -1;
+
+      const newColour = colours[index + direction] || current;
+      row.pop();
+      row.unshift(newColour);
+    }
 
     pixels.push(row);
   }
@@ -38,12 +55,16 @@ const getPixels = (
   return pixels;
 };
 
-const updatePixels = (pixels: string[][]) => {
-  const pixelBtn = document.getElementById("pixelBtn");
+export const updateButtonBackground = (
+  pixels: string[][],
+  elementId: string
+) => {
+  const el = document.getElementById(elementId);
+  if (!el) return;
 
-  const height = pixels.length;
-  const width = 260 * 1.5;
   const rowHeight = 10;
+  const height = pixels.length;
+  const width = 260;
 
   const backgroundImages: string[] = [];
   const backgroundSizes: string[] = [];
@@ -53,55 +74,51 @@ const updatePixels = (pixels: string[][]) => {
     const segmentWidth = 100 / row.length;
     let offset = 0;
 
-    const segments = row.map((color) => {
+    const segments = row.map((colour) => {
       const start = offset;
       offset += segmentWidth;
-      return `${color} ${start}%, ${color} ${offset}%`;
+      return `${colour} ${start}%, ${colour} ${offset}%`;
     });
 
     backgroundImages.push(`linear-gradient(to right, ${segments.join(", ")})`);
     backgroundSizes.push(`${width}px ${rowHeight}px`);
     backgroundPositions.push(`0px ${rowIndex * rowHeight}px`);
   });
-  if (pixelBtn) {
-    pixelBtn.style.height = `${height * rowHeight}px`;
-    pixelBtn.style.backgroundImage = backgroundImages.join(",");
-    pixelBtn.style.backgroundSize = backgroundSizes.join(",");
-    pixelBtn.style.backgroundRepeat = "no-repeat";
-    pixelBtn.style.backgroundPosition = backgroundPositions.join(",");
-  }
+
+  el.style.height = `${height * rowHeight}px`;
+  el.style.backgroundImage = backgroundImages.join(",");
+  el.style.backgroundSize = backgroundSizes.join(",");
+  el.style.backgroundPosition = backgroundPositions.join(",");
+  el.style.backgroundRepeat = "no-repeat";
 };
 
-const shiftPixels = (
+export const animatePixels = (
   pixels: string[][],
-  order: string[],
+  colours: string[],
   direction: number,
   range: number
-) => {
-  const newRow = [...pixels[0]];
-  const currentColour = newRow[0];
+): [string[][], number] => {
+  const row = [...pixels[0]];
+  const current = row[0];
+  const count = countLeadingColours(row, current);
 
-  const count = countColours(newRow, currentColour);
-  let newColour;
+  let newRow;
 
   if (count < range) {
-    newRow.pop();
-    newRow.unshift(currentColour);
+    row.pop();
+    row.unshift(current);
+    newRow = row;
   } else {
-    let index = order.indexOf(currentColour);
-
+    let index = colours.indexOf(current);
     if (index <= 0) direction = 1;
-    else if (index >= order.length - 1) direction = -1;
+    else if (index >= colours.length - 1) direction = -1;
 
-    newColour = order[index + direction];
-    newRow.pop();
-    newRow.unshift(newColour);
+    const newColour = colours[index + direction] || current;
+    row.pop();
+    row.unshift(newColour);
+    newRow = row;
   }
-  pixels[0] = newRow;
-  const newPixels = getPixels(pixels.length - 1, null, newRow);
 
-  updatePixels(newPixels);
-  return direction;
+  const updated = generatePixels(range, colours, direction, newRow);
+  return [updated, direction];
 };
-
-export { getPixels, updatePixels, shiftPixels };
