@@ -44,18 +44,19 @@ const LandingPage = (): JSX.Element => {
                 <TechStackLogos />
 
                 <Button
-                  href={MyCV}
-                  download=""
+                  href="/MyCV.pdf"
+                  download={MyCV}
+                  title="Download CV"
                   id="pixelBtn"
-                  title="Download my CV"
                   colours={[
                     "#EC4899",
-
                     "#EB6A6A",
                     "#EB7D51",
                     "#EB9630",
                     "#EBB305",
                   ]}
+                  range={5}
+                  delay={100}
                 />
               </div>
             </div>

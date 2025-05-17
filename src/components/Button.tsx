@@ -1,31 +1,55 @@
-import { getPixels, updatePixels, shiftPixels } from "../utils/buttonFn";
-
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-interface IButton {
+import {
+  generatePixels,
+  updateButtonBackground,
+  animatePixels,
+} from "../utils/buttonFn";
+
+interface IButtonProps {
   href: string;
   download?: string;
   title: string;
   id: string;
-  colours: string[];
+  colours?: string[];
+  range?: number;
+  delay?: number;
 }
 
-const Button = (props: IButton): JSX.Element => {
+const Button = ({
+  href,
+  download,
+  title,
+  id,
+  colours = [],
+  range = 4,
+  delay = 75,
+}: IButtonProps): JSX.Element => {
   useEffect(() => {
+    if (!colours.length) return;
+
     let direction = 1;
-
-    const initialPixels = getPixels(4, props.colours);
-    const button = document.getElementById("btnContainer");
     let interval: number | null = null;
-    let pixels = [...initialPixels];
+    let pixels = generatePixels(range, colours, direction);
 
-    updatePixels(pixels);
+    updateButtonBackground(pixels, id);
+
+    const container = document.getElementById("btnContainer");
 
     const handleEnter = () => {
       if (interval) return;
-      interval = setInterval(() => {
-        direction = shiftPixels(pixels, props.colours, direction, 4);
-      }, 75);
+      interval = window.setInterval(() => {
+        const [newPixels, newDirection] = animatePixels(
+          pixels,
+          colours,
+          direction,
+          range
+        );
+        pixels = newPixels;
+        direction = newDirection;
+        updateButtonBackground(pixels, id);
+      }, delay);
     };
 
     const handleLeave = () => {
@@ -35,28 +59,39 @@ const Button = (props: IButton): JSX.Element => {
       }
     };
 
-    button?.addEventListener("mouseenter", handleEnter);
-    button?.addEventListener("mouseleave", handleLeave);
+    container?.addEventListener("mouseenter", handleEnter);
+    container?.addEventListener("mouseleave", handleLeave);
 
     return () => {
-      button?.removeEventListener("mouseenter", handleEnter);
-      button?.removeEventListener("mouseleave", handleLeave);
+      container?.removeEventListener("mouseenter", handleEnter);
+      container?.removeEventListener("mouseleave", handleLeave);
       if (interval) clearInterval(interval);
     };
-  }, []);
+  }, [colours, range, delay, id]);
+
+  let letters = title.split("");
 
   return (
     <a
       id="btnContainer"
-      href={props.href}
-      download={props.href}
-      className="flex items-center min-w-max h-16 justify-center btn overflow-hidden"
+      href={href}
+      download={download}
+      aria-label={title}
+      className="flex items-center min-w-max h-16 justify-center btn overflow-hidden relative group"
     >
-      <div
-        id={props.id}
-        className="absolute top-0 left-1/2 w-[150%] h-auto -translate-x-2/3"
-      ></div>
-      <p className="absolute z-0 text-sm">{props.title}</p>
+      <div id={id} className="absolute top-0 w-full h-auto"></div>
+      <div aria-hidden="true" className="absolute z-0 text-sm">
+        {letters.map((letter, index) => (
+          <motion.span
+            key={index}
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className={`${letter === " " ? "mx-4" : ""}inline-block`}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </div>
     </a>
   );
 };
