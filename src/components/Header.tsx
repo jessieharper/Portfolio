@@ -28,7 +28,7 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="container bg-body flex flex-row h-30 w-full justify-between items-center py-2 md:py-4 relative z-50 border-b-2 md:border-0 border-[var(--primary-50)]"
+        className="container bg-transparent flex flex-row h-30 w-full justify-between items-center py-2 md:py-4 relative z-50 border-b-2 md:border-0 border-[var(--primary-50)]"
       >
         <Link to="/">
           <div
