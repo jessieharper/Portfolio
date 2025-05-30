@@ -8,6 +8,7 @@ import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
 import Projects from "./Projects";
 import Button from "../components/Button";
+import Contact from "./Contact";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -19,7 +20,7 @@ const LandingPage = (): JSX.Element => {
         trigger: "#earth",
         start: "top top",
         endTrigger: "#projects",
-        end: "top 50%",
+        end: "top 90%",
         pin: true,
         scrub: true,
       });
@@ -45,7 +46,7 @@ const LandingPage = (): JSX.Element => {
 
   return (
     <div ref={main}>
-      <section className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto ">
+      <section className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto container">
         <div className="flex w-full h-full">
           <div
             id="earth"
@@ -96,7 +97,8 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </section>
-      <section className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72">
+
+      <section className="container h-full md:h-screen w-full flex flex-col flex-auto mt-72">
         <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-between gap-8 ">
           <div id="card2" className="card mb-auto mx-auto lg:mx-0 flex">
             <p className="text-xs leading-5 h-full flex flex-col gap-2">
@@ -135,7 +137,8 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </section>
-      <section className=" h-full md:h-screen w-full flex flex-col flex-auto ">
+
+      <section className=" container h-full md:h-screen w-full flex flex-col flex-auto ">
         <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-end gap-8 ">
           <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
             <div className="h-full space-y-2">
@@ -155,6 +158,7 @@ const LandingPage = (): JSX.Element => {
         </div>
       </section>
       <Projects />
+      <Contact />
     </div>
   );
 };

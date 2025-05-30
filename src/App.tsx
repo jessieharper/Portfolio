@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
       <GlobalProvider>
         <Header />
 
-        <main id="main" className="h-full flex flex-col gap-8 lg:px-12 py-8">
+        <main id="main" className="h-full flex flex-col gap-8 py-8">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<About />} />
