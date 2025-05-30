@@ -1,49 +1,43 @@
-// import { motion } from "framer-motion";
-// import { useEffect } from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-// const About = (): JSX.Element => {
-//   useEffect(() => {
-//     document.documentElement.classList.add("about");
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-//     return () => {
-//       document.documentElement.classList.remove("about");
-//     };
-//   }, []);
+export default function About() {
+  const main = useRef<HTMLDivElement | null>(null);
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray(".box") as HTMLElement[];
+      boxes.forEach((box) => {
+        gsap.to(box, {
+          x: 150,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: true,
+            // markers: true,
+          },
+        });
+      });
+    },
+    { scope: main }
+  );
 
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0 }}
-//       animate={{ opacity: 1 }}
-//       className="h-[500vh]"
-//     >
-//       <div className="h-[100vh] w-full flex items-center gap-40 -mt-24 md:-mt-28 container">
-//         <div className="w-1/2 flex justify-center items-center">
-//           <img
-//             className="w-full h-full"
-//             src="/images/suzuki.png"
-//             alt="A Suzuki Carry Van"
-//           />
-//         </div>
-//         <div className="max-w-[500px] w-1/2">
-//           <h2 className="text-xl mb-8">About Me</h2>
-//           <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-//             molestiae officia mollitia! Molestias aliquid odio eveniet, ipsam
-//             veniam deleniti qui!
-//           </p>
-//         </div>
-//       </div>
-
-//       <div className="h-[300vh] w-full flex items-center gap-40 -mt-24 md:-mt-28 relative">
-//         <div className="w-3/4 mx-auto flex justify-center items-center">
-//           <img className="w-full h-full" src="/images/ferns.png" alt="" />
-//         </div>
-//         <div className="absolute bottom-0">
-//           <img className="w-full h-full" src="/images/clouds.png" alt="" />
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
-// export default About;
+  return (
+    <div>
+      <section className="section flex-center column">
+        <h2>Basic ScrollTrigger with React</h2>
+        <p>Scroll down to see the magic happen!!</p>
+      </section>
+      <div className="section flex-center column" ref={main}>
+        <div className="box gradient-blue">box</div>
+        <div className="box gradient-blue">box</div>
+        <div className="box gradient-blue">box</div>
+      </div>
+      <section className="section"></section>
+    </div>
+  );
+}

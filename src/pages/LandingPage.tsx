@@ -1,28 +1,61 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import Earth from "../components/Earth";
 import TechStackLogos from "../components/TechStackLogos";
 import MyCV from "../assets/Jessica Harper CV.pdf";
-import { motion } from "framer-motion";
-import { projects } from "../data/ProjectData";
-
-import ProjectsCarousel from "../components/ProjectsCarousel";
+import Projects from "./Projects";
 import Button from "../components/Button";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const LandingPage = (): JSX.Element => {
+  const main = useRef<HTMLDivElement | null>(null);
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: "#earth",
+        start: "top top",
+        endTrigger: "#projects",
+        end: "top 50%",
+        pin: true,
+        scrub: true,
+      });
+      ScrollTrigger.create({
+        trigger: "#card1",
+        start: "top 5%",
+        endTrigger: "#card2",
+        end: "top 40%",
+        pin: true,
+        scrub: true,
+      });
+      ScrollTrigger.create({
+        trigger: "#card2",
+        start: "top 5%",
+        endTrigger: "#projects",
+        end: "top 120%",
+        pin: true,
+        scrub: true,
+      });
+    },
+    { scope: main }
+  );
+
   return (
-    <>
-      {" "}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto "
-      >
+    <div ref={main}>
+      <section className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto ">
         <div className="flex w-full h-full">
-          <div className="absolute top-[2rem] inset-0 z-0 xl:z-10 2xl:z-30 w-full">
+          <div
+            id="earth"
+            className="absolute top-[2rem] inset-0 z-0 xl:z-10 2xl:z-30 w-full"
+          >
             <Earth />
           </div>
 
           <div className="flex flex-col md:flex-row w-full  justify-center md:justify-between gap-8">
-            <div className="card mb-auto mx-auto lg:mx-0 flex">
+            <div id="card1" className="card mb-auto mx-auto lg:mx-0 flex">
               <p className="text-xs leading-5 h-full">
                 <span className="font-depixel text-3xl">Yo!</span> My name is
                 Jessica, and I am a Sheffield-based Software Developer, amateur
@@ -62,10 +95,10 @@ const LandingPage = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </motion.section>
-      <section className=" h-full md:h-screen w-full flex flex-col flex-auto ">
+      </section>
+      <section className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72">
         <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-between gap-8 ">
-          <div className="card mb-auto mx-auto lg:mx-0 flex">
+          <div id="card2" className="card mb-auto mx-auto lg:mx-0 flex">
             <p className="text-xs leading-5 h-full flex flex-col gap-2">
               <span className="font-depixel text-3xl">About me...</span>I am a
               former Videogame Translator, current Web Developer and future
@@ -121,15 +154,8 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </section>
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        id="projects"
-        className="h-screen w-full"
-      >
-        <ProjectsCarousel projects={projects} />
-      </motion.section>
-    </>
+      <Projects />
+    </div>
   );
 };
 

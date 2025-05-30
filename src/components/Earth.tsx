@@ -48,9 +48,9 @@ const Earth = (): JSX.Element => {
     animate();
 
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.aspect = window.innerWidth / 725;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(window.innerWidth, 725);
     };
 
     if (window.innerWidth > 400) {
@@ -66,7 +66,12 @@ const Earth = (): JSX.Element => {
     };
   }, []);
 
-  return <div className="w-full h-full flex mx-auto" ref={mountRef} />;
+  return (
+    <div
+      className="earth w-full h-full min-h-screen flex mx-auto"
+      ref={mountRef}
+    />
+  );
 };
 
 export default Earth;
