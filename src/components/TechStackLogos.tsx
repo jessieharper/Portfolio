@@ -13,7 +13,7 @@ const TechStackLogos = (): JSX.Element => {
   return (
     <div className="grid grid-cols-4 gap-4">
       {logos.map((logo) => (
-        <div key={logo} className="relative z-50 group flex justify-center">
+        <div key={logo} className="relative group flex justify-center">
           <div
             style={{
               maskImage: `url('/images/icons/${logo}.svg')`,
