@@ -4,13 +4,13 @@ import { GlobalProvider } from "./contexts/GlobalContext.js";
 import "./index.css";
 import { Header } from "./components/index.js";
 import LandingPage from "./pages/LandingPage.js";
-import Stars from "./pages/About.js";
+import HyperspaceStars from "./components/HyperspaceStars.js";
 
 const App = (): JSX.Element => {
   return (
     <ThemeProvider>
       <GlobalProvider>
-        <Stars />
+        <HyperspaceStars />
         <Header />
 
         <main id="main" className="h-full flex flex-col gap-8 py-8">

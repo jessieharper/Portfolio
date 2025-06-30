@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { randInt } from "three/src/math/MathUtils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,10 +80,10 @@ export default function HyperspaceStars() {
   }, []);
 
   return (
-    <div>
+    <div className=" absolute top-0 w-full">
       <svg
         ref={svgRef}
-        className="absolute inset-0 w-full h-full -z-10 overflow-visible text-primary"
+        className="sticky top-0 -z-20 w-full h-full overflow-visible text-primary"
         viewBox="0 0 500 150"
       />
     </div>

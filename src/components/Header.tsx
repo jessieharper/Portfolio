@@ -28,9 +28,12 @@ const Header = (): JSX.Element => {
     <>
       <header
         id="home"
-        className="container bg-transparent flex flex-row h-30 w-full justify-between items-center py-2 md:py-4 relative z-50 border-b-2 md:border-0 border-[var(--primary-50)]"
+        className="container bg-transparent flex flex-row h-30 w-full items-center py-2 md:py-4 relative z-50 border-b-2 md:border-0 border-[var(--primary-50)]"
       >
-        <Link to="/">
+        <h1 className="text-8xl w-full text-center text-accent leading-normal">
+          Jessica Harper
+        </h1>
+        {/* <Link to="/">
           <div
             style={{
               maskImage: `url('/images/logos/${logo}.svg')`,
@@ -38,23 +41,20 @@ const Header = (): JSX.Element => {
             }}
             className="block w-56 md:w-72 lg:w-96 h-20 md:h-24 lg:h-32 icon-mask bg-primary"
           ></div>
-        </Link>
-        <nav className="flex flex-col lg:gap-8 h-[96px]">
+        </Link> */}
+        {/* <nav className="flex flex-col lg:gap-8 h-[96px]">
           <div className="hidden w-auto md:inline-flex justify-end">
             <ThemeSelector />
           </div>
           <div className="h-full w-full flex items-center text-sm lg:text-lg gap-4 lg:gap-8 ">
             <Link to="/about" className="hidden md:flex">
-              {/* {!isHomePage ? <TextShuffler text="About Me" /> : "About Me"} */}
               About Me
             </Link>
 
             <Link to="/projects" className="hidden md:flex">
-              {/* {!isHomePage ? <TextShuffler text="Projects" /> : "Projects"} */}
               Projects
             </Link>
             <Link to="/contact" className="hidden md:flex ">
-              {/* {!isHomePage ? <TextShuffler text="Contact" /> : "Contact"} */}
               Contact
             </Link>
           </div>
@@ -70,9 +70,9 @@ const Header = (): JSX.Element => {
             }}
             className="icon-mask bg-primary h-10 w-10"
           ></div>
-        </button>
+        </button> */}
       </header>
-      <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <NavBar isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </>
   );
 };

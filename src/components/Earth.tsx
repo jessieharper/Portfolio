@@ -21,6 +21,8 @@ const Earth = (): JSX.Element => {
 
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);
+      renderer.domElement.style.height = "100%";
+      renderer.domElement.style.minHeight = "725px";
     }
 
     const flipbook = new SpriteAnimator(
@@ -48,9 +50,10 @@ const Earth = (): JSX.Element => {
     animate();
 
     const handleResize = () => {
-      camera.aspect = window.innerWidth / 725;
+      const height = Math.max(window.innerHeight, 725);
+      renderer.setSize(window.innerWidth, height);
+      camera.aspect = window.innerWidth / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, 725);
     };
 
     if (window.innerWidth > 400) {
@@ -66,12 +69,7 @@ const Earth = (): JSX.Element => {
     };
   }, []);
 
-  return (
-    <div
-      className="earth w-full h-full min-h-screen flex mx-auto"
-      ref={mountRef}
-    />
-  );
+  return <div className="w-full h-full  flex mx-auto" ref={mountRef} />;
 };
 
 export default Earth;

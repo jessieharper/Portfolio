@@ -48,10 +48,7 @@ const LandingPage = (): JSX.Element => {
     <div ref={main}>
       <section className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto container">
         <div className="flex w-full h-full">
-          <div
-            id="earth"
-            className="absolute top-[2rem] inset-0 z-0 xl:z-10 2xl:z-30 w-full"
-          >
+          <div id="earth" className="absolute top-[2rem] inset-0 -z-10 w-full">
             <Earth />
           </div>
 
@@ -74,7 +71,7 @@ const LandingPage = (): JSX.Element => {
               <div className="h-full space-y-2">
                 <h3 className="text-sm">Main Tech Stack: </h3>
               </div>
-              <div className="relative z-40 gap-8 flex flex-col">
+              <div className="gap-8 flex flex-col">
                 <TechStackLogos />
 
                 <Button
