@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
         <HyperspaceStars />
         <Header />
 
-        <main id="main" className="h-full flex flex-col gap-8 py-8">
+        <main id="main" className="h-full gap-8 py-8">
           <Routes>
             <Route path="/" element={<LandingPage />} />
           </Routes>{" "}

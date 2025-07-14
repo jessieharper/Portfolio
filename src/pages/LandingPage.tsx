@@ -13,105 +13,103 @@ import Contact from "./Contact";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const LandingPage = (): JSX.Element => {
-  const main = useRef<HTMLDivElement | null>(null);
+  const gsapContainer = useRef<HTMLDivElement | null>(null);
   useGSAP(
     () => {
       ScrollTrigger.create({
         trigger: "#earth",
         start: "top top",
         endTrigger: "#projects",
-        end: "top 90%",
+        end: "top 10%",
         pin: true,
-        scrub: true,
+        pinSpacing: false,
+        pinType: "transform",
       });
       ScrollTrigger.create({
         trigger: "#card1",
         start: "top 5%",
         endTrigger: "#card2",
-        end: "top 40%",
+        end: "top 5%",
         pin: true,
-        scrub: true,
+        pinSpacing: false,
+        pinType: "transform",
       });
       ScrollTrigger.create({
         trigger: "#card2",
         start: "top 5%",
-        endTrigger: "#projects",
-        end: "top 120%",
+        endTrigger: "#card3",
+        end: "top 5%",
         pin: true,
-        scrub: true,
+        pinSpacing: false,
+        pinType: "transform",
       });
+      ScrollTrigger.create({
+        trigger: "#card3",
+        start: "top 5%",
+        endTrigger: "#card4",
+        end: "top 5%",
+        pin: true,
+        pinSpacing: false,
+        pinType: "transform",
+      });
+
+      window.addEventListener("load", () => ScrollTrigger.refresh());
     },
-    { scope: main }
+    { scope: gsapContainer }
   );
 
   return (
-    <div ref={main}>
-      <section className="h-screen lg:h-[70vh] w-full flex flex-col flex-auto container">
-        <div className="flex w-full h-full">
-          <div id="earth" className="absolute top-[2rem] inset-0 -z-10 w-full">
-            <Earth />
+    <div ref={gsapContainer}>
+      <div id="earth" className="absolute top-[2rem] inset-0 -z-10 w-full">
+        <Earth />
+      </div>
+
+      <section className="px-0 lg:px-12 container relative overflow-hidden">
+        <div className="absolute w-full ">
+          <div id="card1" className="card">
+            <p className="text-xs leading-5 h-full">
+              <span className="font-depixel text-3xl">Yo!</span> My name is
+              Jessica, and I am a Sheffield-based Software Developer, amateur
+              animator, and burgeoning crazy cat lady.
+              <br />
+              <br />
+              This is my creative dumping ground. Take a look around - any
+              feedback, praise, criticisms, ~
+              <span className="uppercase font-bold">job offers</span>
+              ~, or questions(?) are welcome.
+            </p>
           </div>
+        </div>
 
-          <div className="px-12 flex flex-col md:flex-row w-full  justify-center md:justify-between gap-8">
-            <div id="card1" className="card mb-auto mx-auto lg:mx-0 flex">
-              <p className="text-xs leading-5 h-full">
-                <span className="font-depixel text-3xl">Yo!</span> My name is
-                Jessica, and I am a Sheffield-based Software Developer, amateur
-                animator, and burgeoning crazy cat lady.
-                <br />
-                <br />
-                This is my creative dumping ground. Take a look around - any
-                feedback, praise, criticisms, ~
-                <span className="uppercase font-bold">job offers</span>
-                ~, or questions(?) are welcome.
-              </p>
+        <div className="h-[60vh] flex w-full">
+          <div className="card ml-auto mt-auto">
+            <div className="h-full space-y-2">
+              <h3 className="text-sm">Main Tech Stack: </h3>
             </div>
+            <div className="gap-8 flex flex-col">
+              <TechStackLogos />
 
-            <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
-              <div className="h-full space-y-2">
-                <h3 className="text-sm">Main Tech Stack: </h3>
-              </div>
-              <div className="gap-8 flex flex-col">
-                <TechStackLogos />
-
-                <Button
-                  href="/MyCV.pdf"
-                  download={MyCV}
-                  title="Download CV"
-                  id="pixelBtn"
-                  colours={[
-                    "#EC4899",
-                    "#EB6A6A",
-                    "#EB7D51",
-                    "#EB9630",
-                    "#EBB305",
-                  ]}
-                  range={5}
-                  delay={100}
-                />
-              </div>
+              <Button
+                href="/MyCV.pdf"
+                download={MyCV}
+                title="Download CV"
+                id="pixelBtn"
+                colours={[
+                  "#EC4899",
+                  "#EB6A6A",
+                  "#EB7D51",
+                  "#EB9630",
+                  "#EBB305",
+                ]}
+                range={5}
+                delay={100}
+              />
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="container h-full md:h-screen w-full flex flex-col flex-auto mt-72">
-        <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-between gap-8 ">
-          <div id="card2" className="card mb-auto mx-auto lg:mx-0 flex">
-            <p className="text-xs leading-5 h-full flex flex-col gap-2">
-              <span className="font-depixel text-3xl">About me...</span>I am a
-              former Videogame Translator, current Web Developer and future
-              [LOADING...]. My favourite animals are whales, because they are
-              both graceful and majestic, and I drive to work every day in a
-              clapped-out Suzuki Carry van.
-              <span>
-                I am interested in interactive UX/UI design, 3D modeling, insert
-                more stuff here.
-              </span>
-            </p>
-          </div>
-
-          <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
+        <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-48">
+          <div id="card2" className="card mx-auto md:mx-0 md:ml-auto">
             <div className="h-full space-y-2">
               <h3 className="text-sm">Key Skills: </h3>
               <p className="text-xs leading-5 h-full flex flex-col gap-2">
@@ -133,11 +131,28 @@ const LandingPage = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className=" container h-full md:h-screen w-full flex flex-col flex-auto ">
-        <div className="h-full flex flex-col md:flex-row w-full justify-center md:justify-end gap-8 ">
-          <div className="w-full max-w-[28rem] md:max-w-[21.5rem] h-min border-4 border-primary p-8  flex flex-col gap-8 bg-card shadow mt-auto mx-auto lg:mx-0">
+        <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72 ">
+          <div id="card3" className="card mb-auto mx-auto md:mx-0 flex">
+            <p className="text-xs leading-5 h-full flex flex-col gap-2">
+              <span className="font-depixel text-3xl">About me...</span>I am a
+              former Videogame Translator, current Web Developer and future
+              [LOADING...]. My favourite animals are whales, because they are
+              both graceful and majestic, and I drive to work every day in a
+              clapped-out Suzuki Carry van.
+              <span>
+                I am interested in interactive UX/UI design, 3D modeling, insert
+                more stuff here.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className=" h-full w-full flex flex-col flex-auto mt-48 mb-48">
+          <div
+            id="card4"
+            className="card mt-auto mx-auto md:mx-0 md:ml-auto left-0"
+          >
             <div className="h-full space-y-2">
               <h3 className="text-sm">Experience:</h3>
               <ul className="text-xs leading-5 h-full flex flex-col gap-2">
