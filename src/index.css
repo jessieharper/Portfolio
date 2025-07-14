@@ -101,7 +101,6 @@ a {
   @apply relative z-20;
   @apply border-4 border-primary;
   @apply p-8 gap-8;
-  @apply flex flex-col;
   @apply bg-card;
   @apply shadow;
   max-width: 28rem;
