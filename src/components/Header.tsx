@@ -1,28 +1,26 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import ThemeSelector from "./ThemeSelector";
-import NavBar from "./NavBar";
+// import { useState } from "react";
+// import { useLocation } from "react-router-dom";
 
 const Header = (): JSX.Element => {
-  const location = useLocation();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const menuIcon = !isOpen ? "menu.svg" : "times.svg";
-  let logo: string;
+  // const location = useLocation();
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const menuIcon = !isOpen ? "menu.svg" : "times.svg";
+  // let logo: string;
 
-  switch (location.pathname) {
-    case "/about":
-      logo = "about-logo";
-      break;
-    case "/projects":
-      logo = "projects-logo";
-      break;
-    default:
-      logo = "jessharper";
-  }
+  // switch (location.pathname) {
+  //   case "/about":
+  //     logo = "about-logo";
+  //     break;
+  //   case "/projects":
+  //     logo = "projects-logo";
+  //     break;
+  //   default:
+  //     logo = "jessharper";
+  // }
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
     <>
