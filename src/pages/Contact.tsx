@@ -1,33 +1,33 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import MyCV from "../assets/Jessica Harper CV.pdf";
+// import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import MyCV from "../assets/Jessica Harper CV.pdf";
 
 const Contact = (): JSX.Element => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const navigate = useNavigate();
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsLoading(true);
-    const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "8400f33f-baff-49dc-b140-6ae3dc46f830");
+  // const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   setIsLoading(true);
+  //   const formData = new FormData(event.currentTarget);
+  //   formData.append("access_key", "8400f33f-baff-49dc-b140-6ae3dc46f830");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+  //   const response = await fetch("https://api.web3forms.com/submit", {
+  //     method: "POST",
+  //     body: formData,
+  //   });
 
-    const data = await response.json();
+  //   const data = await response.json();
 
-    if (data.success) {
-      setIsLoading(false);
+  //   if (data.success) {
+  //     setIsLoading(false);
 
-      navigate("/thanks");
-      event.currentTarget.reset();
-    } else {
-      console.log("Error", data);
-    }
-  };
+  //     navigate("/thanks");
+  //     event.currentTarget.reset();
+  //   } else {
+  //     console.log("Error", data);
+  //   }
+  // };
 
   return (
     <>
