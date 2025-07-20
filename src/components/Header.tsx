@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
         id="home"
         className="container bg-transparent flex flex-row h-30 w-full items-center py-2 md:py-4 relative z-50"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-full h-full text-center text-accent leading-normal md:leading-normal lg:leading-normal xl:leading-normal md:text-nowrap">
+        <h1 className="text-6xl lg:text-7xl xl:text-8xl w-full h-full text-center text-accent leading-normal md:leading-normal lg:leading-normal xl:leading-normal md:text-nowrap header relative">
           Jessica Harper
         </h1>
         {/* <Link to="/">

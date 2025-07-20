@@ -205,3 +205,15 @@ a {
   height: 100%;
   overflow: visible;
 }
+
+.header::after {
+  content: "";
+  @apply absolute -z-10 inset-0 bottom-0 md:bottom-5;
+  @apply border-b-2 border-yellow-200;
+}
+
+/* .header::before {
+  content: "Jessica Harper";
+  @apply absolute -z-10 inset-0 mt-2.5 ml-5;
+  @apply text-yellow-200;
+} */
