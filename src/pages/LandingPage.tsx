@@ -16,6 +16,7 @@ const LandingPage = (): JSX.Element => {
   const gsapContainer = useRef<HTMLDivElement | null>(null);
   useGSAP(
     () => {
+      let mm = gsap.matchMedia();
       ScrollTrigger.create({
         trigger: "#earth",
         start: "top top",
@@ -25,32 +26,35 @@ const LandingPage = (): JSX.Element => {
         pinSpacing: false,
         pinType: "transform",
       });
-      ScrollTrigger.create({
-        trigger: "#card1",
-        start: "top 5%",
-        endTrigger: "#card2",
-        end: "top 5%",
-        pin: true,
-        pinSpacing: false,
-        pinType: "transform",
-      });
-      ScrollTrigger.create({
-        trigger: "#card2",
-        start: "top 5%",
-        endTrigger: "#card3",
-        end: "top 5%",
-        pin: true,
-        pinSpacing: false,
-        pinType: "transform",
-      });
-      ScrollTrigger.create({
-        trigger: "#card3",
-        start: "top 5%",
-        endTrigger: "#card4",
-        end: "top 5%",
-        pin: true,
-        pinSpacing: false,
-        pinType: "transform",
+
+      mm.add("(min-width: 800px)", () => {
+        ScrollTrigger.create({
+          trigger: "#card1",
+          start: "top 5%",
+          endTrigger: "#card2",
+          end: "top 5%",
+          pin: true,
+          pinSpacing: false,
+          pinType: "transform",
+        });
+        ScrollTrigger.create({
+          trigger: "#card2",
+          start: "top 5%",
+          endTrigger: "#card3",
+          end: "top 5%",
+          pin: true,
+          pinSpacing: false,
+          pinType: "transform",
+        });
+        ScrollTrigger.create({
+          trigger: "#card3",
+          start: "top 5%",
+          endTrigger: "#card4",
+          end: "top 5%",
+          pin: true,
+          pinSpacing: false,
+          pinType: "transform",
+        });
       });
 
       window.addEventListener("load", () => ScrollTrigger.refresh());
@@ -64,8 +68,8 @@ const LandingPage = (): JSX.Element => {
         <Earth />
       </div>
 
-      <section className="px-0 lg:px-12 container relative overflow-hidden">
-        <div className="absolute w-full ">
+      <section className="mt-96 md:mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
+        <div className="flex md:absolute">
           <div id="card1" className="card">
             <p className="text-xs leading-5 h-full">
               <span className="font-depixel text-3xl">Yo!</span> My name is
@@ -81,8 +85,8 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="h-[60vh] flex w-full">
-          <div className="card ml-auto mt-auto">
+        <div className="h-full md:h-[60vh] flex w-full mt-72 md:mt-0">
+          <div className="card md:ml-auto mt-auto">
             <div className="h-full space-y-2">
               <h3 className="text-sm">Main Tech Stack: </h3>
             </div>
@@ -108,7 +112,7 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
 
-        <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-48">
+        <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72">
           <div id="card2" className="card mx-auto md:mx-0 md:ml-auto">
             <div className="h-full space-y-2">
               <h3 className="text-sm">Key Skills: </h3>
