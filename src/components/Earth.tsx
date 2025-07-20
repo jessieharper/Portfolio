@@ -4,20 +4,21 @@ import { SpriteAnimator } from "./SpriteAnimator";
 
 const Earth = (): JSX.Element => {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  const initialHeightRef = useRef<number>(0);
 
   useEffect(() => {
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
 
+    const width = window.innerWidth;
+    const height = Math.max(window.innerHeight, 725);
+
+    initialHeightRef.current = height;
+
+    renderer.setSize(width, height);
     renderer.setClearColor(0xffffff, 0);
 
-    const camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
 
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);
@@ -50,9 +51,9 @@ const Earth = (): JSX.Element => {
     animate();
 
     const handleResize = () => {
-      const height = Math.max(window.innerHeight, 725);
-      renderer.setSize(window.innerWidth, height);
-      camera.aspect = window.innerWidth / height;
+      // Always use the captured initial height to avoid jumpiness
+      renderer.setSize(window.innerWidth, initialHeightRef.current);
+      camera.aspect = window.innerWidth / initialHeightRef.current;
       camera.updateProjectionMatrix();
     };
 
@@ -69,7 +70,7 @@ const Earth = (): JSX.Element => {
     };
   }, []);
 
-  return <div className="w-full h-full  flex mx-auto" ref={mountRef} />;
+  return <div className="w-full h-full flex mx-auto" ref={mountRef} />;
 };
 
 export default Earth;

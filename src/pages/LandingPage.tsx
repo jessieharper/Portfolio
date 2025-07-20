@@ -68,7 +68,9 @@ const LandingPage = (): JSX.Element => {
         <Earth />
       </div>
 
-      <section className="mt-96 md:mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
+      <div className="h-screen md:h-0"></div>
+
+      <section className="mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
         <div className="flex md:absolute">
           <div id="card1" className="card">
             <p className="text-xs leading-5 h-full">
