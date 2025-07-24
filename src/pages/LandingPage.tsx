@@ -142,10 +142,11 @@ const LandingPage = (): JSX.Element => {
           <div id="card3" className="card mb-auto mx-auto md:mx-0 flex">
             <p className="text-xs leading-5 h-full flex flex-col gap-2">
               <span className="font-depixel text-3xl">About me...</span>I am a
-              former Videogame Translator, current Web Developer and future
-              [LOADING...]. My favourite animals are whales, because they are
-              both graceful and majestic, and I drive to work every day in a
-              clapped-out Suzuki Carry van.
+              former Videogame Translator, current Web Developer, and I have
+              weirdly narrow ear canals. My favourite animals are whales, I've
+              just signed up to do a triathlon because I'm going through a
+              mid-life crisis, and I drive to work every day in a clapped-out
+              Suzuki Carry van.
               <span>
                 I am interested in interactive UX/UI design, 3D modeling, insert
                 more stuff here.
