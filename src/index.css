@@ -217,3 +217,9 @@ a {
   @apply absolute -z-10 inset-0 ml-2 lg:ml-4;
   @apply text-pink-800;
 }
+
+.title::before {
+  content: "Projects";
+  @apply absolute  inset-0 ml-2 lg:ml-4;
+  @apply text-blue-900;
+}
