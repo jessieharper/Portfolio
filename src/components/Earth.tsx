@@ -18,6 +18,8 @@ const Earth = (): JSX.Element => {
     renderer.setSize(width, height);
     renderer.setClearColor(0xffffff, 0);
 
+    renderer.setPixelRatio(window.devicePixelRatio);
+
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
 
     if (mountRef.current) {
@@ -38,7 +40,7 @@ const Earth = (): JSX.Element => {
       8
     );
 
-    camera.position.z = 1.4;
+    camera.position.z = 1;
 
     const clock = new THREE.Clock();
     const animate = () => {
@@ -51,7 +53,6 @@ const Earth = (): JSX.Element => {
     animate();
 
     const handleResize = () => {
-      // Always use the captured initial height to avoid jumpiness
       renderer.setSize(window.innerWidth, initialHeightRef.current);
       camera.aspect = window.innerWidth / initialHeightRef.current;
       camera.updateProjectionMatrix();
