@@ -13,10 +13,14 @@ const Projects = (): JSX.Element => {
 
   return (
     <section id="projects" className="bg-body">
-      <div className="h-full border-t-4 border-dashed border-primary flex justify-center items-start my-8 md:my-16">
-        <h2 className="title relative text-blue-300 text-5xl md:text-7xl container text-left md:text-center mt-8 md:mt-16">
+      <div className="pixel-border relative h-full border-t-8 border-[#589C9A] flex flex-col justify-center items-center my-8 md:my-16">
+        <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl container text-left md:text-center mt-8 md:mt-16 underline">
           Projects
         </h2>
+        <p className="pt-6 w-1/2 text-center">
+          Here's a list of some of my most notable projects past, present and
+          future.
+        </p>
       </div>
       <div className="container h-full w-full mt-8">
         <div className="space-y-4 bg-body ">
@@ -25,11 +29,11 @@ const Projects = (): JSX.Element => {
             return (
               <div
                 key={i}
-                className="border-b-2 border-primary-50 h-full space-y-2 py-4 flex flex-col"
+                className="border-b-2 border-teal-100 h-full space-y-2 py-4 flex flex-col"
               >
                 <div className="flex justify-between items-center w-full">
                   <div>
-                    <h3 className="text-accent font-depixel text-5xl leading-normal">
+                    <h3 className="text-accent font-depixel text-3xl leading-normal">
                       {project.title}
                     </h3>
                     <p className="text-sm flex h-full">~{project.stack}~</p>
