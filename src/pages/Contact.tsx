@@ -33,9 +33,11 @@ const Contact = (): JSX.Element => {
     <>
       <section
         id="contact"
-        className="flex flex-col h-[100vh] items-center justify-center mt-14  relative"
+        className="container flex flex-col h-[20vh] items-start justify-center mt-8 relative"
       >
-        <h2 className="text-5xl font-semibold">Contact Me</h2>
+        <div className="px-8">
+          <h2 className="text-5xl font-semibold my-auto flex">Contact Me</h2>
+        </div>
       </section>
     </>
   );

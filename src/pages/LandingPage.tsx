@@ -21,7 +21,7 @@ const LandingPage = (): JSX.Element => {
         trigger: "#earth",
         start: "top top",
         endTrigger: "#projects",
-        end: "top 10%",
+        end: "bottom 80%",
         pin: true,
         pinSpacing: false,
         pinType: "transform",
