@@ -12,18 +12,18 @@ const Projects = (): JSX.Element => {
   };
 
   return (
-    <section id="projects" className="bg-body">
-      <div className="pixel-border relative h-full border-t-8 border-[#589C9A] flex flex-col justify-center items-center my-8 md:my-16">
-        <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl container text-left md:text-center mt-8 md:mt-16 underline">
+    <section id="projects" className="bg-body  px-8">
+      <div className="container relative h-full pixel-border border-t-8 border-yellow-200 flex flex-col justify-center items-start my-8 md:my-16 ">
+        <h2 className="title w-auto relative text-[#2A4257] text-5xl md:text-7xl text-left mt-32 ">
           Projects
         </h2>
-        <p className="pt-6 w-1/2 text-center">
+        {/* <p className="pt-6 w-full md:w-1/2 text-left md:text-center">
           Here's a list of some of my most notable projects past, present and
           future.
-        </p>
+        </p> */}
       </div>
       <div className="container h-full w-full mt-8">
-        <div className="space-y-4 bg-body ">
+        <div className="space-y-4 ">
           {projects.map((project, i) => {
             const isOpen = openStates[i];
             return (
@@ -42,9 +42,7 @@ const Projects = (): JSX.Element => {
                     {isOpen ? "-" : "+"}
                   </button>
                 </div>
-                {isOpen && (
-                  <div className="justifyStart py-8">{project.content}</div>
-                )}
+                {isOpen && <div className="py-8">{project.content}</div>}
               </div>
             );
           })}

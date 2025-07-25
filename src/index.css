@@ -220,11 +220,11 @@ a {
 
 .title::before {
   content: "Projects";
-  @apply absolute  inset-0 ml-2 lg:ml-4;
+  @apply absolute -right-2;
   @apply text-[#589C9A];
 }
 
-.pixel-border::before {
+/* .pixel-border::before {
   content: "";
   @apply absolute -top-3;
   @apply w-full border-2 border-[#99C9B3];
@@ -234,4 +234,4 @@ a {
   content: "";
   @apply absolute top-0;
   @apply w-full border-4 border-[#2A4257];
-}
+} */
