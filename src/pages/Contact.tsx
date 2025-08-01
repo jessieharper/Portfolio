@@ -4,20 +4,30 @@ import { useGSAP } from "@gsap/react";
 
 const Contact = () => {
   const gsapContainer = useRef<HTMLDivElement | null>(null);
-  const arrowTimeline = useRef<gsap.core.Tween | null>(null);
-  const arrowPathRef = useRef<SVGPathElement | null>(null);
+  const arrowTimeline = useRef<gsap.core.Timeline | null>(null);
+  const arrowPathRef = useRef<HTMLDivElement | null>(null);
+  const arrowHeadRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      const windowWidth = window.innerWidth;
-      const endX = windowWidth - 100;
+      const endWidth = window.innerWidth / 2.2;
 
-      arrowTimeline.current = gsap.to(arrowPathRef.current, {
-        duration: 0.5,
-        attr: { d: `M8 8 H${endX}` },
-        ease: "power1.inOut",
-        paused: true,
-      });
+      arrowTimeline.current = gsap
+        .timeline({ paused: true })
+        .to(arrowPathRef.current, {
+          width: endWidth,
+          duration: 0.5,
+          ease: "power1.inOut",
+        })
+        .to(
+          arrowHeadRef.current,
+          {
+            x: endWidth,
+            duration: 0.5,
+            ease: "power1.inOut",
+          },
+          "<"
+        );
     },
     { scope: gsapContainer }
   );
@@ -27,56 +37,53 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="container flex flex-col h-[20vh] items-start justify-center mt-8 relative"
-    >
-      <div ref={gsapContainer} className="px-8 flex items-center gap-4 w-full">
-        <h2 className="text-5xl font-semibold my-auto text-nowrap leading-normal infline-flex w-min sm:w-auto">
+    <section id="contact" className="container flex h-[20vh] mt-8 relative">
+      <div
+        ref={gsapContainer}
+        className="px-8 flex items-center gap-4 w-full relative"
+      >
+        <h2 className="text-5xl font-semibold my-auto text-nowrap leading-normal inline-flex w-min sm:w-auto">
           Contact Me
         </h2>
-        <span
-          id="arrow"
-          onClick={openSesame}
-          className="mt-4 cursor-pointer flex flex-auto w-full"
-        >
-          <svg
-            viewBox={`0 0 ${window.innerWidth} 40`}
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
-          >
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="16"
-                markerHeight="16"
-                refX="8"
-                refY="8"
-                orient="auto"
-                markerUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M0,0 L8,8 L0,16"
-                  fill="none"
-                  stroke="#ffffff"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </marker>
-            </defs>
 
-            <path
-              ref={arrowPathRef}
-              id="arrowPath"
-              d="M8 20 H10"
-              stroke="#ffffff"
-              strokeWidth="4"
-              fill="none"
-              markerEnd="url(#arrowhead)"
-            />
-          </svg>
-        </span>
+        <div ref={arrowPathRef} className="h-1 w-0 bg-primary relative">
+          <div
+            ref={arrowHeadRef}
+            onClick={openSesame}
+            className="absolute -left-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
+          >
+            <div
+              style={{
+                maskImage: `url('/images/icons/arrowhead.svg')`,
+                WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
+              }}
+              className="block w-8 h-10 icon-mask bg-primary"
+            ></div>
+          </div>
+        </div>
+        <div className="flex gap-4 ml-auto">
+          <div
+            style={{
+              maskImage: `url('/images/icons/github.svg')`,
+              WebkitMaskImage: `url('/images/icons/github.svg')`,
+            }}
+            className="flex w-12 h-12 icon-mask bg-primary"
+          ></div>
+          <div
+            style={{
+              maskImage: `url('/images/icons/linkedin.svg')`,
+              WebkitMaskImage: `url('/images/icons/linkedin.svg')`,
+            }}
+            className="flex w-12 h-12 icon-mask bg-primary"
+          ></div>
+          <div
+            style={{
+              maskImage: `url('/images/icons/linkedin.svg')`,
+              WebkitMaskImage: `url('/images/icons/linkedin.svg')`,
+            }}
+            className="flex w-12 h-12 icon-mask bg-primary"
+          ></div>
+        </div>
       </div>
     </section>
   );
