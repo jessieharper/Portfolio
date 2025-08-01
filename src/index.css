@@ -52,6 +52,11 @@
   background-repeat: repeat;
 } */
 
+html {
+  scroll-behavior: smooth;
+  transition: all 4s ease-in-out;
+}
+
 body {
   @apply transition-colors duration-100;
   @apply font-dogica;
@@ -235,3 +240,23 @@ a {
   @apply absolute top-0;
   @apply w-full border-4 border-[#2A4257];
 } */
+
+.dropdown {
+  .dropdown-toggle {
+    z-index: -1;
+
+    ~ .dropdown-content {
+      @apply max-h-0;
+      @apply overflow-hidden;
+      @apply transition-all;
+      @apply duration-500;
+    }
+
+    &:checked {
+      ~ .dropdown-content {
+        max-height: 100vh;
+        @apply py-8;
+      }
+    }
+  }
+}

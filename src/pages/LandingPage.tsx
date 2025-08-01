@@ -17,6 +17,9 @@ const LandingPage = (): JSX.Element => {
   useGSAP(
     () => {
       let mm = gsap.matchMedia();
+      // ScrollTrigger.scrollerProxy(".full-height-container", {
+      //   pinType: "fixed",
+      // });
       ScrollTrigger.create({
         trigger: "#earth",
         start: "top top",
@@ -63,7 +66,7 @@ const LandingPage = (): JSX.Element => {
   );
 
   return (
-    <div ref={gsapContainer}>
+    <div ref={gsapContainer} className="full-height-container">
       <div id="earth" className="absolute top-[2rem] inset-0 -z-10 w-full">
         <Earth />
       </div>
