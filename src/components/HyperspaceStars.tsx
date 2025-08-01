@@ -80,12 +80,10 @@ export default function HyperspaceStars() {
   }, []);
 
   return (
-    <div className=" absolute top-0 w-full">
+    <div className=" absolute top-0 w-full h-full ">
       <svg
         ref={svgRef}
         className="sticky top-0 -z-20 w-full h-full overflow-visible text-primary"
-        width={500}
-        height={150}
         viewBox="0 0 500 150"
       />
     </div>
