@@ -92,9 +92,8 @@ const LandingPage = (): JSX.Element => {
 
         <div className="h-full md:h-[60vh] flex w-full mt-72 md:mt-0">
           <div className="card md:ml-auto mt-auto">
-            <div className="h-full space-y-2">
-              <h3 className="text-sm">Main Tech Stack: </h3>
-            </div>
+            <h3 className="text-sm mb-8">Main Tech Stack: </h3>
+
             <div className="gap-8 flex flex-col">
               <TechStackLogos />
 

@@ -104,10 +104,10 @@ a {
 .card {
   @apply w-full h-min;
   @apply relative z-20;
-  @apply border-4 border-primary;
+  @apply border-4 border-yellow-200;
   @apply p-8 gap-8;
   @apply bg-card;
-  @apply shadow;
+  /* @apply shadow; */
   max-width: 28rem;
   @screen md {
     max-width: 21.5rem;
