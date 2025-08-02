@@ -27,7 +27,10 @@ const Contact = () => {
             ease: "power1.inOut",
           },
           "<"
-        );
+        )
+        .fromTo("#github", { y: "500%" }, { y: "0%", duration: 0.2 }, "-=0.1")
+        .fromTo("#linkedin", { y: "500%" }, { y: "0%", duration: 0.2 }, "<0.1")
+        .fromTo("#email", { y: "500%" }, { y: "0%", duration: 0.2 }, "<0.1");
     },
     { scope: gsapContainer }
   );
@@ -37,7 +40,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="container flex h-[20vh] mt-8 relative">
+    <section
+      id="contact"
+      className="container flex h-[20vh] my-8 relative overflow-y-hidden"
+    >
       <div
         ref={gsapContainer}
         className="px-8 flex items-center gap-4 w-full relative"
@@ -57,12 +63,13 @@ const Contact = () => {
                 maskImage: `url('/images/icons/arrowhead.svg')`,
                 WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
               }}
-              className="block w-8 h-10 icon-mask bg-primary"
+              className="block w-6 h-8 icon-mask bg-primary"
             ></div>
           </div>
         </div>
         <div className="flex gap-4 ml-auto">
           <div
+            id="github"
             style={{
               maskImage: `url('/images/icons/github.svg')`,
               WebkitMaskImage: `url('/images/icons/github.svg')`,
@@ -70,6 +77,7 @@ const Contact = () => {
             className="flex w-12 h-12 icon-mask bg-primary"
           ></div>
           <div
+            id="linkedin"
             style={{
               maskImage: `url('/images/icons/linkedin.svg')`,
               WebkitMaskImage: `url('/images/icons/linkedin.svg')`,
@@ -77,9 +85,10 @@ const Contact = () => {
             className="flex w-12 h-12 icon-mask bg-primary"
           ></div>
           <div
+            id="email"
             style={{
-              maskImage: `url('/images/icons/linkedin.svg')`,
-              WebkitMaskImage: `url('/images/icons/linkedin.svg')`,
+              maskImage: `url('/images/icons/envelope-solid-full.svg')`,
+              WebkitMaskImage: `url('/images/icons/envelope-solid-full.svg')`,
             }}
             className="flex w-12 h-12 icon-mask bg-primary"
           ></div>
