@@ -64,22 +64,24 @@ const Projects = (): JSX.Element => {
                     pariatur. Reprehenderit consequuntur libero obcaecati nihil
                     reiciendis non sit, omnis quibusdam quisquam in aperiam?
                   </p>
-                  <div className="flex mr-auto ">
-                    <Button
-                      href={project.link}
-                      title="Visit Site"
-                      id=""
-                      colours={[
-                        "#EC4899",
-                        "#EB6A6A",
-                        "#EB7D51",
-                        "#EB9630",
-                        "#EBB305",
-                      ]}
-                      range={5}
-                      delay={100}
-                    />
-                  </div>
+                  {project.link && (
+                    <div className="flex mr-auto">
+                      <Button
+                        href={project.link}
+                        title="Visit Site"
+                        id={`project${i}`}
+                        colours={[
+                          "#EC4899",
+                          "#EB6A6A",
+                          "#EB7D51",
+                          "#EB9630",
+                          "#EBB305",
+                        ]}
+                        range={5}
+                        delay={100}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             );
