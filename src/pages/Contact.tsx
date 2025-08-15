@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Contact = () => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const gsapContainer = useRef<HTMLDivElement | null>(null);
   const arrowTimeline = useRef<gsap.core.Timeline | null>(null);
   const arrowPathRef = useRef<HTMLDivElement | null>(null);
@@ -36,7 +37,10 @@ const Contact = () => {
   );
 
   const openSesame = () => {
-    arrowTimeline.current?.restart();
+    if (!isClicked) {
+      arrowTimeline.current?.restart();
+    }
+    setIsClicked(true);
   };
 
   return (

@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { projects } from "../data/ProjectData";
+import Button from "../components/Button";
 
 const Projects = (): JSX.Element => {
   // const [openStates, setOpenStates] = useState<Record<number, boolean>>({});
@@ -41,23 +42,44 @@ const Projects = (): JSX.Element => {
                 >
                   <div className="flex justify-between items-center w-full">
                     <div>
-                      <h3 className="text-accent font-depixel text-3xl leading-normal">
-                        {project.title}
-                      </h3>
+                      <div className="flex gap-4 items-center">
+                        <h3 className="text-accent font-depixel text-3xl leading-normal">
+                          {project.title}
+                        </h3>
+                      </div>
                       <p className="text-sm flex h-full">~{project.stack}~</p>
                     </div>
-                    <span>+</span>
+                    <span className="pt-4">+</span>
                   </div>
                 </label>
-                <div className="dropdown-content w-full md:w-2/3 lg:w-7/12">
-                  {project.content} Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit. Saepe rerum accusantium maiores neque
-                  similique ipsa ducimus in illo at aperiam, provident
-                  consequuntur quasi ipsam laborum a? Ad nesciunt fuga aliquid,
-                  deserunt aliquam qui voluptatum veritatis temporibus tempore
-                  repellendus est molestiae commodi sequi pariatur.
-                  Reprehenderit consequuntur libero obcaecati nihil reiciendis
-                  non sit, omnis quibusdam quisquam in aperiam?
+
+                <div className="flex flex-col justify-start gap-8 dropdown-content w-full md:w-2/3 lg:w-7/12">
+                  <p>
+                    {project.content} Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Saepe rerum accusantium maiores neque
+                    similique ipsa ducimus in illo at aperiam, provident
+                    consequuntur quasi ipsam laborum a? Ad nesciunt fuga
+                    aliquid, deserunt aliquam qui voluptatum veritatis
+                    temporibus tempore repellendus est molestiae commodi sequi
+                    pariatur. Reprehenderit consequuntur libero obcaecati nihil
+                    reiciendis non sit, omnis quibusdam quisquam in aperiam?
+                  </p>
+                  <div className="flex mr-auto ">
+                    <Button
+                      href={project.link}
+                      title="Visit Site"
+                      id=""
+                      colours={[
+                        "#EC4899",
+                        "#EB6A6A",
+                        "#EB7D51",
+                        "#EB9630",
+                        "#EBB305",
+                      ]}
+                      range={5}
+                      delay={100}
+                    />
+                  </div>
                 </div>
               </div>
             );

@@ -71,10 +71,10 @@ export default function HyperspaceStars() {
         stretch = 0;
       }
 
-      requestAnimationFrame(update);
+      // requestAnimationFrame(update);
     };
 
-    requestAnimationFrame(update);
+    // requestAnimationFrame(update);
 
     return () => {};
   }, []);
