@@ -35,7 +35,7 @@ const Button = ({
 
     updateButtonBackground(pixels, id);
 
-    const container = document.getElementById("btnContainer");
+    const container = document.getElementById(`${id}Container`);
 
     const handleEnter = () => {
       if (interval) return;
@@ -73,9 +73,10 @@ const Button = ({
 
   return (
     <a
-      id="btnContainer"
+      target={download ? undefined : "_blank"}
+      id={`${id}Container`}
       href={href}
-      download={download}
+      download={download || undefined}
       aria-label={title}
       className="flex items-center min-w-max h-16 justify-center btn overflow-hidden relative group"
     >

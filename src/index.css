@@ -148,8 +148,8 @@ a {
 
 .btn {
   @apply relative;
-  @apply active:top-1 active:left-1 active:shadow-none;
-  @apply shadow-sm active:shadow-none;
+  /* @apply active:top-1 active:left-1 active:shadow-none; */
+  /* @apply shadow-sm active:shadow-none; */
   @apply text-body border-3;
   @apply mx-auto;
   width: 260px;
