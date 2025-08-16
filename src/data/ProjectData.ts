@@ -1,6 +1,7 @@
 export interface Project {
   title: string;
   date: string;
+  category: string;
   stack: string;
   image: string;
   link: string;
@@ -15,6 +16,7 @@ const projects: Project[] = [
   {
     title: "Sudowiz",
     date: "WIP",
+    category: "Personal Project",
     stack: "JavaScript, React, React Native, Tailwind, JEST",
     image: "",
     link: "",
@@ -35,6 +37,7 @@ const projects: Project[] = [
   {
     title: "Morelife",
     date: "WIP",
+    category: "Genius Division",
     stack: "Laravel, Livewire, Tailwind, Nova, MySQL, PEST",
     image: "morelife.svg",
     link: "",
@@ -47,6 +50,7 @@ const projects: Project[] = [
   {
     title: "Fashion Toolbox",
     date: 'Jul "25',
+    category: "Genius Division",
     stack: "WP, JS, Tailwind, Three.js",
     image: "",
     link: "https://www.fashiontoolbox.co.uk/",
@@ -60,6 +64,7 @@ const projects: Project[] = [
   {
     title: "Curve Digital",
     date: 'May "25',
+    category: "Genius Division",
     stack: "WP, Laravel, Tailwind, Alpine,js, JS",
     image: "curve.svg",
     link: "https://www.curvedigital.co.uk/",
@@ -73,6 +78,7 @@ const projects: Project[] = [
   {
     title: "Cannon Hall Farm",
     date: 'Aug "24',
+    category: "Genius Division",
     stack: "WP, Woocommerce, AJAX, JS, Tailwind",
     image: "",
     link: "https://shop.cannonhallfarm.co.uk/",
@@ -85,6 +91,7 @@ const projects: Project[] = [
   {
     title: "Codelingo",
     date: 'Jan "24',
+    category: "Northcoders",
     stack: "TypeScript, Next.js, Tailwind, MongoDB",
     image: "codelingo.png",
     link: "https://codelingo-by-tpwogitlou.netlify.app/",

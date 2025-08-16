@@ -32,7 +32,10 @@ const Projects = (): JSX.Element => {
                 key={i}
                 className="relative dropdown border-b-2 border-teal-100/30 h-full w-full space-y-2 py-4 flex flex-col"
               >
-                <div className="opacity-60 text-xs italic">{project.date}</div>
+                <div className="opacity-60 text-xs italic divide-x-2 divide-primary flex">
+                  <span className="pr-5">{project.date}</span>
+                  <span className="pl-5">{project.category}</span>
+                </div>
                 <input
                   id={i.toString()}
                   type="checkbox"
