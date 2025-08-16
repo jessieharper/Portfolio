@@ -30,7 +30,6 @@ module.exports = {
         primary: "var(--primary)",
         "primary-50": "var(--primary-50)",
         card: "var(--card)",
-
         dark: "#18110C",
       },
     },

@@ -46,7 +46,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="container flex h-[20vh] my-8 relative overflow-y-hidden"
+      className="container flex h-[20vh] py-8 relative overflow-y-hidden z-40 bg-black"
     >
       <div
         ref={gsapContainer}
@@ -71,7 +71,7 @@ const Contact = () => {
             ></div>
           </div>
         </div>
-        <div className="flex gap-4 ml-auto">
+        <div className="flex gap-6 ml-auto">
           <a
             target="_blank"
             href="https://github.com/jessieharper"

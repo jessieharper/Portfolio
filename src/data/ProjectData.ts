@@ -1,5 +1,6 @@
 export interface Project {
   title: string;
+  date: string;
   stack: string;
   image: string;
   link: string;
@@ -12,7 +13,8 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: "Sudowiz (WIP)",
+    title: "Sudowiz",
+    date: "WIP",
     stack: "JavaScript, React, React Native, Tailwind, JEST",
     image: "",
     link: "",
@@ -31,7 +33,8 @@ const projects: Project[] = [
   //     "MyLOS (My Life Organisation System) is a personal project I’m building to explore Filament and solidify my Laravel skills. The goal is to create a centralised admin panel for managing projects, tasks, and personal budgets, with flexible organisation tools including lists, kanban boards, and budget trackers. This project has been an opportunity to deepen my understanding of Laravel’s ecosystem while developing a practical, scalable tool that I plan to evolve over time.",
   // },
   {
-    title: "Morelife (WIP)",
+    title: "Morelife",
+    date: "WIP",
     stack: "Laravel, Livewire, Tailwind, Nova, MySQL, PEST",
     image: "morelife.svg",
     link: "",
@@ -43,6 +46,7 @@ const projects: Project[] = [
   },
   {
     title: "Fashion Toolbox",
+    date: 'Jul "25',
     stack: "WP, JS, Tailwind, Three.js",
     image: "",
     link: "https://www.fashiontoolbox.co.uk/",
@@ -55,6 +59,7 @@ const projects: Project[] = [
   },
   {
     title: "Curve Digital",
+    date: 'May "25',
     stack: "WP, Laravel, Tailwind, Alpine,js, JS",
     image: "curve.svg",
     link: "https://www.curvedigital.co.uk/",
@@ -67,6 +72,7 @@ const projects: Project[] = [
   },
   {
     title: "Cannon Hall Farm",
+    date: 'Aug "24',
     stack: "WP, Woocommerce, AJAX, JS, Tailwind",
     image: "",
     link: "https://shop.cannonhallfarm.co.uk/",
@@ -78,6 +84,7 @@ const projects: Project[] = [
   },
   {
     title: "Codelingo",
+    date: 'Jan "24',
     stack: "TypeScript, Next.js, Tailwind, MongoDB",
     image: "codelingo.png",
     link: "https://codelingo-by-tpwogitlou.netlify.app/",
