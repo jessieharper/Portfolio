@@ -72,30 +72,35 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex gap-4 ml-auto">
-          <div
+          <a
+            target="_blank"
+            href="https://github.com/jessieharper"
             id="github"
             style={{
               maskImage: `url('/images/icons/github.svg')`,
               WebkitMaskImage: `url('/images/icons/github.svg')`,
             }}
             className="flex w-12 h-12 icon-mask bg-primary"
-          ></div>
-          <div
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/jessie-harper/"
             id="linkedin"
             style={{
               maskImage: `url('/images/icons/linkedin.svg')`,
               WebkitMaskImage: `url('/images/icons/linkedin.svg')`,
             }}
             className="flex w-12 h-12 icon-mask bg-primary"
-          ></div>
-          <div
+          ></a>
+          <a
+            href="mailto:jessieharper12@gmail.com"
             id="email"
             style={{
               maskImage: `url('/images/icons/envelope-solid-full.svg')`,
               WebkitMaskImage: `url('/images/icons/envelope-solid-full.svg')`,
             }}
             className="flex w-12 h-12 icon-mask bg-primary"
-          ></div>
+          ></a>
         </div>
       </div>
     </section>

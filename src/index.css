@@ -224,7 +224,7 @@ a {
 }
 
 .title::before {
-  content: "Projects";
+  content: "Notable Projects";
   @apply absolute -right-2;
   @apply text-[#589C9A];
 }
@@ -243,8 +243,6 @@ a {
 
 .dropdown {
   .dropdown-toggle {
-    z-index: -1;
-
     ~ .dropdown-content {
       @apply max-h-0;
       @apply overflow-hidden;
