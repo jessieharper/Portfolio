@@ -24,7 +24,7 @@ const LandingPage = (): JSX.Element => {
         trigger: "#earth",
         start: "top top",
         endTrigger: "#projects",
-        end: "bottom 80%",
+        end: "top top",
         pin: true,
         pinSpacing: false,
         pinType: "transform",
@@ -52,8 +52,17 @@ const LandingPage = (): JSX.Element => {
         ScrollTrigger.create({
           trigger: "#card3",
           start: "top 5%",
-          endTrigger: "#card4",
-          end: "top 5%",
+          endTrigger: "#projects",
+          end: "bottom 80%",
+          pin: true,
+          pinSpacing: false,
+          pinType: "transform",
+        });
+        ScrollTrigger.create({
+          trigger: "#card4",
+          start: "top 5%",
+          endTrigger: "#projects",
+          end: "bottom 80%",
           pin: true,
           pinSpacing: false,
           pinType: "transform",
