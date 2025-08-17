@@ -46,29 +46,35 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="container flex h-[20vh] py-8 relative overflow-y-hidden z-40 bg-black"
+      className="container flex h-[20vh] py-8 relative overflow-y-hidden z-40 bg-body"
     >
       <div
         ref={gsapContainer}
         className="px-8 flex items-center gap-4 w-full relative"
       >
-        <h2 className="text-5xl font-semibold my-auto text-nowrap leading-normal inline-flex w-min sm:w-auto">
-          Contact Me
-        </h2>
+        <div
+          className={`flex items-center gap-4 ${
+            isClicked ? "" : "cursor-pointer"
+          }`}
+          onClick={openSesame}
+        >
+          <h2 className="text-5xl font-semibold my-auto text-nowrap leading-normal inline-flex w-min sm:w-auto">
+            Contact Me
+          </h2>
 
-        <div ref={arrowPathRef} className="h-1 w-0 bg-primary relative">
-          <div
-            ref={arrowHeadRef}
-            onClick={openSesame}
-            className="absolute -left-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
-          >
+          <div ref={arrowPathRef} className="h-1 w-0 bg-primary relative">
             <div
-              style={{
-                maskImage: `url('/images/icons/arrowhead.svg')`,
-                WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
-              }}
-              className="block w-6 h-8 icon-mask bg-primary"
-            ></div>
+              ref={arrowHeadRef}
+              className="absolute -left-2 top-1/2 transform -translate-y-1/2"
+            >
+              <div
+                style={{
+                  maskImage: `url('/images/icons/arrowhead.svg')`,
+                  WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
+                }}
+                className="block w-6 h-8 icon-mask bg-primary"
+              ></div>
+            </div>
           </div>
         </div>
         <div className="flex gap-6 ml-auto">

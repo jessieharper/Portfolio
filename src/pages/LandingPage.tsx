@@ -101,7 +101,7 @@ const LandingPage = (): JSX.Element => {
 
         <div className="h-full md:h-[60vh] flex w-full mt-72 md:mt-0">
           <div className="card md:ml-auto mt-auto">
-            <h3 className="text-sm mb-8">Main Tech Stack: </h3>
+            <h3 className="text-lg mb-8">Main Tech Stack: </h3>
 
             <div className="gap-8 flex flex-col">
               <TechStackLogos />
@@ -128,7 +128,7 @@ const LandingPage = (): JSX.Element => {
         <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72">
           <div id="card2" className="card mx-auto md:mx-0 md:ml-auto">
             <div className="h-full space-y-2">
-              <h3 className="text-sm">Key Skills: </h3>
+              <h3 className="text-lg ">Key Skills: </h3>
               <p className="text-xs leading-5 h-full flex flex-col gap-2">
                 Languages: JavaScript, PHP, TypeScript
                 <span>
@@ -151,9 +151,9 @@ const LandingPage = (): JSX.Element => {
 
         <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72 ">
           <div id="card3" className="card mb-auto mx-auto md:mx-0 flex">
-            <p className="text-xs leading-5 h-full flex flex-col gap-2">
-              <span className="font-depixel text-3xl">About me...</span>I am a
-              former Videogame Translator, current Web Developer, and I have
+            <div className="text-xs leading-5 h-full flex flex-col gap-2">
+              <h3 className="font-depixel text-lg uppercase">About me:</h3>I am
+              a former Videogame Translator, current Web Developer, and I have
               weirdly narrow ear canals. My favourite animals are whales, I've
               just signed up to do a triathlon because I'm going through a
               mid-life crisis, and I drive to work every day in a clapped-out
@@ -162,7 +162,7 @@ const LandingPage = (): JSX.Element => {
                 I am interested in interactive UX/UI design, 3D modeling, insert
                 more stuff here.
               </span>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -172,7 +172,7 @@ const LandingPage = (): JSX.Element => {
             className="card mt-auto mx-auto md:mx-0 md:ml-auto left-0"
           >
             <div className="h-full space-y-2">
-              <h3 className="text-sm">Experience:</h3>
+              <h3 className="text-lg">Experience:</h3>
               <ul className="text-xs leading-5 h-full flex flex-col gap-2">
                 <li>
                   Junior Software Developer, Northcoders | 11/2023 to 3/2024

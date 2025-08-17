@@ -3,7 +3,7 @@ export interface Project {
   date: string;
   category: string;
   stack: string;
-  image: string;
+  image: string[];
   link: string;
   content: {
     goal: string;
@@ -18,12 +18,16 @@ const projects: Project[] = [
     date: "WIP",
     category: "Personal Project",
     stack: "JavaScript, React, React Native, Tailwind, JEST",
-    image: "",
+    image: [
+      "/images/projects/sudowiz/sudowiz1.png",
+      "/images/projects/sudowiz/sudowiz2.png",
+    ],
     link: "",
     content: {
-      goal: "Build a mobile Sudoku puzzle app where you can play Sudoku and other number-based puzzle games.",
-      features: "Puzzles.",
-      outcome: "TBD...",
+      goal: "Build a cross-platform Sudoku and puzzle app to strengthen mobile development skills and explore React Native while creating an engaging, user-friendly gaming experience.",
+      features:
+        "Customizable difficulty levels, ability to choose different clue patterns, daily challenge mode, player progress tracking, and social features for sharing results with friends. Planned future features include expanding to alternate Sudoku styles (e.g. Bomb Sudoku, Latin-Doku) to offer greater variety and replayability.",
+      outcome: "Currently in development (WIP).",
     },
   },
   // {
@@ -38,13 +42,14 @@ const projects: Project[] = [
     title: "Morelife",
     date: "WIP",
     category: "Genius Division",
-    stack: "Laravel, Livewire, Tailwind, Nova, MySQL, PEST",
-    image: "morelife.svg",
+    stack: "PHP, Laravel, Livewire, Blade, Tailwind, MySQL, PEST",
+    image: [],
     link: "",
     content: {
-      goal: "Create a habit tracking feature as part of the My Life Plan weight management service that is provided by Morelife. The client requested that the feature be integrated into their pre-existing online weight loss platform.",
-      features: "Habit tracker.",
-      outcome: "TBD...",
+      goal: "Design and implement a habit tracking feature as part of the My Life Plan weight management service by Morelife, integrating seamlessly into their existing online weight loss platform.",
+      features:
+        "Track weekly habits related to nutrition, exercise, and wellbeing; provide users with progress visualizations; deliver reminders and accountability tools to support sustained lifestyle changes.",
+      outcome: "Currently in testing (WIP).",
     },
   },
   {
@@ -52,13 +57,14 @@ const projects: Project[] = [
     date: 'Jul "25',
     category: "Genius Division",
     stack: "WP, JS, Tailwind, Three.js",
-    image: "",
+    image: [],
     link: "https://www.fashiontoolbox.co.uk/",
     content: {
-      goal: "Create a website for a small digital fashion company to showcase their work and act as a hub to attract new clients.",
-      features: "3D models, video, forms.",
+      goal: "Create a modern, engaging website for a small digital fashion company (Fashion Toolbox) to showcase their portfolio and serve as a hub for attracting new clients.",
+      features:
+        "Interactive 3D models to display digital products, integrated video content for storytelling.",
       outcome:
-        "'The team completely got my vision from day one. They listened, asked the right questions, and turned ideas into a site that reflects everything Fashion Toolbox stands for. They went above and beyond at every stage, nothing was too much trouble, and the end result is absolutely spot on. I'm really proud of what we've built together.' - Laura Fish, Fashion Toolbox",
+        "Delivered a fully customized site that highlights Fashion Toolbox’s innovative work and brand identity. Client feedback: 'The team completely got my vision from day one. They listened, asked the right questions, and turned ideas into a site that reflects everything Fashion Toolbox stands for. They went above and beyond at every stage, nothing was too much trouble, and the end result is absolutely spot on. I'm really proud of what we've built together.' – Laura Fish, Fashion Toolbox",
     },
   },
   {
@@ -66,13 +72,14 @@ const projects: Project[] = [
     date: 'May "25',
     category: "Genius Division",
     stack: "WP, Laravel, Tailwind, Alpine,js, JS",
-    image: "curve.svg",
+    image: [],
     link: "https://www.curvedigital.co.uk/",
     content: {
       goal: "Create a website for a small digital fashion company to showcase their work and act as a hub to attract new clients.",
-      features: "3D models, video, forms.",
+      features:
+        "Fully customised site with integrated video content for storytelling.",
       outcome:
-        "'Working with the team at Genius Division has been a fantastic experience once again. They brought our vision for the new curvedigital.co.uk site to life with precision and creativity. From understanding our goals to delivering technical solutions—especially around showcasing high-quality video in a fast, seamless way—they went above and beyond at every stage. They consistently delivered ideas and solutions that exceeded our expectations. We absolutely love our new site!' - Ian Moss, Curve Digital",
+        '"Working with the team at Genius Division has been a fantastic experience once again. They brought our vision for the new curvedigital.co.uk site to life with precision and creativity. From understanding our goals to delivering technical solutions — especially around showcasing high-quality video in a fast, seamless way — they went above and beyond at every stage. They consistently delivered ideas and solutions that exceeded our expectations. We absolutely love our new site!" - Ian Moss, Curve Digital',
     },
   },
   {
@@ -80,7 +87,7 @@ const projects: Project[] = [
     date: 'Aug "24',
     category: "Genius Division",
     stack: "WP, Woocommerce, AJAX, JS, Tailwind",
-    image: "",
+    image: [],
     link: "https://shop.cannonhallfarm.co.uk/",
     content: {
       goal: "Create a website for a small digital fashion company to showcase their work and act as a hub to attract new clients.",
@@ -93,12 +100,14 @@ const projects: Project[] = [
     date: 'Jan "24',
     category: "Northcoders",
     stack: "TypeScript, Next.js, Tailwind, MongoDB",
-    image: "codelingo.png",
+    image: [],
     link: "https://codelingo-by-tpwogitlou.netlify.app/",
     content: {
-      goal: "Create a website for a small digital fashion company to showcase their work and act as a hub to attract new clients.",
-      features: "3D models, video, forms.",
-      outcome: "Lorem",
+      goal: "Design and develop a website aimed at helping children learn Python and JavaScript through interactive quizzes and gamified experiences.",
+      features:
+        "Built-in IDE-style coding sandbox for real-time practice, drag-and-drop quiz games, and a friendly, accessible interface inspired by Duolingo and Scratch.",
+      outcome:
+        "Collaborated with a team of fellow Northcoders to deliver an engaging educational platform within a tight deadline. Over the course of 8 days, we learned and applied a brand-new tech stack (TypeScript, Next.js, Tailwind, MongoDB) while building the app from scratch. The project showcased both our teamwork and ability to quickly adopt new technologies to meet ambitious goals.",
     },
   },
 ];

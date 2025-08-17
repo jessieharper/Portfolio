@@ -14,7 +14,7 @@ const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="px-8 border-t-4 border-accent-light bg-black"
+      className="px-8 border-t-4 border-accent-light bg-body overflow-x-hidden"
     >
       <div className="container relative z-40 h-full pixel-border  flex flex-col justify-center items-start py-8 md:py-16 ">
         {/* <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl text-center mt-16 ">
@@ -67,39 +67,58 @@ const Projects = (): JSX.Element => {
                   </div>
                 </label>
 
-                <div className="flex flex-col justify-start gap-8 dropdown-content w-full md:w-2/3 lg:w-7/12">
-                  <div className="gap-4 flex flex-col">
-                    <p className="flex flex-col gap-2">
-                      <span className="text-accent-dark">Goal</span>
-                      <span className="text-sm">{project.content.goal}</span>
-                    </p>
-                    <p className="flex flex-col gap-2">
-                      <span className="text-accent-dark">Features</span>
-                      <span className="text-sm">
-                        {project.content.features}
-                      </span>
-                    </p>
-                    <p className="flex flex-col gap-2">
-                      <span className="text-accent-dark">Outcome</span>
-                      <span className="text-sm">{project.content.outcome}</span>
-                    </p>
+                <div className="dropdown-content flex flex-col lg:flex-row w-full gap-4">
+                  <div className="flex flex-col justify-start gap-8 w-full md:w-2/3 lg:w-7/12">
+                    <div className="gap-4 flex flex-col">
+                      <p className="flex flex-col gap-2">
+                        <span className="text-accent-dark">Goal</span>
+                        <span className="text-sm">{project.content.goal}</span>
+                      </p>
+                      <p className="flex flex-col gap-2">
+                        <span className="text-accent-dark">Features</span>
+                        <span className="text-sm">
+                          {project.content.features}
+                        </span>
+                      </p>
+                      <p className="flex flex-col gap-2">
+                        <span className="text-accent-dark">Outcome</span>
+                        <span className="text-sm">
+                          {project.content.outcome}
+                        </span>
+                      </p>
+                    </div>
+                    {project.link && (
+                      <div className="flex mr-auto">
+                        <Button
+                          href={project.link}
+                          title="Visit Site"
+                          id={`project${i}`}
+                          colours={[
+                            "#EC4899",
+                            "#EB6A6A",
+                            "#EB7D51",
+                            "#EB9630",
+                            "#EBB305",
+                          ]}
+                          range={5}
+                          delay={100}
+                        />
+                      </div>
+                    )}
                   </div>
-                  {project.link && (
-                    <div className="flex mr-auto">
-                      <Button
-                        href={project.link}
-                        title="Visit Site"
-                        id={`project${i}`}
-                        colours={[
-                          "#EC4899",
-                          "#EB6A6A",
-                          "#EB7D51",
-                          "#EB9630",
-                          "#EBB305",
-                        ]}
-                        range={5}
-                        delay={100}
-                      />
+
+                  {project.image && (
+                    <div className="flex justify-start lg:justify-center gap-4 md:gap-8 h-full w-full lg:w-5/12">
+                      {project.image.map((img, i) => (
+                        <div className="h-52">
+                          <img
+                            key={i}
+                            src={img}
+                            alt={`${project.title} screenshot ${i + 1}`}
+                            className="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
