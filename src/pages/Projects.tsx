@@ -14,7 +14,7 @@ const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="px-8 border-t-4 border-accent-light bg-body overflow-x-hidden"
+      className="lg:px-8 border-t-4 border-accent-light bg-body overflow-x-hidden"
     >
       <div className="container relative z-40 h-full pixel-border  flex flex-col justify-center items-start py-8 md:py-16 ">
         {/* <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl text-center mt-16 ">
@@ -46,10 +46,10 @@ const Projects = (): JSX.Element => {
                   htmlFor={i.toString()}
                   className="dropdown-label flex cursor-pointer"
                 >
-                  <div className="flex justify-between items-center w-full">
+                  <div className="flex justify-between items-start md:items-center w-full gap-2">
                     <div>
                       <div className="flex gap-4 items-center">
-                        <h3 className="text-accent font-depixel text-3xl leading-normal">
+                        <h3 className="text-accent font-depixel text-2xl md:text-3xl leading-normal">
                           {project.title}
                         </h3>
                       </div>
@@ -60,7 +60,7 @@ const Projects = (): JSX.Element => {
                         maskImage: `url('/images/icons/arrowhead.svg')`,
                         WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
                       }}
-                      className={`block w-6 h-6 icon-mask bg-accent-light transition-all duration-300 ease-in-out  ${
+                      className={`block w-6 h-6 icon-mask bg-accent-light transition-all duration-300 ease-in-out flex-shrink-0  ${
                         isOpen && i == index ? "-rotate-90" : "rotate-90"
                       }`}
                     ></div>

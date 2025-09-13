@@ -252,7 +252,7 @@ a {
 
     &:checked {
       ~ .dropdown-content {
-        max-height: 100vh;
+        max-height: 999vh;
         @apply py-8;
       }
     }
