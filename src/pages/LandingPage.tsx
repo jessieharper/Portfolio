@@ -14,9 +14,27 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const LandingPage = (): JSX.Element => {
   const gsapContainer = useRef<HTMLDivElement | null>(null);
+  const itemRef = useRef<HTMLDivElement | null>(null);
+
   useGSAP(
     () => {
       let mm = gsap.matchMedia();
+
+      const el = itemRef.current;
+      if (!el) return;
+
+      const speed = parseFloat(el.dataset.speed || "0.8");
+
+      gsap.to(el, {
+        y: () => -(ScrollTrigger.maxScroll(window) * speed),
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
 
       ScrollTrigger.create({
         trigger: "#earth",
@@ -28,7 +46,7 @@ const LandingPage = (): JSX.Element => {
         pinType: "transform",
       });
 
-      mm.add("(min-width: 800px)", () => {
+      mm.add("(min-width: 768px)", () => {
         ScrollTrigger.create({
           trigger: "#card1",
           start: "top 5%",
@@ -74,8 +92,22 @@ const LandingPage = (): JSX.Element => {
 
   return (
     <div ref={gsapContainer} className="full-height-container">
-      <div id="earth" className="absolute top-[2rem] inset-0 -z-10 w-full">
+      <div id="earth" className="absolute top-[2rem] inset-0  w-full">
         <Earth />
+      </div>
+      <div
+        ref={itemRef}
+        data-speed="0.1"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs -z-10"
+      >
+        Keep scrollin'
+        <div
+          style={{
+            maskImage: `url('/images/icons/arrowhead.svg')`,
+            WebkitMaskImage: `url('/images/icons/arrowhead.svg')`,
+          }}
+          className="block w-6 h-8 icon-mask bg-primary rotate-90 mx-auto"
+        />
       </div>
 
       <div className="h-screen lg:h-0"></div>
