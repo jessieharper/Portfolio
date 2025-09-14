@@ -91,10 +91,9 @@ const LandingPage = (): JSX.Element => {
               animator, and burgeoning crazy cat lady.
               <br />
               <br />
-              This is my creative dumping ground. Take a look around - any
-              feedback, praise, criticisms, ~
-              <span className="uppercase font-bold">job offers</span>
-              ~, or questions(?) are welcome.
+              This is my creative dumping ground and is very much a WIP. I have
+              created everything on this site bar the fonts (credit: ) and the
+              brand logos (duh).
             </p>
           </div>
         </div>
@@ -128,7 +127,7 @@ const LandingPage = (): JSX.Element => {
         <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72">
           <div id="card2" className="card mx-auto md:mx-0 md:ml-auto">
             <div className="h-full space-y-2">
-              <h3 className="text-lg ">Key Skills: </h3>
+              <h3 className="text-lg ">What I do: </h3>
               <p className="text-xs leading-5 h-full flex flex-col gap-2">
                 Languages: JavaScript, PHP, TypeScript
                 <span>
@@ -187,6 +186,7 @@ const LandingPage = (): JSX.Element => {
           </div>
         </div>
       </section>
+
       <Projects />
       <Contact />
     </div>
