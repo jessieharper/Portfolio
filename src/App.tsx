@@ -4,7 +4,7 @@ import { GlobalProvider } from "./contexts/GlobalContext.js";
 import "./index.css";
 import { Header } from "./components/index.js";
 import LandingPage from "./pages/LandingPage.js";
-import HyperspaceStars from "./components/HyperspaceStars.js";
+import HyperspaceStars from "./components/Stars.js";
 
 const App = (): JSX.Element => {
   return (
