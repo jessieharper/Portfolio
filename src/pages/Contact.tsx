@@ -13,27 +13,18 @@ const Contact = () => {
 
   useGSAP(
     () => {
-      if (window.innerWidth < 768) return;
-
-      let endWidth = 0;
-
-      if (h2Ref.current && logoContainerRef.current) {
-        const arrowStart = h2Ref.current.getBoundingClientRect().right;
-        const logoStart = logoContainerRef.current.getBoundingClientRect().left;
-        endWidth = logoStart - arrowStart - 48;
-      }
-
       arrowTimeline.current = gsap
         .timeline({ paused: true })
-        .to(arrowPathRef.current, {
-          width: endWidth,
-          duration: 0.5,
-          ease: "power1.inOut",
-        })
-        .to(
+        .fromTo(
+          arrowPathRef.current,
+          { width: "0%" },
+          { width: "100%", duration: 0.5, ease: "power1.inOut" }
+        )
+        .fromTo(
           arrowHeadRef.current,
+          { left: "0%" },
           {
-            x: endWidth,
+            left: "calc(100% - 20px)",
             duration: 0.5,
             ease: "power1.inOut",
           },
@@ -61,25 +52,26 @@ const Contact = () => {
         className="lg:px-8 flex flex-col sm:flex-row items-center gap-4 w-full relative"
       >
         <div
-          className={`flex items-center gap-4 ${
+          className={`flex items-center h-full w-full gap-4 ${
             isClicked ? "" : "cursor-pointer"
           }`}
           onClick={openSesame}
         >
           <h2
             ref={h2Ref}
-            className="text-3xl md:text-5xl font-semibold my-auto text-nowrap leading-normal inline-flex w-full md:w-auto"
+            className="text-3xl md:text-5xl font-semibold my-auto text-nowrap leading-normal inline-flex w-full md:w-auto justify-center sm:justify-start"
           >
             Contact Me
           </h2>
 
-          <div
-            ref={arrowPathRef}
-            className="h-1 w-0 bg-primary relative hidden md:block"
-          >
+          <div className="h-full w-full relative hidden md:flex items-center mr-4">
+            <div
+              ref={arrowPathRef}
+              className="h-1 bg-primary relative z-10"
+            ></div>
             <div
               ref={arrowHeadRef}
-              className="absolute -left-2 top-1/2 transform -translate-y-1/2"
+              className="absolute top-1/2 -translate-y-1/2"
             >
               <div
                 style={{
