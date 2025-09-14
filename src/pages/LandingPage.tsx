@@ -17,9 +17,7 @@ const LandingPage = (): JSX.Element => {
   useGSAP(
     () => {
       let mm = gsap.matchMedia();
-      // ScrollTrigger.scrollerProxy(".full-height-container", {
-      //   pinType: "fixed",
-      // });
+
       ScrollTrigger.create({
         trigger: "#earth",
         start: "top top",
@@ -83,12 +81,12 @@ const LandingPage = (): JSX.Element => {
       <div className="h-screen lg:h-0"></div>
 
       <section className="mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
-        <div className="flex md:absolute">
+        <div className="flex justify-center md:absolute">
           <div id="card1" className="card">
             <p className="text-xs leading-5 h-full">
-              <span className="font-depixel text-3xl">Yo!</span> My name is
-              Jessica, and I am a Sheffield-based Software Developer, amateur
-              animator, and burgeoning crazy cat lady.
+              <span className="font-depixel text-3xl text-accent">Yo!</span> My
+              name is Jess, and I am a Sheffield-based Software Developer,
+              amateur animator, and burgeoning crazy cat lady.
               <br />
               <br />
               This is my creative dumping ground and is very much a WIP. I have
@@ -99,7 +97,7 @@ const LandingPage = (): JSX.Element => {
         </div>
 
         <div className="h-full md:h-[60vh] flex w-full mt-72 md:mt-0">
-          <div className="card md:ml-auto mt-auto">
+          <div className="card mx-auto md:mr-0 md:ml-auto mt-auto ">
             <h3 className="text-lg mb-8">Main Tech Stack: </h3>
 
             <div className="gap-8 flex flex-col">
@@ -128,22 +126,33 @@ const LandingPage = (): JSX.Element => {
           <div id="card2" className="card mx-auto md:mx-0 md:ml-auto">
             <div className="h-full space-y-2">
               <h3 className="text-lg ">What I do: </h3>
-              <p className="text-xs leading-5 h-full flex flex-col gap-2">
-                Languages: JavaScript, PHP, TypeScript
-                <span>
-                  Testing: Test Driven Development (TDD), Jest, Supertest, Pest
-                </span>
-                <span>Back-end: SQL, RESTful APIs, Express, MongoDB</span>
-                <span>
-                  Front-end: HTML, CSS, React, React Native Next.js, Tailwind,
-                  Laravel, Filament, Three.js, WordPress, Woocommerce
-                </span>
-                <span>Hosting: Render, Netlify</span>
-                <span>
-                  Other: Paired programming, technical communication, SDL, Agile
-                  and SCRUM methodologies
-                </span>
-              </p>
+              <div className="text-xs leading-5 h-full flex flex-col gap-2">
+                <div>
+                  <span className="text-accent">Languages:</span> JavaScript,
+                  PHP, TypeScript
+                </div>
+                <div>
+                  <span className="text-accent">Testing:</span> Test Driven
+                  Development (TDD), Jest, Supertest, Pest
+                </div>
+                <div>
+                  <span className="text-accent">Back-end:</span> SQL, RESTful
+                  APIs, Express, MongoDB
+                </div>
+                <div>
+                  <span className="text-accent"> Front-end:</span> HTML, CSS,
+                  React, React Native Next.js, Tailwind, Laravel, Filament,
+                  Three.js, WordPress, Woocommerce
+                </div>
+                <div>
+                  <span className="text-accent">Hosting:</span> Render, Netlify
+                </div>
+                <div>
+                  <span className="text-accent">Other:</span> Paired
+                  programming, technical communication, Agile and SCRUM
+                  methodologies
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -171,15 +180,26 @@ const LandingPage = (): JSX.Element => {
             className="card mt-auto mx-auto md:mx-0 md:ml-auto left-0"
           >
             <div className="h-full space-y-2">
-              <h3 className="text-lg">Experience:</h3>
+              <h3 className="text-lg">Where I've worked:</h3>
               <ul className="text-xs leading-5 h-full flex flex-col gap-2">
-                <li>
-                  Junior Software Developer, Northcoders | 11/2023 to 3/2024
-                  JavaScript, TypeScript, PSQL, React, Node.js, MongoDB
+                <li className="flex flex-col">
+                  <span className="text-accent">
+                    Software Developer, Verticode | 10/2025 to Present:
+                  </span>
+                  React, TypeScript, Tailwind, Express, Node.js, Express,
+                  MongoDB
                 </li>
-                <li>
-                  Freelance Translator, INLINGO | 10/2022 to 08/2024 &
-                  AllCorrect Games | 08/2021 to 08/2024
+                <li className="flex flex-col">
+                  <span className="text-accent">
+                    Junior Web Developer, Genius Division | 06/2024 to 10/2025:
+                  </span>
+                  PHP, Laravel, Livewire, Blade, MySQL, WordPress, Tailwind
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-accent">
+                    Junior Software Developer, Northcoders | 11/2023 to 3/2024:
+                  </span>
+                  JavaScript, TypeScript, PSQL, React, Node.js, MongoDB
                 </li>
               </ul>
             </div>
