@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -14,13 +14,13 @@ const Contact = () => {
   useGSAP(
     () => {
       if (window.innerWidth < 768) return;
+
       let endWidth = 0;
 
       if (h2Ref.current && logoContainerRef.current) {
-        const h2Width = h2Ref.current.getBoundingClientRect().width;
-        const logosWidth =
-          logoContainerRef.current.getBoundingClientRect().width;
-        endWidth = window.innerWidth - (h2Width + logosWidth + 150);
+        const arrowStart = h2Ref.current.getBoundingClientRect().right;
+        const logoStart = logoContainerRef.current.getBoundingClientRect().left;
+        endWidth = logoStart - arrowStart - 48;
       }
 
       arrowTimeline.current = gsap
