@@ -46,6 +46,7 @@ const Stars = (): JSX.Element => {
           }
         `}
       </style>
+
       <svg
         ref={svgRef}
         className="w-full h-full text-primary"
