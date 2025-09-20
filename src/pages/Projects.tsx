@@ -14,15 +14,15 @@ const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="lg:px-8 border-t-4 border-accent-light bg-body  relative"
+      className="lg:px-8 border-t-4 border-yellow-200 bg-body  relative"
     >
-      <div className="container relative z-40 h-full pixel-border  flex flex-col justify-center items-start py-8 md:py-16 ">
+      <div className="container relative z-40 h-full pixel-border flex flex-col justify-center items-start py-8 md:py-16 ">
         {/* <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl text-center mt-16 ">
           Notable Projects
         </h2> */}
-        <p className="pt-6 w-full md:w-1/2 text-left font-depixel text-3xl text-accent-dark italic">
-          My work...
-        </p>
+        <h2 className=" w-full md:w-1/2 text-left font-depixel uppercase text-xl">
+          What I'm working on:
+        </h2>
       </div>
       <div className="container h-full w-full ">
         <div className="space-y-4 ">
