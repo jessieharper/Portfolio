@@ -98,7 +98,7 @@ const LandingPage = (): JSX.Element => {
       <div
         ref={itemRef}
         data-speed="0.2"
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs -z-10"
+        className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs -z-10"
       >
         Keep scrollin'
         <div
@@ -117,8 +117,8 @@ const LandingPage = (): JSX.Element => {
           <div id="card1" className="card">
             <p className="text-xs leading-5 h-full">
               <span className="font-depixel text-3xl text-accent">Yo!</span> My
-              name is Jess, and I am a Sheffield-based Software Developer,
-              amateur animator, and burgeoning crazy cat lady.
+              name is Jess, and I am a Software Developer, amateur animator, and
+              burgeoning crazy cat lady based in Sheffield (see map opposite).
               <br />
               <br />
               This is my creative dumping ground and is very much a WIP. I have
