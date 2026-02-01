@@ -91,14 +91,17 @@ const LandingPage = (): JSX.Element => {
   );
 
   return (
-    <div ref={gsapContainer} className="full-height-container">
+    <div
+      ref={gsapContainer}
+      className="full-height-container w-full flex flex-col"
+    >
       <div id="earth" className="absolute top-[2rem] inset-0  w-full">
         <Earth />
       </div>
       <div
         ref={itemRef}
         data-speed="0.2"
-        className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs -z-10"
+        className=" absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs -z-10"
       >
         Keep scrollin'
         <div
@@ -115,16 +118,17 @@ const LandingPage = (): JSX.Element => {
       <section className="mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
         <div className="flex justify-center md:absolute">
           <div id="card1" className="card">
-            <p className="text-xs leading-5 h-full">
-              <span className="font-depixel text-3xl text-accent">Yo!</span> My
-              name is Jess, and I am a Software Developer, amateur animator, and
-              burgeoning crazy cat lady based in Sheffield (see map opposite).
-              <br />
-              <br />
-              This is my creative dumping ground and is very much a WIP. I have
-              created everything on this site bar the fonts (credit: ) and the
-              brand logos (duh).
-            </p>
+            <div className="text-xs leading-5 h-full flex flex-col gap-2">
+              <p>
+                <span className="font-depixel text-3xl text-accent">Yo!</span>{" "}
+                My name is Jess, and I am a Software Developer, amateur
+                animator, and burgeoning crazy cat lady based in Sheffield (see
+                model of Earth for reference).
+              </p>
+              <span className="mt-2">
+                I currently work with TypeScript and the MERN stack.
+              </span>
+            </div>
           </div>
         </div>
 
@@ -161,7 +165,7 @@ const LandingPage = (): JSX.Element => {
               <div className="text-xs leading-5 h-full flex flex-col gap-2">
                 <div>
                   <span className="text-accent">Languages:</span> JavaScript,
-                  PHP, TypeScript
+                  TypeScript, PHP
                 </div>
                 <div>
                   <span className="text-accent">Testing:</span> Test Driven
@@ -193,13 +197,12 @@ const LandingPage = (): JSX.Element => {
           <div id="card3" className="card mb-auto mx-auto md:mx-0 flex">
             <div className="text-xs leading-5 h-full flex flex-col gap-2">
               <h3 className="font-depixel text-lg uppercase">About me:</h3>I am
-              a former Videogame Translator, current Web Developer, and I've
-              just signed up to do a triathlon because I'm going through a
-              mid-life crisis. My favourite animals are whales, and I drive to
+              a former Videogame Translator, current Software Developer, and
+              aspiring Game Dev. My favourite animals are whales, and I drive to
               work every day in a clapped-out Suzuki Carry van.
               <span>
-                I'm currently teaching myself Blender and I'm interested in
-                making my own games, so watch this space.
+                I have been attempting to teach myself Blender (hence model of
+                Earth), and I'm currently experimenting with Pico 8.
               </span>
             </div>
           </div>

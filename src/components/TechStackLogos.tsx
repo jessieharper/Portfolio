@@ -3,10 +3,10 @@ const TechStackLogos = (): JSX.Element => {
     "javascript",
     "react",
     "typescript",
-    "php",
+    "node",
     "tailwind",
     "laravel",
-    "wordpress",
+    "mongoDB",
     "sql",
   ];
 
