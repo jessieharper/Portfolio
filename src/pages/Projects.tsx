@@ -21,10 +21,10 @@ const Projects = (): JSX.Element => {
           What I'm working on:
         </h2>
         <p className="text-xs w-full sm:w-10/12 md:w-2/3 lg:w-1/2 leading-5">
-          Here is a non-exhaustive list of some of my favourite projects that
-          I've worked on to daye, as well as some personal projects I have in
-          the pipeline. If you're interested in seeing more professional
-          projects that I've worked on, you should probably{" "}
+          Here is a non-exhaustive list of some of the personal projects that
+          I've been workng on, as well as some ideas that I have in the
+          pipeline. If you're interested in seeing more professional projects
+          that I've worked on, you should probably{" "}
           <span className="text-accent">download my CV</span>.
         </p>
       </div>
@@ -40,7 +40,6 @@ const Projects = (): JSX.Element => {
               >
                 <div className="opacity-60 text-xs italic divide-x-2 divide-primary flex">
                   <span className="pr-5">{project.date}</span>
-                  <span className="pl-5">{project.category}</span>
                 </div>
                 <input
                   id={i.toString()}
