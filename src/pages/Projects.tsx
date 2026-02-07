@@ -16,21 +16,27 @@ const Projects = (): JSX.Element => {
       id="projects"
       className="lg:px-8 border-t-4 border-yellow-200 bg-body  relative"
     >
-      <div className="container relative z-40 h-full pixel-border flex flex-col justify-center items-start py-8 md:py-16 ">
-        {/* <h2 className="title relative text-[#2A4257] text-5xl md:text-7xl text-center mt-16 ">
-          Notable Projects
-        </h2> */}
+      <div className="container relative z-40 h-full pixel-border flex flex-col justify-center items-start py-8 md:py-16 space-y-4">
         <h2 className=" w-full md:w-1/2 text-left font-depixel uppercase text-xl">
           What I'm working on:
         </h2>
+        <p className="text-xs w-full sm:w-10/12 md:w-2/3 lg:w-1/2 leading-5">
+          Here is a non-exhaustive list of some of my favourite projects that
+          I've worked on to daye, as well as some personal projects I have in
+          the pipeline. If you're interested in seeing more professional
+          projects that I've worked on, you should probably{" "}
+          <span className="text-accent">download my CV</span>.
+        </p>
       </div>
       <div className="container h-full w-full ">
-        <div className="space-y-4 ">
+        <div className="space-y-4 border-t-2 border-teal-100/30 ">
           {projects.map((project, i) => {
             return (
               <div
                 key={i}
-                className="relative dropdown border-b-2 border-teal-100/30 h-full w-full space-y-2 py-4 flex flex-col"
+                className={`relative dropdown border-b-2 border-teal-100/30 h-full w-full space-y-2 py-4 flex flex-col ${
+                  i === 0 ? "pt-6" : ""
+                }`}
               >
                 <div className="opacity-60 text-xs italic divide-x-2 divide-primary flex">
                   <span className="pr-5">{project.date}</span>

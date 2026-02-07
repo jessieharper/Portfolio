@@ -1,12 +1,35 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { SpriteAnimator } from "./SpriteAnimator";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 const Earth = (): JSX.Element => {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const initialHeightRef = useRef<number>(0);
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
+    if (!svgRef.current) return;
+
+    gsap.fromTo(
+      svgRef.current,
+      {
+        top: "14%",
+      },
+      {
+        top: "50%",
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: svgRef.current,
+          start: "top 20%",
+          end: "200px top",
+          scrub: true,
+        },
+      }
+    );
+
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ alpha: true });
 
@@ -75,16 +98,14 @@ const Earth = (): JSX.Element => {
     <>
       <div className="relative w-full h-full flex mt-6 mx-auto" ref={mountRef}>
         <svg
+          ref={svgRef}
           viewBox="0 0 500 500"
-          className="absolute -z-10 left-1/2 -translate-x-1/2 top-[13.5%] w-[550px] h-[550px] flex-shrink-0"
+          className="absolute -z-10 left-1/2 -translate-x-1/2 w-[550px] h-[550px] flex-shrink-0"
         >
-          <path
+          {/* <path
             id="curve"
             d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
-            className="fill-none w-auto"
-            stroke="#17110E"
-            strokeWidth="40"
-            strokeLinecap="round"
+            className="fill-body"
           />
 
           <text width="500">
@@ -92,7 +113,7 @@ const Earth = (): JSX.Element => {
               xlinkHref="#curve"
               startOffset="50%"
               textAnchor="middle"
-              className="w-full h-full font-dogica fill-primary text-[10px] relative -mb-10"
+              className="relative w-full h-full font-dogica fill-primary text-[10px]"
               dx="10"
             >
               <tspan className="text-[18px]">🐈</tspan>
@@ -101,7 +122,7 @@ const Earth = (): JSX.Element => {
                 🐈
               </tspan>
             </textPath>
-          </text>
+          </text> */}
         </svg>
       </div>
     </>
