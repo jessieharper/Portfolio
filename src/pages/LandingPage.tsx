@@ -23,15 +23,15 @@ const LandingPage = (): JSX.Element => {
       const el = itemRef.current;
       if (!el) return;
 
-      const speed = parseFloat(el.dataset.speed || "0.8");
+      const speed = parseFloat(el.dataset.speed || "0.1");
 
       gsap.to(el, {
         y: () => -(ScrollTrigger.maxScroll(window) * speed),
         ease: "none",
         scrollTrigger: {
-          trigger: el,
-          start: "top bottom",
-          end: "bottom top",
+          trigger: "#card1",
+          start: "top top",
+          end: "top bottom",
           scrub: true,
         },
       });
@@ -91,19 +91,16 @@ const LandingPage = (): JSX.Element => {
   );
 
   return (
-    <div
-      ref={gsapContainer}
-      className="full-height-container w-full flex flex-col"
-    >
+    <div ref={gsapContainer} className="full-height-container">
       <div id="earth" className="absolute top-[2rem] inset-0  w-full">
         <Earth />
       </div>
       <div
         ref={itemRef}
         data-speed="0.2"
-        className=" absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs -z-10"
+        className="w-screen absolute bottom-8 left-1/2 -translate-x-1/2 text-xs -z-10"
       >
-        Keep scrollin'
+        <p className="text-center">Keep scrollin'</p>
         <div
           style={{
             maskImage: `url('/images/icons/arrowhead.svg')`,
@@ -112,7 +109,6 @@ const LandingPage = (): JSX.Element => {
           className="block w-6 h-8 icon-mask bg-primary rotate-90 mx-auto"
         />
       </div>
-
       <div className="h-screen lg:h-0"></div>
 
       <section className="mt-0 px-0 lg:px-12 h-full container relative overflow-hidden">
