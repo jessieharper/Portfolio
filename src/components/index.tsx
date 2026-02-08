@@ -5,7 +5,6 @@ import MobileNavLinks from "./MobileNavLinks";
 import NavBar from "./NavBar";
 import { SpriteAnimator } from "./SpriteAnimator";
 import ThemeSelector from "./ThemeSelector";
-import TextShuffler from "./TextScrambler";
 
 export {
   Earth,
@@ -15,5 +14,4 @@ export {
   NavBar,
   SpriteAnimator,
   ThemeSelector,
-  TextShuffler,
 };

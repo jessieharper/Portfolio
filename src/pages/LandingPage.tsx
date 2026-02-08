@@ -117,12 +117,13 @@ const LandingPage = (): JSX.Element => {
             <div className="text-xs leading-5 h-full flex flex-col gap-2">
               <p>
                 <span className="font-depixel text-3xl text-accent">Yo!</span>{" "}
-                My name is Jess, and I am a Software Developer, amateur
-                animator, and burgeoning crazy cat lady based in Sheffield (see
-                model of Earth for reference).
+                My name is Jessie, and I am a Software Developer, amateur
+                animator, and burgeoning crazy cat lady based in Sheffield.
               </p>
               <span className="mt-2">
-                I currently work with TypeScript and the MERN stack.
+                I currently work with TypeScript and the MERN stack. Outside of
+                work, I’m experimenting with Lua, Pico-8, and Blender while
+                slowly working towards building my own small games.
               </span>
             </div>
           </div>
@@ -192,14 +193,26 @@ const LandingPage = (): JSX.Element => {
         <div className=" h-full md:h-screen w-full flex flex-col flex-auto mt-72 ">
           <div id="card3" className="card mb-auto mx-auto md:mx-0 flex">
             <div className="text-xs leading-5 h-full flex flex-col gap-2">
-              <h3 className="font-depixel text-lg uppercase">About me:</h3>I am
-              a former Videogame Translator, current Software Developer, and
-              aspiring Game Dev. My favourite animals are whales, and I drive to
-              work every day in a clapped-out Suzuki Carry van.
-              <span>
-                I have been attempting to teach myself Blender (hence model of
-                Earth), and I'm currently experimenting with Pico 8.
-              </span>
+              <h3 className="font-depixel text-lg uppercase">About me:</h3>I'm a
+              former videogame translator turned developer, my favourite animals
+              are whales, and I drive to work every day in a clapped-out Suzuki
+              Carry van.
+              <ul className="mt-3 space-y-">
+                <li className="flex flex-col">
+                  Favourite book:{" "}
+                  <span className="text-accent">
+                    The Infernal Desire Machines of Doctor Hoffman
+                  </span>
+                </li>
+                <li className="flex flex-col">
+                  Favourite game:{" "}
+                  <span className="text-accent">Psychonauts</span>
+                </li>
+                <li className="flex flex-col">
+                  Favourite movie:{" "}
+                  <span className="text-accent">Evil Dead II</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -216,8 +229,8 @@ const LandingPage = (): JSX.Element => {
                   <span className="text-accent">
                     Software Developer, Verticode | 10/2025 to Present:
                   </span>
-                  React, TypeScript, Tailwind, Express, Node.js, Express,
-                  MongoDB
+                  React, React Native, TypeScript, Tailwind, Express, Node.js,
+                  Express, MongoDB
                 </li>
                 <li className="flex flex-col">
                   <span className="text-accent">

@@ -157,24 +157,6 @@ a {
   background-repeat: repeat-x;
 }
 
-/* About Page Changes */
-:where(.about *) {
-  @apply font-roboto !important;
-}
-
-:where(.about a) {
-  @apply text-2xl;
-}
-
-/* Projects Page Changes */
-:where(.projects *) {
-  @apply font-kirang !important;
-}
-
-:where(.projects a) {
-  @apply text-3xl;
-}
-
 .panel {
   height: 100vh;
   position: sticky;
@@ -252,5 +234,11 @@ a {
         @apply py-8;
       }
     }
+  }
+}
+
+@keyframes zoom {
+  to {
+    transform: scale(1);
   }
 }
