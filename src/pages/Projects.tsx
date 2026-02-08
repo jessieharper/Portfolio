@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { projects } from "../data/ProjectData";
-import Button from "../components/Button";
+import ImageModal from "../components/ImageModal";
 
 const Projects = (): JSX.Element => {
   const [isOpen, setisOpen] = useState<Boolean>(false);
   const [index, setIndex] = useState<Number>(0);
+  const [activeImages, setActiveImages] = useState<string[] | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const toggleOpen = (i: Number) => {
     setisOpen(!isOpen);
@@ -58,7 +60,9 @@ const Projects = (): JSX.Element => {
                           {project.title}
                         </h3>
                       </div>
-                      <p className="text-sm flex h-full">~{project.stack}~</p>
+                      <p className="text-sm flex h-full text-accent-dark">
+                        ~{project.stack}~
+                      </p>
                     </div>
                     <div
                       style={{
@@ -73,54 +77,37 @@ const Projects = (): JSX.Element => {
                 </label>
 
                 <div className="dropdown-content flex flex-col lg:flex-row w-full gap-4">
-                  <div className="flex flex-col justify-start gap-8 w-full md:w-2/3 lg:w-7/12">
+                  <div className="flex flex-col justify-start gap-8 w-full md:w-2/3 lg:w-1/2">
                     <div className="gap-4 flex flex-col">
                       <p className="flex flex-col gap-2">
-                        <span className="text-accent-dark">Goal</span>
-                        <span className="text-sm">{project.content.goal}</span>
-                      </p>
-                      <p className="flex flex-col gap-2">
-                        <span className="text-accent-dark">Features</span>
-                        <span className="text-sm">
-                          {project.content.features}
-                        </span>
-                      </p>
-                      <p className="flex flex-col gap-2">
-                        <span className="text-accent-dark">Outcome</span>
-                        <span className="text-sm">
-                          {project.content.outcome}
+                        <span className="text-xs leading-5">
+                          {project.content}
                         </span>
                       </p>
                     </div>
                     {project.link && (
-                      <div className="flex mr-auto">
-                        <Button
-                          href={project.link}
-                          title="Visit Site"
-                          id={`project${i}`}
-                          colours={[
-                            "#EC4899",
-                            "#EB6A6A",
-                            "#EB7D51",
-                            "#EB9630",
-                            "#EBB305",
-                          ]}
-                          range={5}
-                          delay={100}
-                        />
-                      </div>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        className="font-dogica tracking-tighter normal-case text-sm flex mr-auto text-accent items-center  gap-2"
+                      >
+                        Visit Site
+                      </a>
                     )}
                   </div>
 
                   {project.image && (
-                    <div className="flex justify-start lg:justify-center gap-4 md:gap-8 h-full w-full lg:w-5/12">
+                    <div className="flex flex-row justify-center sm:justify-start lg:justify-center gap-4 md:gap-8 h-full w-full lg:w-1/2">
                       {project.image.map((img, i) => (
-                        <div className="h-52">
+                        <div key={i} className="h-44 w-44 cursor-pointer">
                           <img
-                            key={i}
                             src={img}
                             alt={`${project.title} screenshot ${i + 1}`}
                             className="w-full h-full object-cover object-center"
+                            onClick={() => {
+                              setActiveImages(project.image);
+                              setCurrentIndex(i);
+                            }}
                           />
                         </div>
                       ))}
@@ -132,6 +119,12 @@ const Projects = (): JSX.Element => {
           })}
         </div>
       </div>
+      <ImageModal
+        images={activeImages}
+        index={currentIndex}
+        setIndex={setCurrentIndex}
+        onClose={() => setActiveImages(null)}
+      />
     </section>
   );
 };
